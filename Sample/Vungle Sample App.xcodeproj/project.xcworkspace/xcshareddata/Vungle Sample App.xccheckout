@@ -10,31 +10,31 @@
 	<string>Vungle Sample App</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>D3BBCCA24DDFC4689F6015A0A5379C126D488E84</key>
-		<string>https://github.com/Vungle/publisher-sample-ios</string>
+		<key>3C0B041086E541D319B1EE2BD7F5A10F9002F364</key>
+		<string>https://github.com/Vungle/iOS-SDK.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Vungle Sample App.xcodeproj</string>
+	<string>Sample/Vungle Sample App.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>D3BBCCA24DDFC4689F6015A0A5379C126D488E84</key>
-		<string>../..</string>
+		<key>3C0B041086E541D319B1EE2BD7F5A10F9002F364</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Vungle/publisher-sample-ios</string>
+	<string>https://github.com/Vungle/iOS-SDK.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>D3BBCCA24DDFC4689F6015A0A5379C126D488E84</string>
+	<string>3C0B041086E541D319B1EE2BD7F5A10F9002F364</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D3BBCCA24DDFC4689F6015A0A5379C126D488E84</string>
+			<string>3C0B041086E541D319B1EE2BD7F5A10F9002F364</string>
 			<key>IDESourceControlWCCName</key>
-			<string>publisher-sample-ios</string>
+			<string>iOS-SDK</string>
 		</dict>
 	</array>
 </dict>
