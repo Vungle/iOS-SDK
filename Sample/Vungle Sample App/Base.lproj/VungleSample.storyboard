@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CZ4-MO-1fc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--First-->
+        <scene sceneID="W3I-pn-N6e">
+            <objects>
+                <viewController title="First" id="CZ4-MO-1fc" customClass="FirstViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nUS-lZ-eyD"/>
+                        <viewControllerLayoutGuide type="bottom" id="pL9-cq-WSf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2VE-Yg-loa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VungleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="wD1-tf-251">
+                                <rect key="frame" x="93" y="0.0" width="135" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="V1o-tP-JUv"/>
+                                    <constraint firstAttribute="width" constant="135" id="sMl-6e-AGM"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQT-WE-twr">
+                                <rect key="frame" x="0.0" y="68" width="320" height="142"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Play Ad (default)" image="PlayDefaultAdButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAd" destination="CZ4-MO-1fc" eventType="touchUpInside" id="WN7-9a-VcD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhr-dw-rI2">
+                                <rect key="frame" x="0.0" y="218" width="320" height="142"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Play Ad (options)" image="PlayCustomAdButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAdWithOptions" destination="CZ4-MO-1fc" eventType="touchUpInside" id="kJb-7m-PFV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKx-cg-CUE">
+                                <rect key="frame" x="0.0" y="368" width="320" height="142"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Play Ad (options)" image="PlayIncentivizedAdButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showIncentivizedAd" destination="CZ4-MO-1fc" eventType="touchUpInside" id="onO-1i-lJG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="uKx-cg-CUE" firstAttribute="width" secondItem="2VE-Yg-loa" secondAttribute="width" id="2Ao-Aj-P1M"/>
+                            <constraint firstAttribute="height" secondItem="CQT-WE-twr" secondAttribute="height" multiplier="4" id="HP0-Dr-sSX"/>
+                            <constraint firstAttribute="centerX" secondItem="wD1-tf-251" secondAttribute="centerX" constant="-0.5" id="ODt-Hr-KY7"/>
+                            <constraint firstItem="lhr-dw-rI2" firstAttribute="top" secondItem="CQT-WE-twr" secondAttribute="bottom" constant="8" id="QKQ-LL-eiI"/>
+                            <constraint firstAttribute="width" secondItem="CQT-WE-twr" secondAttribute="width" id="U4D-So-ZCV"/>
+                            <constraint firstItem="uKx-cg-CUE" firstAttribute="top" secondItem="lhr-dw-rI2" secondAttribute="bottom" constant="8" id="cDa-IC-6e3"/>
+                            <constraint firstItem="uKx-cg-CUE" firstAttribute="height" secondItem="2VE-Yg-loa" secondAttribute="height" multiplier="0.25" id="d3T-Ul-JV7"/>
+                            <constraint firstItem="lhr-dw-rI2" firstAttribute="height" secondItem="2VE-Yg-loa" secondAttribute="height" multiplier="0.25" id="dBX-aP-Ry6"/>
+                            <constraint firstAttribute="centerX" secondItem="lhr-dw-rI2" secondAttribute="centerX" id="hBC-Qm-tHe"/>
+                            <constraint firstItem="lhr-dw-rI2" firstAttribute="width" secondItem="2VE-Yg-loa" secondAttribute="width" id="kx9-ay-ewr"/>
+                            <constraint firstAttribute="centerX" secondItem="uKx-cg-CUE" secondAttribute="centerX" id="n5U-jc-P7V"/>
+                            <constraint firstAttribute="centerX" secondItem="CQT-WE-twr" secondAttribute="centerX" id="ri7-DJ-fbM"/>
+                            <constraint firstItem="wD1-tf-251" firstAttribute="top" secondItem="nUS-lZ-eyD" secondAttribute="bottom" constant="-20" id="sWz-x8-5uU"/>
+                            <constraint firstItem="CQT-WE-twr" firstAttribute="top" secondItem="wD1-tf-251" secondAttribute="bottom" constant="8" id="y4Q-Iz-aHv"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="First" image="first" id="u1e-5L-l1D"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="showAdButton" destination="CQT-WE-twr" id="9MM-9F-NLj"/>
+                        <outlet property="showAdWithOptionsButton" destination="lhr-dw-rI2" id="SiK-SG-Npe"/>
+                        <outlet property="showIncentivizedAdButton" destination="uKx-cg-CUE" id="By1-TA-xwd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1223.5" y="-146.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="PlayCustomAdButton" width="1000" height="480"/>
+        <image name="PlayDefaultAdButton" width="1000" height="480"/>
+        <image name="PlayIncentivizedAdButton" width="1000" height="480"/>
+        <image name="VungleLogo" width="800" height="364"/>
+        <image name="first" width="30" height="30"/>
+    </resources>
+</document>
