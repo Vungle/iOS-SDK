@@ -17,12 +17,13 @@ pod "VungleSDK-iOS"
 The latest information around our Cocoapods support can be found at the [VungleSDK-iOS Cocoapods Page](https://cocoapods.org/pods/VungleSDK-iOS)
 
 ### Version Info
-The Vungle iOS SDK only supports iOS 6+ and supports both 32bit and 64bit apps.  
+The Vungle iOS SDK only supports iOS 7+ and supports both 32bit and 64bit apps.  
 
-Our newest iOS SDK (3.2.0) was released in support of the newest XCode 6.3. Please ensure you are using XCode 6.3 or higher to ensure smooth integration.
+Our newest iOS SDK (3.2.0) was released in support of the newest XCode 6.4. Please ensure you are using XCode 6.4 or higher to ensure smooth integration.
 
 ## Release Notes
 ### 3.2.0.*
+* This SDK supports iOS 7+ devices only
 * Enabled SSL as default for all internal network requests
 * Improved caching performance
 * Resolved race-condition crash around fetchConfig request
