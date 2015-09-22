@@ -1,6 +1,7 @@
 ## Changelog
 
 ## VERSION 3.2.0
+* This SDK supports iOS 7+ devices only
 * Enabled SSL as default for all internal network requests
 * Improved caching performance
 * Resolved race-condition crash around fetchConfig request
