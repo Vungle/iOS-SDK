@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE8F42381BBB0BC9009EC672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		DEFCFF4F1BA1F2BB006414B2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFCFF4E1BA1F2BB006414B2 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DEFCFF591BA33DB6006414B2 /* __vungle.db in Resources */ = {isa = PBXBuildFile; fileRef = DEFCFF521BA33DB6006414B2 /* __vungle.db */; };
 		DEFCFF5A1BA33DB6006414B2 /* vg_close.png in Resources */ = {isa = PBXBuildFile; fileRef = DEFCFF531BA33DB6006414B2 /* vg_close.png */; };
@@ -15,8 +16,6 @@
 		DEFCFF5D1BA33DB6006414B2 /* vg_mute_on.png in Resources */ = {isa = PBXBuildFile; fileRef = DEFCFF561BA33DB6006414B2 /* vg_mute_on.png */; };
 		DEFCFF5E1BA33DB6006414B2 /* vg_privacy.png in Resources */ = {isa = PBXBuildFile; fileRef = DEFCFF571BA33DB6006414B2 /* vg_privacy.png */; };
 		DEFCFF5F1BA33DB6006414B2 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFCFF581BA33DB6006414B2 /* VungleSDK.framework */; };
-		DEFCFF611BA34127006414B2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = DEFCFF601BA34127006414B2 /* README.md */; };
-		DEFCFF641BA34812006414B2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DEFCFF621BA34812006414B2 /* LICENSE */; };
 		DEFCFF651BA34812006414B2 /* VungleSDK-iOS.podspec in Resources */ = {isa = PBXBuildFile; fileRef = DEFCFF631BA34812006414B2 /* VungleSDK-iOS.podspec */; };
 		F45D5FC518E0F05300329123 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D5FC418E0F05300329123 /* Foundation.framework */; };
 		F45D5FC718E0F05300329123 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D5FC618E0F05300329123 /* CoreGraphics.framework */; };
@@ -58,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE8F42351BBB09C7009EC672 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
+		DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEFCFF4E1BA1F2BB006414B2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		DEFCFF521BA33DB6006414B2 /* __vungle.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = __vungle.db; sourceTree = "<group>"; };
 		DEFCFF531BA33DB6006414B2 /* vg_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vg_close.png; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		DEFCFF571BA33DB6006414B2 /* vg_privacy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vg_privacy.png; sourceTree = "<group>"; };
 		DEFCFF581BA33DB6006414B2 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VungleSDK.framework; sourceTree = "<group>"; };
 		DEFCFF601BA34127006414B2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		DEFCFF621BA34812006414B2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DEFCFF631BA34812006414B2 /* VungleSDK-iOS.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "VungleSDK-iOS.podspec"; path = "../VungleSDK-iOS.podspec"; sourceTree = "<group>"; };
 		F45D5FC118E0F05300329123 /* Vungle Sample App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vungle Sample App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45D5FC418E0F05300329123 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -167,7 +167,7 @@
 		F45D5FB818E0F05300329123 = {
 			isa = PBXGroup;
 			children = (
-				DEFCFF621BA34812006414B2 /* LICENSE */,
+				DE8F42351BBB09C7009EC672 /* LICENSE.md */,
 				DEFCFF631BA34812006414B2 /* VungleSDK-iOS.podspec */,
 				DEFCFF601BA34127006414B2 /* README.md */,
 				F45D5FCA18E0F05300329123 /* Vungle Sample App */,
@@ -217,6 +217,7 @@
 				F45D5FD318E0F05300329123 /* AppDelegate.h */,
 				F45D5FD418E0F05300329123 /* AppDelegate.m */,
 				F45D5FD618E0F05300329123 /* VungleSample.storyboard */,
+				DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */,
 				F45D5FDC18E0F05300329123 /* FirstViewController.h */,
 				F45D5FDD18E0F05300329123 /* FirstViewController.m */,
 				F45D5FE218E0F05300329123 /* Images.xcassets */,
@@ -299,7 +300,7 @@
 		F45D5FB918E0F05300329123 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Jordyn Chuhaloff";
 				TargetAttributes = {
 					F45D5FC018E0F05300329123 = {
@@ -340,10 +341,10 @@
 				DEFCFF5D1BA33DB6006414B2 /* vg_mute_on.png in Resources */,
 				DEFCFF5E1BA33DB6006414B2 /* vg_privacy.png in Resources */,
 				F45D5FE318E0F05300329123 /* Images.xcassets in Resources */,
-				DEFCFF641BA34812006414B2 /* LICENSE in Resources */,
 				DEFCFF5C1BA33DB6006414B2 /* vg_mute_off.png in Resources */,
 				F45D5FD818E0F05300329123 /* VungleSample.storyboard in Resources */,
 				F45D5FCF18E0F05300329123 /* InfoPlist.strings in Resources */,
+				DE8F42381BBB0BC9009EC672 /* LaunchScreen.storyboard in Resources */,
 				DEFCFF591BA33DB6006414B2 /* __vungle.db in Resources */,
 				DEFCFF5B1BA33DB6006414B2 /* vg_cta.png in Resources */,
 			);
@@ -366,7 +367,6 @@
 			files = (
 				F45D5FD518E0F05300329123 /* AppDelegate.m in Sources */,
 				F45D5FDE18E0F05300329123 /* FirstViewController.m in Sources */,
-				DEFCFF611BA34127006414B2 /* README.md in Sources */,
 				F45D5FD118E0F05300329123 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +435,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -505,6 +506,7 @@
 				INFOPLIST_FILE = "Vungle Sample App/Vungle Sample App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -527,6 +529,7 @@
 				INFOPLIST_FILE = "Vungle Sample App/Vungle Sample App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -537,11 +540,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Vungle Sample App.app/Vungle Sample App";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vungle Sample App/Vungle Sample App-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -549,6 +548,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Vungle Sample AppTests/Vungle Sample AppTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -559,14 +559,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Vungle Sample App.app/Vungle Sample App";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vungle Sample App/Vungle Sample App-Prefix.pch";
 				INFOPLIST_FILE = "Vungle Sample AppTests/Vungle Sample AppTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
