@@ -1,5 +1,10 @@
 ## Changelog
 
+## VERSION 3.2.1
+* Bitcode support!
+* Initialization prevention for devices under iOS 7.0
+* Multiple initialization crash fix
+
 ## VERSION 3.2.0
 * This SDK supports iOS 7+ devices only
 * Enabled SSL as default for all internal network requests
