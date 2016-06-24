@@ -233,7 +233,7 @@ Vungle SDK.
 
 6.  **Developer Payments**.
 
-A.  *Developer Payment*. Subject to the terms and conditions of this
+    A.  *Developer Payment*. Subject to the terms and conditions of this
     Agreement, Vungle shall pay to Developer amounts calculated based on
     a percentage of the Net Revenue (defined below) received by Vungle
     from CPI, CPM, CPCV or CPC based IOs (the “*Developer Payment*”) for
@@ -253,7 +253,7 @@ A.  *Developer Payment*. Subject to the terms and conditions of this
     revenue received from activities that Vungle deems to be fraudulent
     may be refunded to the Advertiser(s) in Vungle’s sole discretion.
 
-B.  *Payment Terms*. Vungle will pay any Developer Payment due to
+    B.  *Payment Terms*. Vungle will pay any Developer Payment due to
     Developer 60 days after the completion of the month in which such
     campaign runs; provided that, Vungle may withhold payment until the
     following month for Developer Payment amounts less than \$50 U.S.
