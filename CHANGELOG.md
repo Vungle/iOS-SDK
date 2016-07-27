@@ -1,5 +1,8 @@
 ## Changelog
 
+## VERSION 3.2.2
+* Fix presenting modal view controller exception
+
 ## VERSION 3.2.1
 * Bitcode support!
 * Initialization prevention for devices under iOS 7.0
