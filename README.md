@@ -23,7 +23,7 @@ Our newest iOS SDK (4.0.4) was released on September 13th, 2016 in support of th
 
 ## Release Notes
 ### 4.0.4
-* OS 10 OS performance optimizations
+* iOS 10 OS performance optimizations
 * CloudUX functionality support
 * Vungle unique id implementation to maintain publisher frequency capping
 * Fix click area around CTA button 
