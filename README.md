@@ -19,11 +19,16 @@ The latest information around our Cocoapods support can be found at the [VungleS
 ### Version Info
 The Vungle iOS SDK only supports iOS 7+ and supports both 32bit and 64bit apps.  
 
-Our newest iOS SDK (3.2.2) was released in support of the newest XCode 7+. Please ensure you are using XCode 7.0 or higher to ensure smooth integration.
+Our newest iOS SDK (4.0.4) was released on September 13th, 2016 in support of the newest XCode 7+. Please ensure you are using XCode 7.0 or higher to ensure smooth integration.
 
 ## Release Notes
-### 3.2.2
-* Fix presenting modal view controller exception
+### 4.0.4
+* OS 10 OS performance optimizations
+* CloudUX functionality support
+* Vungle unique id implementation to maintain publisher frequency capping
+* Fix click area around CTA button 
+* Resume video when app comes to foreground 
+* Add logging when the publisher uses a wrong appId 
 
 
 ## License
