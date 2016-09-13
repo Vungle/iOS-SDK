@@ -1,0 +1,68 @@
+{
+    "id": "8",
+    "adTypex": "vungle_mraid",
+    "adType": "third_party_mraid",
+    "adTypex": "vungle_local",
+    "campaign": "4",
+    "callToActionUrl": "http://CLICKTRACKING.com",
+    "countdown": 4,
+    "mraidContent": "PGh0bWw+DQo8Ym9keSBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLDAsMCwwKTsiPg0KPHNwYW4gc3R5bGU9ImNvbG9yOiBncmVlbjsiPiBUSElTIElTIFRIRSBURVhUIFNUUklORyA8L3NwYW4+DQo8L2JvZHk+DQo8L2h0bWw+",
+    "mraidContentx": "LyoNCiAqIERlc2NyaXB0aW9uOiBUaGUgbG9hZGVyIGZvciBhIHN0YXRpYyAoYmFzaWMgY2xpY2thYmxlKSBhZCB1c2luZyB0aGUgTVJBSUQgYXBpLiBUaGlzIGFkIGhhcyBqdXN0IG9uZSBpbWFnZSB3OjMxNnB4IGg6NzI4cHggdGhhdCBjbGlja3MgDQogKiB0aHJvdWdoIHRvIGEgbGFuZGluZyBwYWdlICh3d3cubGl2ZXN0YW5kLmNvbSkNCiAqIEF1dGhvcjogQWRpdHlhIEthbHJvDQogKiBDb21wYW55OiBZYWhvbyENCiAqLw0KDQpkb2N1bWVudC53cml0ZSgiPHNjcmlwdCBzcmM9XCJtcmFpZC5qc1wiPjwvc2NyaXB0PiIpOw0KDQovKg0KICogQ2hlY2tpbmcgZm9yIHRoZSBzdGF0ZSBvZiB0aGUgbXJhaWQgY2xpZW50IGxpYnJhcnkgYW5kIHN1YnNjcmliaW5nIHRvIHRoZSByZWFkeSBldmVudCBpZiBuZWNlc3NhcnkgDQogKiBXaGVuIHRoZSBjbGllbnQgbGlicmFyeSBpcyByZWFkeSBjYWxsIHRoZSBzaG93QWQgbWV0aG9kIHRvIHJlbmRlciB0aGUgYWQNCiAqLw0KaWYgKG1yYWlkLmdldFN0YXRlKCkgIT0gJ3JlYWR5Jykgew0KCWNvbnNvbGUubG9nKCJNUkFJRCBBZDogYWRkaW5nIGV2ZW50IGxpc3RlbmVyIGZvciByZWFkeSIpOw0KCW1yYWlkLmFkZEV2ZW50TGlzdGVuZXIoJ3JlYWR5Jywgc2hvd0FkKTsNCn0gZWxzZSB7DQoJc2hvd0FkKCk7DQp9DQoNCi8qDQogKiBUaGUgc2hvd0FkIG1ldGhvZCByZWdpc3RlcnMgZXZlbnQgbGlzdGVuZXJzIGZvciB0aGUgbXJhaWQgZXZlbnRzIGFuZCByZW5kZXJzDQogKiB0aGUgYmFzZSBhZCAoc2ltcGxlIGltYWdlKQ0KICovDQpmdW5jdGlvbiBzaG93QWQoKSB7DQoJYmFzZVBhdGggPSAiaHR0cDovL2xvY2FsaG9zdDo4NjY2L3lhaG9vLmFkcy5tcmFpZF9zdGF0aWMvIjsNCglyZWdpc3Rlck1yYWlkSGFuZGxlcnMobXJhaWQsIGJhc2VQYXRoKTsNCglyZW5kZXJCYXNlQWQobXJhaWQsIGJhc2VQYXRoKTsNCgkvKg0KCSAqIHNldCB0aGUgZXhwYW5kIHByb3BlcnRpZXMgdG8gdXNlIHRoZSBjdXN0b20gY2xvc2UgbWV0aG9kIHNpbmNlIHRoZSBhZA0KCSAqIHJlbmRlcnMgaXQncyBvd24gY2xvc2UgYnV0dG9uIGluIHRoZSBleHBhbmRlZCBsYXllcg0KCSAqLw0KCW1yYWlkLnNldEV4cGFuZFByb3BlcnRpZXMoew0KCQl1c2VDdXN0b21DbG9zZSA6IHRydWUNCgl9KTsNCn07DQoNCi8qDQogKiBBZGQgYSBsaXN0ZW5lciB0byB0aGUgc3RhdGVDaGFuZ2UgZXZlbnQgdG8gZmlndXJlIG91dCB3aGF0IHN0YXRlIHRoZSBjbGllbnQNCiAqIGxpc3RlbmVyIGlzIGluIGFuZCB3aGV0aGVyIHRvIHJlbmRlciB0aGUgcmljaCBmdW5jdGlvbmFsaXR5IG9yIG5vdA0KICovDQpmdW5jdGlvbiByZWdpc3Rlck1yYWlkSGFuZGxlcnMobXJhaWQsIGJhc2VQYXRoKSB7DQoJbXJhaWQuYWRkRXZlbnRMaXN0ZW5lcigic3RhdGVDaGFuZ2UiLCBmdW5jdGlvbihzdGF0ZSkgew0KCQlzd2l0Y2ggKHN0YXRlKSB7DQoJCS8vIEV2ZW50IHRyaWdnZXIgd2hlbiB0aGUgYWQtY29udGFpbmVyIGdvZXMgb2Zmc2NyZWVuDQoJCWNhc2UgImhpZGRlbiI6DQoJCQlicmVhazsNCgkJLy8gRXZlbnQgdHJpZ2dlciB3aGVuIHRoZSBhZC1jb250YWluZXIgaXMgb25zY3JlZW4NCgkJY2FzZSAiZGVmYXVsdCI6DQoJCQkvLyBUaGlzIGlzIHdoZXJlIHRoZSBpbXByZXNzaW9uIGJlYWNvbiAoaWYgYW55KSBzaG91bGQgYmUgZmlyZWQNCgkJCWJyZWFrOw0KCQl9DQoJfSk7DQp9DQoNCi8qDQogKiBSZW5kZXIgdGhlIGJhc2ljIGFkIChhbiBpbWFnZSB3aXRoIHdyYXBwZWQgaW4gYW4gYW5jaG9yIGVsZW1lbnQpDQogKi8NCmZ1bmN0aW9uIHJlbmRlckJhc2VBZChtcmFpZCwgYmFzZVBhdGgpIHsNCgl2YXIgbGFuZGluZ1BhZ2UgPSAiaHR0cDovL3d3dy55YWhvby5jb20iOw0KCXZhciBpbWFnZVVSTCA9IGJhc2VQYXRoICsgImFzc2V0cy9tcmFpZF9jb2x1bW5fZXhhbXBsZS5qcGciLCBhZEltYWdlID0gIjxpbWcgd2lkdGg9JzMxNnB4JyBoZWlnaHQ9JzcyOHB4JyBib3JkZXI9MCBzcmM9JyINCgkJCSsgaW1hZ2VVUkwgKyAiJy8+IjsNCgl2YXIgYW5jaG9yID0gIjxhIGlkPVwiYmFzZV9pbWFnZV9leGFtcGxlXCIgaHJlZj1cIiIgKyBsYW5kaW5nUGFnZSArICJcIj4gIg0KCQkJKyBhZEltYWdlICsgIjwvYT4iOw0KCWRvY3VtZW50LndyaXRlKGFuY2hvcik7DQoJdmFyIGFuY2hvckVsZW1lbnQgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiYmFzZV9pbWFnZV9leGFtcGxlIik7DQoJYW5jaG9yRWxlbWVudC5vbmNsaWNrID0gZnVuY3Rpb24oKSB7DQoJCWNvbnNvbGUubG9nKCJDbGlja2luZyBvbiBhbmNob3JFbGVtZW50ID0gIiArIGFuY2hvckVsZW1lbnQuaHJlZik7DQoJCW1yYWlkLm9wZW4oYW5jaG9yRWxlbWVudC5ocmVmKTsNCgkJcmV0dXJuIGZhbHNlOw0KCX07DQp9DQo=",
+    "showClose": 4,
+    "cta_overlay": {
+        "time_enabled": 5,
+        "time_show": 2,
+        "enabled": true,
+        "click_area": 1
+    },
+    "expiry": 1448883900000,
+    "app_id": "test",
+    "callToActionDest": "http://CTA.com",
+    "showCloseIncentivized": 4,
+    "delay": 0,
+    "templateSettings": {"normal_replacements":{"NO_ENDCARD_REQUIRED": "false","VIDEO_SHOW_CTA": "true","ENDCARD_SHOW_CTA": "true","CLOSE_BUTTON_DELAY_SECONDS":"3.5","DOWNLOAD_BUTTON_DELAY_SECONDS": "3","PORTRAIT_BACKGROUND":"http://vvv-qa.s3.amazonaws.com/edwin/img/bg_portrait.png","LANDSCAPE_BACKGROUND":"http://vvv-qa.s3.amazonaws.com/edwin/img/bg_landscape.png","APP_NAME_STRING": "Racing Rivals","APP_DESC_STRING": "Glu","APP_ICON":"http://vvv-qa.s3.amazonaws.com/edwin/img/app_icon.png","APP_RATING":"http://vvv-qa.s3.amazonaws.com/edwin/img/star4.5.svg","INCENTIVIZED_TITLE_TEXT":"Close this ad?","INCENTIVIZED_BODY_TEXT":"Are you sure you want to skip this ad? You must finish watching to claim your reward.","INCENTIVIZED_CLOSE_TEXT": "Close","INCENTIVIZED_CONTINUE_TEXT":"Continue","BUTTON_COLOR":"#fff","CTA_BUTTON_TEXT":"Download","CTA_BUTTON_URL":"market://details?id=com.ciegames.RacingRivals","CTA_BUTTON_COLOR": "#fff","APP_STORE_ICON":"http://vvv-qa.s3.amazonaws.com/edwin/img/apple_store.png","VUNGLE_PRIVACY_URL":"http://vungle.com/privacy/","FONT_NAME":"Open San","FONT_TYPE":"truetype","POWERED_BY_VUNGLE":"http://vvv-qa.s3.amazonaws.com/edwin/img/poweredbyvungle.svg","ACTION_TRACKING": "true"},"cacheable_replacements":{"FONT_URL":{"extension":"ttf","url":"http://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3SZ2oysoEQEeKwjgmXLRnTc.ttf"},"MAIN_VIDEO":{"extension":"mp4","url":"https://vvv-qa.s3.amazonaws.com/edwin/video/rr.mp4"}}},
+    "templateURL": "http://vvv-qa.s3.amazonaws.com/mraid/standardUnit2.zip",
+    "templateURLx": "http://vvv-qa.s3.amazonaws.com/grace/index.zip",
+    "postBundle": "http://cds.g8j8b9g6.hwcdn.net/bundles/524a01dc997fc17a42000008-2.zip",
+    "url": "http://cds.g8j8b9g6.hwcdn.net/zen/9262013_FebrezeNT_PGFG2686000D_15s_PD_Universal_High%20%281%29-1280x720-Q2.mp4",
+    "videoWidth": "400",
+    "videoHeight": "300",
+    "size": 42,
+    "tpat": {
+        "play_percentage": [{
+                            "checkpoint": "0",
+                            "urls": ["http://tpat-server-69623.usw1.nitrousbox.com/creativeStart?isu=%isu%&timestamp=%timestamp%&country=%country%", "http://creativeStart_1.com", "http://creativeStart_2.com", "http://creativeStart_3.com", "http://creativeStart_4.com", "http://rtb-lb-event-us-west.tubemogul.com/rtb/e.png?e=win&aid=D5_lz2RRQC-s4aIBajO9EQ.0&ad=53420028&cp=169958&slot=0&x_price=0.05&ets=1393288780893&tz=GMT-05%3A00&source=vast2&suid=2716559818041108049&country=US&region=CA&mc=48&ap=0&ut=0&vis=UNKNOWN&site=yASkYONirZAZUs1LpLGQ&bp=50000&curr=USD&exr=1.0&fid=4Q2kvGglmcypLHRHFSU6&c=2737372&ccurr=USD&cuxr=1.0&a=444002&ca=460168&st=INSTREAM_MOBILE_VAST_INTER&sh=0&sw=0&rid=4183&mp=533&dur=30&metroid=169&countryid=232&postalid=40415&v=1&auth=FkzzQPreWcJ4mgNVvNTof6Nv3aI&x_r=Mmrelg", "http://stats.tubemogul.com/stats/1/view?sessId=D5_lz2RRQC-s4aIBajO9EQ.0&paId=AjdrLodvAHvhxxnhD8cj&dur=15&date=1393288780893&auth=0d97084b20e4e10e8528a98cdba9efee&psId=yASkYONirZAZUs1LpLGQ&price=0.05&bi=B059MdaC4p2cFrvehaAqTFVBZ0yI9GEaZbV2sedBpRJ8DaWk9c5VqV1oaH1mOE0f9rKzJmTUzO8PnsUa4rOId_gpks0UPW-ysCqEzRg12oExEFOrCsCYJsm376Ur4bDZOJc", "http://ad-audit.tubemogul.com/audit/e.png?event=comscore", "http://ad-audit.tubemogul.com/audit/e.png?event=view&mp=4Q2kvGglmcypLHRHFSU6&cp=Zv3JbIaFVctVm8jTQkat&pa=AjdrLodvAHvhxxnhD8cj&psId=yASkYONirZAZUs1LpLGQ&rand=87344010"]
+                            }, {
+                            "checkpoint": "1",
+                            "urls": ["http://CreativeComplete_1.com", "http://CreativeComplete_2.com", "http://CreativeComplete_3.com", "http://CreativeComplete_4.com", "http://CreativeComplete_5.com", "http://tpat-server-69623.usw1.nitrousbox.com/videocomplete?isu=%isu%&timestamp=%timestamp%&country=%country%"]
+                            }, {
+                            "checkpoint": "0.25",
+                            "urls": ["http://1stquartile_1.com", "http://1stquartile_1.com", "http://tpat-server-69623.usw1.nitrousbox.com/firstquartile?isu=%isu%&timestamp=%timestamp%&country=%country%"]
+                            }, {
+                            "checkpoint": "0.5",
+                            "urls": ["http://MidpointQuartile_1.com", "http://MidpointQuartile_2.com", "http://tpat-server-69623.usw1.nitrousbox.com/midpoint?isu=%isu%&timestamp=%timestamp%&country=%country%"]
+                            }, {
+                            "checkpoint": "0.75",
+                            "urls": ["http://3dQuartile_1.com", "http://3dQuartile_2.com", "http://tpat-server-69623.usw1.nitrousbox.com/thirdquartile?isu=%isu%&timestamp=%timestamp%&country=%country%"]
+                            }],
+        "mute": ["http://VideoMute_1.com", "http://VideoMute_2.com", "http://tpat-server-69623.usw1.nitrousbox.com/mute?isu=%isu%&timestamp=%timestamp%&country=%country%"],
+        "video_close": ["http://VideoClosed_1.com", "http://VideoClosed_2.com", "http://tpat-server-69623.usw1.nitrousbox.com/videoclose?isu=%isu%&timestamp=%timestamp%&country=%country%"],
+        "unmute": [],
+        "postroll_click": [],
+        "postroll_view": [],
+        "checkpoint.0": ["http://www.iab.net/mraid?checkpoint0", "http://www.iab.net/mraid?checkpoint0-2"],
+        "checkpoint.25": ["http://www.iab.net/mraid?checkpoint25"],
+        "checkpoint.50": ["http://www.iab.net/mraid?checkpoint50", "http://www.iab.net/mraid?checkpoint50-2"],
+        "checkpoint.75": ["http://www.iab.net/mraid?checkpoint75"],
+        "checkpoint.100": ["http://www.iab.net/mraid?checkpoint100"],
+        "video.close": ["http://www.iab.net/mraid?videoclose"],
+        "video.mute": ["http://www.iab.net/mraid?videomute", "http://www.iab.net/mraid?videomute-2"],
+        "video.unmute": ["http://www.iab.net/mraid?videounmute", "http://www.iab.net/mraid?videounmute-2"],
+        "postroll.view": ["http://www.iab.net/mraid?postrollview"],
+        "postroll.click": ["http://www.iab.net/mraid?postrollclick"]
+    },
+    "md5": "fake_md5",
+    "chk": "d03cc669a434da88fc78c51031fdcba2",
+    "retryCount": 3,
+    "asyncThreshold": 40
+}

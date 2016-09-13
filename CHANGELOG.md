@@ -1,5 +1,14 @@
 ## Changelog
 
+## VERSION 4.0.4
+* OS 10 OS performance optimizations
+* CloudUX functionality support
+* Vungle unique id implementation to maintain publisher frequency capping
+* Fix click area around CTA button 
+* Resume video when app comes to foreground 
+* Add logging when the publisher uses a wrong appId 
+
+
 ## VERSION 3.2.2
 * Fix presenting modal view controller exception
 
