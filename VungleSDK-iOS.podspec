@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = "VungleSDK-iOS"
-s.version          = "4.0.4"
+s.version          = "4.0.5"
 s.summary          = "Vungle's iOS SDK'"
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -26,7 +26,7 @@ s.author           = { "Vungle" => "tech-support@vungle.com" }
 s.platform     = :ios, '7.0'
 s.requires_arc = true
 
-s.source           = { :git => "https://github.com/Vungle/iOS-SDK.git", :tag => "4.0.4" }
+s.source           = { :git => "https://github.com/Vungle/iOS-SDK.git", :tag => "4.0.5" }
 s.resources = 'VungleSDK.embeddedframework/Resources/*.*'
 s.vendored_frameworks = 'VungleSDK.embeddedframework/VungleSDK.framework'
 s.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }

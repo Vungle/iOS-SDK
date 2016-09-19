@@ -1,5 +1,9 @@
 ## Changelog
 
+## VERSION 4.0.5
+* Bug fixes
+* Performance improvement
+
 ## VERSION 4.0.4
 * iOS 10 OS performance optimizations
 * CloudUX functionality support
