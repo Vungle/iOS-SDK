@@ -26,6 +26,12 @@ Our newest iOS SDK (4.0.5) was released on September 19th, 2016 in support of th
 * Bug fixes
 * Performance improvement
 
+### 4.0.4
+* iOS 10 OS performance optimizations
+* CloudUX functionality support
+* Vungle unique id implementation to maintain publisher frequency capping
+* Fix click area around CTA button
+
 
 ## License
 The Vungle iOS-SDK is available under a commercial license. See the LICENSE file for more info.
