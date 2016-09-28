@@ -19,9 +19,14 @@ The latest information around our CocoaPods support can be found at the [VungleS
 ### Version Info
 The Vungle iOS SDK only supports iOS 7+, iOS 10 with limited tracking, and supports both 32bit and 64bit apps.  
 
-Our newest iOS SDK (4.0.5) was released on September 19th, 2016 in support of the newest XCode 7+. Please ensure you are using XCode 7.0 or higher to ensure smooth integration.
+Our newest iOS SDK (4.0.6) was released on September 29th, 2016 in support of the newest XCode 7+. Please ensure you are using XCode 7.0 or higher to ensure smooth integration.
 
 ## Release Notes
+### 4.0.6
+* Add cache early check to initial operation chain 
+* Prefix 3rd party zip/unzip lib functions 
+* Track and use the didDownload state for legacy ads
+
 ### 4.0.5
 * Bug fixes
 * Performance improvement
