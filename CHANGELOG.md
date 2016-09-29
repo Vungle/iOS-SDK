@@ -1,4 +1,8 @@
 ## Changelog
+## VERSION 4.0.6
+* Add cache early check to initial operation chain 
+* Prefix 3rd party zip/unzip lib functions 
+* Track and use the didDownload state for legacy ads
 
 ## VERSION 4.0.5
 * Bug fixes
