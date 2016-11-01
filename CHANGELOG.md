@@ -1,4 +1,8 @@
 ## Changelog
+## VERSION 4.0.8
+* Refresh the IDFA when app comes to foreground
+* Minor fixes
+
 ## VERSION 4.0.6
 * Add cache early check to initial operation chain 
 * Prefix 3rd party zip/unzip lib functions 
