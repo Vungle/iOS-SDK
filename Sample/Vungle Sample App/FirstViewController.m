@@ -58,7 +58,7 @@
 - (void)vungleSDKwillCloseAdWithViewInfo:(NSDictionary *)viewInfo willPresentProductSheet:(BOOL)willPresentProductSheet {
     NSLog(@"ViewInfo Dictionary:");
     // viewInfo dictioanry contains completedView, playTime and didDownload information
-    // willPresentProduct always returns NO
+    // willPresentProductSheet always returns NO
     for(NSString * key in [viewInfo allKeys]) {
         NSLog(@"%@ : %@", key, [[viewInfo objectForKey:key] description]);
     }
@@ -79,7 +79,7 @@
 
 - (IBAction)showAd {
     // Play a Vungle ad (with default options)
-    VungleSDK* sdk = [VungleSDK sharedSDK];
+    VungleSDK *sdk = [VungleSDK sharedSDK];
     NSError *error;
     [sdk playAd:self error:&error];
     if (error) {
@@ -90,10 +90,10 @@
 // Play a Vungle ad (with customized options)
 - (IBAction)showAdWithOptions {
     // Grab instance of Vungle SDK
-    VungleSDK* sdk = [VungleSDK sharedSDK];
+    VungleSDK *sdk = [VungleSDK sharedSDK];
     
     // Dict to set custom ad options
-    NSDictionary* options = @{VunglePlayAdOptionKeyOrientations: @(UIInterfaceOrientationMaskLandscape),
+    NSDictionary *options = @{VunglePlayAdOptionKeyOrientations: @(UIInterfaceOrientationMaskLandscape),
 							  VunglePlayAdOptionKeyUser: @"user",
 							  VunglePlayAdOptionKeyPlacement: @"StoreFront",
                               // Use this to keep track of metrics about your users
@@ -110,10 +110,10 @@
 
 - (IBAction)showIncentivizedAd {
 	// Grab instance of Vungle SDK
-	VungleSDK* sdk = [VungleSDK sharedSDK];
+	VungleSDK *sdk = [VungleSDK sharedSDK];
 	
 	// Dict to set custom ad options
-	NSDictionary* options = @{VunglePlayAdOptionKeyIncentivized: @YES,
+	NSDictionary *options = @{VunglePlayAdOptionKeyIncentivized: @YES,
 							  VunglePlayAdOptionKeyIncentivizedAlertBodyText : @"If the video isn't completed you won't get your reward! Are you sure you want to close early?",
 							  VunglePlayAdOptionKeyIncentivizedAlertCloseButtonText : @"Close",
 							  VunglePlayAdOptionKeyIncentivizedAlertContinueButtonText : @"Keep Watching",
