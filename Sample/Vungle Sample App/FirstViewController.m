@@ -74,7 +74,7 @@
 - (void)enableAdButtons:(BOOL)enabled {
     _showAdButton.enabled = enabled;
     _showAdWithOptionsButton.enabled = enabled;
-	_showIncentivizedAdButton.enabled = enabled;
+    _showIncentivizedAdButton.enabled = enabled;
 }
 
 - (IBAction)showAd {
