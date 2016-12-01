@@ -16,8 +16,7 @@
 
 #pragma mark - UIViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     //Set VungleSDK Delegate
@@ -29,13 +28,11 @@
     }
 }
 
-- (BOOL)shouldAutorotate
-{
+- (BOOL)shouldAutorotate {
     return NO;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [[VungleSDK sharedSDK] setDelegate:nil];
 }
 
@@ -58,22 +55,12 @@
     //Use this delegate method to pause animations, sound, etc.
 }
 
-- (void) vungleSDKwillCloseAdWithViewInfo:(NSDictionary *)viewInfo willPresentProductSheet:(BOOL)willPresentProductSheet {
-    if (willPresentProductSheet) {
-        //In this case we don't want to resume animations and sound, the user hasn't returned to the app yet
-        NSLog(@"The ad presented was tapped and the user is now being shown the App Product Sheet");
-        NSLog(@"ViewInfo Dictionary:");
-        for(NSString * key in [viewInfo allKeys]) {
-            NSLog(@"%@ : %@", key, [[viewInfo objectForKey:key] description]);
-        }
-    } else {
-        //In this case the user has declined to download the advertised application and is now returning fully to the main app
-        //Animations / Sound / Gameplay can be resumed now
-        NSLog(@"The ad presented was not tapped - the user has returned to the app");
-        NSLog(@"ViewInfo Dictionary:");
-        for(NSString * key in [viewInfo allKeys]) {
-            NSLog(@"%@ : %@", key, [[viewInfo objectForKey:key] description]);
-        }
+- (void)vungleSDKwillCloseAdWithViewInfo:(NSDictionary *)viewInfo willPresentProductSheet:(BOOL)willPresentProductSheet {
+    NSLog(@"ViewInfo Dictionary:");
+    // viewInfo dictioanry contains completedView, playTime and didDownload information
+    // willPresentProduct always returns NO
+    for(NSString * key in [viewInfo allKeys]) {
+        NSLog(@"%@ : %@", key, [[viewInfo objectForKey:key] description]);
     }
 }
 
@@ -84,14 +71,13 @@
 
 #pragma mark - FirstView Methods
 
-- (void) enableAdButtons:(BOOL)enabled {
+- (void)enableAdButtons:(BOOL)enabled {
     _showAdButton.enabled = enabled;
     _showAdWithOptionsButton.enabled = enabled;
 	_showIncentivizedAdButton.enabled = enabled;
 }
 
-- (IBAction)showAd
-{
+- (IBAction)showAd {
     // Play a Vungle ad (with default options)
     VungleSDK* sdk = [VungleSDK sharedSDK];
     NSError *error;
@@ -102,8 +88,7 @@
 }
 
 // Play a Vungle ad (with customized options)
--(IBAction)showAdWithOptions
-{
+- (IBAction)showAdWithOptions {
     // Grab instance of Vungle SDK
     VungleSDK* sdk = [VungleSDK sharedSDK];
     
@@ -123,7 +108,7 @@
     }
 }
 
--(IBAction)showIncentivizedAd{
+- (IBAction)showIncentivizedAd {
 	// Grab instance of Vungle SDK
 	VungleSDK* sdk = [VungleSDK sharedSDK];
 	
