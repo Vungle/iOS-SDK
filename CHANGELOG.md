@@ -1,4 +1,10 @@
 ## Changelog
+## VERSION 4.0.9
+* Fix wrong behavior for the willCloseAdWithViewInfo: delegate method
+* Improved SDK initialization
+* Minor fixes and performance improvements
+* Fix user-agent field on requests
+
 ## VERSION 4.0.8
 * Refresh the IDFA when app comes to foreground
 * Minor fixes
