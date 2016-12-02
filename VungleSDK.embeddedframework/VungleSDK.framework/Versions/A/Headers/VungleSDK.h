@@ -53,23 +53,29 @@ typedef enum {
 - (void)vungleSDKwillShowAd;
 
 /**
- * if implemented, this will get called when the SDK closes the ad view, but there might be
- * a product sheet that will be presented. This point might be a good place to resume your game
- * if there's no product sheet being presented. The viewInfo dictionary will contain the
- * following keys:
+ * If implemented, this method gets called when a Vungle Ad Unit is completely dismissed.
+ * At this point, it's recommended to resume your Game or App.
+ *
+ * The `viewInfo` NSDictionary parameter will contain the following keys:
  * - "completedView": NSNumber representing a BOOL whether or not the video can be considered a
- *               full view.
+ *                    full view.
  * - "playTime": NSNumber representing the time in seconds that the user watched the video.
  * - "didDownload": NSNumber representing a BOOL whether or not the user clicked the download
  *                  button.
  * - "videoLength": **Deprecated** This will no longer be returned
+ *
+ * NOTE: the `willPresentProductSheet` parameter is *always* `NO`.
  */
 - (void)vungleSDKwillCloseAdWithViewInfo:(NSDictionary *)viewInfo willPresentProductSheet:(BOOL)willPresentProductSheet;
 
 /**
- * if implemented, this will get called when the product sheet is about to be closed.
+ * If implemented, this will get called when the product sheet is about to be closed.
+ *
+ * @note Because `vungleSDKWillCloseAdWithViewInfo:willPresentProductSheet:` is now called
+ * after Product Sheet dismissal, this method should no longer be necessary. It will be
+ * removed in a future version.
  */
-- (void)vungleSDKwillCloseProductSheet:(id)productSheet;
+- (void)vungleSDKwillCloseProductSheet:(id)productSheet __attribute__((deprecated));
 
 /**
  * if implemented, this will get called when the SDK has an ad ready to be displayed. Also it will
