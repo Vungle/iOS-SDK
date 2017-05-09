@@ -1,9 +1,9 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
+//  SDK Version: 4.1.0
 //
-//  Created by Rolando Abarca on 11/19/13.
-//  Copyright (c) 2013 Vungle Inc. All rights reserved.
+//  Copyright (c) 2013-present Vungle Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -35,7 +35,8 @@ typedef enum {
     VungleSDKErrorInvalidPlayAdOption = 1,
     VungleSDKErrorInvalidPlayAdExtraKey,
     VungleSDKErrorCannotPlayAd,
-    VungleSDKErrorNoAppID
+    VungleSDKErrorNoAppID,
+    VungleSDKErrorTopMostViewControllerMismatch
 } VungleSDKErrorCode;
 
 @protocol VungleSDKLogger <NSObject>
@@ -64,9 +65,13 @@ typedef enum {
  *                  button.
  * - "videoLength": **Deprecated** This will no longer be returned
  *
- * NOTE: the `willPresentProductSheet` parameter is *always* `NO`.
+ * NOTE: the `willPresentProductSheet` parameter is *always* `NO`. Because
+ * `vungleSDKWillCloseAdWithViewInfo:willPresentProductSheet:` is now called
+ * after Product Sheet dismissal, this method should no longer be necessary. It will be
+ * removed in a future version. Use `vungleSDKWillCloseAdWithViewInfo:` instead.
  */
-- (void)vungleSDKwillCloseAdWithViewInfo:(NSDictionary *)viewInfo willPresentProductSheet:(BOOL)willPresentProductSheet;
+- (void)vungleSDKwillCloseAdWithViewInfo:(NSDictionary *)viewInfo
+                 willPresentProductSheet:(BOOL)willPresentProductSheet __attribute__((deprecated("Use vungleSDKWillCloseAdWithViewInfo: instead.")));
 
 /**
  * If implemented, this will get called when the product sheet is about to be closed.
@@ -75,7 +80,21 @@ typedef enum {
  * after Product Sheet dismissal, this method should no longer be necessary. It will be
  * removed in a future version.
  */
-- (void)vungleSDKwillCloseProductSheet:(id)productSheet __attribute__((deprecated));
+- (void)vungleSDKwillCloseProductSheet:(id)productSheet __attribute__((deprecated("Use vungleSDKWillCloseAdWithViewInfo: instead.")));
+
+/**
+ * If implemented, this method gets called when a Vungle Ad Unit is completely dismissed.
+ * At this point, it's recommended to resume your Game or App.
+ *
+ * The `viewInfo` NSDictionary parameter will contain the following keys:
+ * - "completedView": NSNumber representing a BOOL whether or not the video can be considered a
+ *                    full view.
+ * - "playTime": NSNumber representing the time in seconds that the user watched the video.
+ * - "didDownload": NSNumber representing a BOOL whether or not the user clicked the download
+ *                  button.
+ * - "videoLength": **Deprecated** This will no longer be returned
+ */
+- (void)vungleSDKWillCloseAdWithViewInfo:(NSDictionary *)viewInfo;
 
 /**
  * if implemented, this will get called when the SDK has an ad ready to be displayed. Also it will
@@ -111,14 +130,21 @@ typedef enum {
 - (void)startWithAppId:(NSString *)appId;
 
 /**
- * Will play an ad, presenting the view over the passed viewController as a modal.
- * Return an error if there is one.
+ * Will play Ad Unit presenting it over the `viewController` parameter
+ * @param viewController A subclass of UIViewController. Should correspond to the ViewControler at the top of the ViewController hierarchy
+ * @param error An optional reference to an NSError. In case this method returns `NO` it will be non-nil
+ * @return YES/NO in case of success/error while presenting an AdUnit
+ * @warning Should be called from the main-thread.
  */
 - (BOOL)playAd:(UIViewController *)viewController error:(NSError **)error;
 
 /**
- * Will play an ad, presenting the view over the passed viewController as a modal.
- * Pass options to decide what type of ad to show. Return an error if there is one.
+ * Will play Ad Unit presenting it over the `viewController` parameter and applying playback options.
+ * @param viewController A subclass of UIViewController. Should correspond to the ViewControler at the top of the ViewController hierarchy
+ * @param options A reference to an instance of NSDictionary with customized ad playback options
+ * @param error An optional reference to a nil NSError reference. In case this method returns `NO` it will be non-nil
+ * @return YES/NO in case of success/error while presenting an AdUnit
+ * @warning Should be called from the main-thread.
  */
 - (BOOL)playAd:(UIViewController *)viewController withOptions:(id)options error:(NSError **)error;
 
