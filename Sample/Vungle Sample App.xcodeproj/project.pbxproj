@@ -7,14 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE8F42381BBB0BC9009EC672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		A8C23D3C1EC15989007ECE48 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C23D3B1EC15989007ECE48 /* libz.tbd */; };
+		A8C23D3E1EC15995007ECE48 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C23D3D1EC15995007ECE48 /* libsqlite3.tbd */; };
+		DE8F42381BBB0BC9009EC672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */; };
 		DEFCFF4F1BA1F2BB006414B2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFCFF4E1BA1F2BB006414B2 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		DEFCFF591BA33DB6006414B2 /* __vungle.db in Resources */ = {isa = PBXBuildFile; fileRef = DEFCFF521BA33DB6006414B2 /* __vungle.db */; };
-		DEFCFF5A1BA33DB6006414B2 /* vg_close.png in Resources */ = {isa = PBXBuildFile; fileRef = DEFCFF531BA33DB6006414B2 /* vg_close.png */; };
-		DEFCFF5B1BA33DB6006414B2 /* vg_cta.png in Resources */ = {isa = PBXBuildFile; fileRef = DEFCFF541BA33DB6006414B2 /* vg_cta.png */; };
-		DEFCFF5C1BA33DB6006414B2 /* vg_mute_off.png in Resources */ = {isa = PBXBuildFile; fileRef = DEFCFF551BA33DB6006414B2 /* vg_mute_off.png */; };
-		DEFCFF5D1BA33DB6006414B2 /* vg_mute_on.png in Resources */ = {isa = PBXBuildFile; fileRef = DEFCFF561BA33DB6006414B2 /* vg_mute_on.png */; };
-		DEFCFF5E1BA33DB6006414B2 /* vg_privacy.png in Resources */ = {isa = PBXBuildFile; fileRef = DEFCFF571BA33DB6006414B2 /* vg_privacy.png */; };
 		DEFCFF5F1BA33DB6006414B2 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFCFF581BA33DB6006414B2 /* VungleSDK.framework */; };
 		DEFCFF651BA34812006414B2 /* VungleSDK-iOS.podspec in Resources */ = {isa = PBXBuildFile; fileRef = DEFCFF631BA34812006414B2 /* VungleSDK-iOS.podspec */; };
 		F45D5FC518E0F05300329123 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D5FC418E0F05300329123 /* Foundation.framework */; };
@@ -26,7 +22,6 @@
 		F45D5FD818E0F05300329123 /* VungleSample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45D5FD618E0F05300329123 /* VungleSample.storyboard */; };
 		F45D5FDE18E0F05300329123 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F45D5FDD18E0F05300329123 /* FirstViewController.m */; };
 		F45D5FE318E0F05300329123 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45D5FE218E0F05300329123 /* Images.xcassets */; };
-		F45D5FEA18E0F05300329123 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D5FE918E0F05300329123 /* XCTest.framework */; };
 		F45D5FEB18E0F05300329123 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D5FC418E0F05300329123 /* Foundation.framework */; };
 		F45D5FEC18E0F05300329123 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D5FC818E0F05300329123 /* UIKit.framework */; };
 		F45D5FF418E0F05300329123 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F45D5FF218E0F05300329123 /* InfoPlist.strings */; };
@@ -35,14 +30,12 @@
 		F45D600418E3870C00329123 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D600318E3870C00329123 /* CFNetwork.framework */; };
 		F45D600618E3872E00329123 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D600518E3872D00329123 /* AudioToolbox.framework */; };
 		F45D600818E3873A00329123 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D600718E3873A00329123 /* CoreMedia.framework */; };
-		F45D600A18E387CD00329123 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D600918E387CD00329123 /* libz.dylib */; };
 		F45D600C18E387E200329123 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D600B18E387E200329123 /* MediaPlayer.framework */; };
 		F45D600E18E387EA00329123 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D600D18E387EA00329123 /* QuartzCore.framework */; };
 		F45D601018E387FF00329123 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D600F18E387FF00329123 /* SystemConfiguration.framework */; };
 		F45D601218E3881000329123 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D601118E3881000329123 /* AdSupport.framework */; };
 		F45D601418E3881800329123 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D601318E3881800329123 /* StoreKit.framework */; };
 		F45D601618E3882000329123 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D601518E3882000329123 /* CoreLocation.framework */; };
-		F45D601818E3889800329123 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D601718E3889800329123 /* libsqlite3.dylib */; };
 		F4EAFD2419C0D164004567BD /* vungle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4EAFD2319C0D164004567BD /* vungle.jpg */; };
 /* End PBXBuildFile section */
 
@@ -57,15 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A8C23D3B1EC15989007ECE48 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		A8C23D3D1EC15995007ECE48 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		DE8F42351BBB09C7009EC672 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
 		DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEFCFF4E1BA1F2BB006414B2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		DEFCFF521BA33DB6006414B2 /* __vungle.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = __vungle.db; sourceTree = "<group>"; };
-		DEFCFF531BA33DB6006414B2 /* vg_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vg_close.png; sourceTree = "<group>"; };
-		DEFCFF541BA33DB6006414B2 /* vg_cta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vg_cta.png; sourceTree = "<group>"; };
-		DEFCFF551BA33DB6006414B2 /* vg_mute_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vg_mute_off.png; sourceTree = "<group>"; };
-		DEFCFF561BA33DB6006414B2 /* vg_mute_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vg_mute_on.png; sourceTree = "<group>"; };
-		DEFCFF571BA33DB6006414B2 /* vg_privacy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vg_privacy.png; sourceTree = "<group>"; };
 		DEFCFF581BA33DB6006414B2 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VungleSDK.framework; sourceTree = "<group>"; };
 		DEFCFF601BA34127006414B2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DEFCFF631BA34812006414B2 /* VungleSDK-iOS.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "VungleSDK-iOS.podspec"; path = "../VungleSDK-iOS.podspec"; sourceTree = "<group>"; };
@@ -84,7 +73,6 @@
 		F45D5FDD18E0F05300329123 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		F45D5FE218E0F05300329123 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F45D5FE818E0F05300329123 /* Vungle Sample AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vungle Sample AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F45D5FE918E0F05300329123 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F45D5FF118E0F05300329123 /* Vungle Sample AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Vungle Sample AppTests-Info.plist"; sourceTree = "<group>"; };
 		F45D5FF318E0F05300329123 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F45D5FF518E0F05300329123 /* Vungle_Sample_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vungle_Sample_AppTests.m; sourceTree = "<group>"; };
@@ -92,14 +80,12 @@
 		F45D600318E3870C00329123 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F45D600518E3872D00329123 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F45D600718E3873A00329123 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		F45D600918E387CD00329123 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F45D600B18E387E200329123 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F45D600D18E387EA00329123 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F45D600F18E387FF00329123 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F45D601118E3881000329123 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		F45D601318E3881800329123 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F45D601518E3882000329123 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		F45D601718E3889800329123 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F4EAFD2319C0D164004567BD /* vungle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vungle.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,8 +94,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C23D3E1EC15995007ECE48 /* libsqlite3.tbd in Frameworks */,
+				A8C23D3C1EC15989007ECE48 /* libz.tbd in Frameworks */,
 				DEFCFF4F1BA1F2BB006414B2 /* WebKit.framework in Frameworks */,
-				F45D601818E3889800329123 /* libsqlite3.dylib in Frameworks */,
 				F45D601618E3882000329123 /* CoreLocation.framework in Frameworks */,
 				F45D601418E3881800329123 /* StoreKit.framework in Frameworks */,
 				F45D601218E3881000329123 /* AdSupport.framework in Frameworks */,
@@ -117,7 +104,6 @@
 				F45D601018E387FF00329123 /* SystemConfiguration.framework in Frameworks */,
 				F45D600E18E387EA00329123 /* QuartzCore.framework in Frameworks */,
 				F45D600C18E387E200329123 /* MediaPlayer.framework in Frameworks */,
-				F45D600A18E387CD00329123 /* libz.dylib in Frameworks */,
 				DEFCFF5F1BA33DB6006414B2 /* VungleSDK.framework in Frameworks */,
 				F45D600818E3873A00329123 /* CoreMedia.framework in Frameworks */,
 				F45D600618E3872E00329123 /* AudioToolbox.framework in Frameworks */,
@@ -132,7 +118,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F45D5FEA18E0F05300329123 /* XCTest.framework in Frameworks */,
 				F45D5FEC18E0F05300329123 /* UIKit.framework in Frameworks */,
 				F45D5FEB18E0F05300329123 /* Foundation.framework in Frameworks */,
 			);
@@ -154,12 +139,6 @@
 		DEFCFF511BA33DB6006414B2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DEFCFF521BA33DB6006414B2 /* __vungle.db */,
-				DEFCFF531BA33DB6006414B2 /* vg_close.png */,
-				DEFCFF541BA33DB6006414B2 /* vg_cta.png */,
-				DEFCFF551BA33DB6006414B2 /* vg_mute_off.png */,
-				DEFCFF561BA33DB6006414B2 /* vg_mute_on.png */,
-				DEFCFF571BA33DB6006414B2 /* vg_privacy.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -189,16 +168,16 @@
 		F45D5FC318E0F05300329123 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8C23D3D1EC15995007ECE48 /* libsqlite3.tbd */,
+				A8C23D3B1EC15989007ECE48 /* libz.tbd */,
 				DEFCFF501BA33DB6006414B2 /* VungleSDK.embeddedframework */,
 				DEFCFF4E1BA1F2BB006414B2 /* WebKit.framework */,
-				F45D601718E3889800329123 /* libsqlite3.dylib */,
 				F45D601518E3882000329123 /* CoreLocation.framework */,
 				F45D601318E3881800329123 /* StoreKit.framework */,
 				F45D601118E3881000329123 /* AdSupport.framework */,
 				F45D600F18E387FF00329123 /* SystemConfiguration.framework */,
 				F45D600D18E387EA00329123 /* QuartzCore.framework */,
 				F45D600B18E387E200329123 /* MediaPlayer.framework */,
-				F45D600918E387CD00329123 /* libz.dylib */,
 				F45D600718E3873A00329123 /* CoreMedia.framework */,
 				F45D600518E3872D00329123 /* AudioToolbox.framework */,
 				F45D600318E3870C00329123 /* CFNetwork.framework */,
@@ -206,7 +185,6 @@
 				F45D5FC418E0F05300329123 /* Foundation.framework */,
 				F45D5FC618E0F05300329123 /* CoreGraphics.framework */,
 				F45D5FC818E0F05300329123 /* UIKit.framework */,
-				F45D5FE918E0F05300329123 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -337,16 +315,10 @@
 			files = (
 				DEFCFF651BA34812006414B2 /* VungleSDK-iOS.podspec in Resources */,
 				F4EAFD2419C0D164004567BD /* vungle.jpg in Resources */,
-				DEFCFF5A1BA33DB6006414B2 /* vg_close.png in Resources */,
-				DEFCFF5D1BA33DB6006414B2 /* vg_mute_on.png in Resources */,
-				DEFCFF5E1BA33DB6006414B2 /* vg_privacy.png in Resources */,
 				F45D5FE318E0F05300329123 /* Images.xcassets in Resources */,
-				DEFCFF5C1BA33DB6006414B2 /* vg_mute_off.png in Resources */,
 				F45D5FD818E0F05300329123 /* VungleSample.storyboard in Resources */,
 				F45D5FCF18E0F05300329123 /* InfoPlist.strings in Resources */,
 				DE8F42381BBB0BC9009EC672 /* LaunchScreen.storyboard in Resources */,
-				DEFCFF591BA33DB6006414B2 /* __vungle.db in Resources */,
-				DEFCFF5B1BA33DB6006414B2 /* vg_cta.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,7 +478,7 @@
 				INFOPLIST_FILE = "Vungle Sample App/Vungle Sample App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.Vungle-Sample-App-v5";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -529,7 +501,7 @@
 				INFOPLIST_FILE = "Vungle Sample App/Vungle Sample App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.Vungle-Sample-App-v5";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

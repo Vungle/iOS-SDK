@@ -57,16 +57,13 @@
 
 - (void)vungleSDKwillCloseAdWithViewInfo:(NSDictionary *)viewInfo willPresentProductSheet:(BOOL)willPresentProductSheet {
     NSLog(@"ViewInfo Dictionary:");
+    //This method can be used to resume animations, sound, etc.
+    
     // viewInfo dictioanry contains completedView, playTime and didDownload information
     // willPresentProductSheet always returns NO
     for(NSString * key in [viewInfo allKeys]) {
         NSLog(@"%@ : %@", key, [[viewInfo objectForKey:key] description]);
     }
-}
-
-- (void)vungleSDKwillCloseProductSheet:(id)productSheet {
-    NSLog(@"The user has downloaded an advertised application and is now returning to the main app");
-    //This method can be used to resume animations, sound, etc. if a user was presented a product sheet earlier
 }
 
 #pragma mark - FirstView Methods
@@ -93,12 +90,7 @@
     VungleSDK *sdk = [VungleSDK sharedSDK];
     
     // Dict to set custom ad options
-    NSDictionary *options = @{VunglePlayAdOptionKeyOrientations: @(UIInterfaceOrientationMaskLandscape),
-							  VunglePlayAdOptionKeyUser: @"user",
-							  VunglePlayAdOptionKeyPlacement: @"StoreFront",
-                              // Use this to keep track of metrics about your users
-                              VunglePlayAdOptionKeyExtraInfoDictionary: @{VunglePlayAdOptionKeyExtra1: @"21",
-                                                                          VunglePlayAdOptionKeyExtra2: @"Female"}};
+    NSDictionary *options = @{VunglePlayAdOptionKeyOrientations: @(UIInterfaceOrientationMaskLandscape)};
     
     // Pass in dict of options, play ad
     NSError *error;
@@ -114,6 +106,7 @@
 	
 	// Dict to set custom ad options
 	NSDictionary *options = @{VunglePlayAdOptionKeyIncentivized: @YES,
+                              VunglePlayAdOptionKeyUser: @"user_test_id",
 							  VunglePlayAdOptionKeyIncentivizedAlertBodyText : @"If the video isn't completed you won't get your reward! Are you sure you want to close early?",
 							  VunglePlayAdOptionKeyIncentivizedAlertCloseButtonText : @"Close",
 							  VunglePlayAdOptionKeyIncentivizedAlertContinueButtonText : @"Keep Watching",
