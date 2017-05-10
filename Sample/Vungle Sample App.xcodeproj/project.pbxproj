@@ -10,7 +10,7 @@
 		A8C23D3C1EC15989007ECE48 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C23D3B1EC15989007ECE48 /* libz.tbd */; };
 		A8C23D3E1EC15995007ECE48 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C23D3D1EC15995007ECE48 /* libsqlite3.tbd */; };
 		DE8F42381BBB0BC9009EC672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */; };
-		DEFCFF4F1BA1F2BB006414B2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFCFF4E1BA1F2BB006414B2 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DEFCFF4F1BA1F2BB006414B2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFCFF4E1BA1F2BB006414B2 /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		DEFCFF5F1BA33DB6006414B2 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFCFF581BA33DB6006414B2 /* VungleSDK.framework */; };
 		DEFCFF651BA34812006414B2 /* VungleSDK-iOS.podspec in Resources */ = {isa = PBXBuildFile; fileRef = DEFCFF631BA34812006414B2 /* VungleSDK-iOS.podspec */; };
 		F45D5FC518E0F05300329123 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45D5FC418E0F05300329123 /* Foundation.framework */; };
