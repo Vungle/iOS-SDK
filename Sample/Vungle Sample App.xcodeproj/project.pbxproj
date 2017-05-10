@@ -281,9 +281,6 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Jordyn Chuhaloff";
 				TargetAttributes = {
-					F45D5FC018E0F05300329123 = {
-						DevelopmentTeam = GTA9LK7P23;
-					};
 					F45D5FE718E0F05300329123 = {
 						TestTargetID = F45D5FC018E0F05300329123;
 					};
@@ -469,6 +466,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../VungleSDK.embeddedframework",
@@ -478,7 +476,7 @@
 				INFOPLIST_FILE = "Vungle Sample App/Vungle Sample App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.Vungle-Sample-App-v5";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.Vungle-Sample-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -492,6 +490,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../VungleSDK.embeddedframework",
@@ -501,7 +500,7 @@
 				INFOPLIST_FILE = "Vungle Sample App/Vungle Sample App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.Vungle-Sample-App-v5";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.Vungle-Sample-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
