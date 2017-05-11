@@ -2,7 +2,7 @@
 ## VERSION 4.1.0
 * Fix for occurrence of a black screen at the end of video
 * Cache improvements
-* Migrate to UIWebView for end cards on iOS 9 and 10 to address memory leak in UIWebView
+* Migrate to WKWebView for end cards on iOS 9 and 10 to address memory leak in UIWebView
 * Set user-agent in HTTP header to platform user agent for all external requests
 * StoreKit support for MRAID ads
 
