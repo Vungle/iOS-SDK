@@ -1,11 +1,10 @@
 ## Changelog
 ## VERSION 4.1.0
-* Fix for occurrence of a black screen at the end of video.
-* Fix to accurately report ad views.
-* Implementation of WKWebView for end cards on iOS 9 and 10.
-* Set user-agent in HTTP header to platform user agent for all external requests.
-* StoreKit support for MRAID ads.
-* Plug memory leaks and squash bugs.
+* Fix for occurrence of a black screen at the end of video
+* Cache improvements
+* Migrate to UIWebView for end cards on iOS 9 and 10 to address memory leak in UIWebView
+* Set user-agent in HTTP header to platform user agent for all external requests
+* StoreKit support for MRAID ads
 
 ## VERSION 4.0.9
 * Fix wrong behavior for the willCloseAdWithViewInfo: delegate method
