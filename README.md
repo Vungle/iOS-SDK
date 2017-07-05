@@ -17,11 +17,19 @@ pod "VungleSDK-iOS"
 The latest information around our CocoaPods support can be found at the [VungleSDK-iOS CocoaPods Page](https://cocoapods.org/pods/VungleSDK-iOS)
 
 ### Version Info
-The Vungle iOS SDK supports iOS 7+, iOS 10 with limited ad tracking, and both 32bit and 64bit apps.  
+The Vungle iOS SDK supports iOS 8+, iOS 10 with limited ad tracking, and both 32bit and 64bit apps.  
 
-Our newest iOS SDK (4.1.0) was released on May 10th, 2017. Please ensure you are using Xcode 7.0 or higher to ensure smooth integration.
+Our newest iOS SDK (5.1.0) was released on July 5th, 2017. Please ensure you are using Xcode 8.0 or higher to ensure smooth integration.
 
 ## Release Notes
+### 5.1.0
+* Launched new Placements feature.
+* Added Native Flex View ad unit. 
+* Added Moat Viewability technology.
+* Added GZIP for faster network transfers.
+* Migrate MRAID to WKWebView on iOS 9 and 10 to address memory leak in UIWebView.
+* Disabled iOS 7 support.
+
 ### 4.1.0
 * Fix for occurrence of a black screen at the end of video
 * Cache improvements

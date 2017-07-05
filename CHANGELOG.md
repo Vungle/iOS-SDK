@@ -1,4 +1,12 @@
 ## Changelog
+## VERSION 5.1.0
+* Launched new Placements feature.
+* Added Native Flex View ad unit.
+* Added Moat Viewability technology.
+* Added GZIP for faster network transfers.
+* Migrate MRAID to WKWebView on iOS 9 and 10 to address memory leak in UIWebView.
+* Disabled iOS 7 support.
+
 ## VERSION 4.1.0
 * Fix for occurrence of a black screen at the end of video
 * Cache improvements
