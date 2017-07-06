@@ -1,5 +1,5 @@
 ## Changelog
-## 5.1.0
+## VERSION 5.1.0
 * Launched new Placements feature.
 * Added Native Flex View ad unit. 
 * Added Moat Viewability technology.
