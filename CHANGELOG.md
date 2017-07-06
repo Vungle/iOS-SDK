@@ -1,18 +1,18 @@
 ## Changelog
-## VERSION 5.1.0
+## 5.1.0
 * Launched new Placements feature.
-* Added Native Flex View ad unit.
+* Added Native Flex View ad unit. 
 * Added Moat Viewability technology.
 * Added GZIP for faster network transfers.
 * Migrate MRAID to WKWebView on iOS 9 and 10 to address memory leak in UIWebView.
 * Disabled iOS 7 support.
 
 ## VERSION 4.1.0
-* Fix for occurrence of a black screen at the end of video
-* Cache improvements
-* Migrate to WKWebView for end cards on iOS 9 and 10 to address memory leak in UIWebView
-* Set user-agent in HTTP header to platform user agent for all external requests
-* StoreKit support for MRAID ads
+* Fix for occurrence of a black screen at the end of video.
+* Cache improvements.
+* Migrate to WKWebView for end cards on iOS 9 and 10 to address memory leak in UIWebView.
+* Set user-agent in HTTP header to platform user agent for all external requests.
+* StoreKit support for MRAID ads.
 
 ## VERSION 4.0.9
 * Fix wrong behavior for the willCloseAdWithViewInfo: delegate method
