@@ -1,6 +1,6 @@
 ## Changelog
 
-##VERSION 5.1.1
+## VERSION 5.1.1
 * Made cache improvements
 * Updated MOAT framework
 * Added code to prevent SDK from initializing in iOS 7
