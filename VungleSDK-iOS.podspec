@@ -27,7 +27,7 @@ s.platform     = :ios, '8.0'
 s.requires_arc = true
 
 s.source           = { :git => "https://github.com/Vungle/iOS-SDK.git", :tag => "5.1.1" }
-s.vendored_frameworks = 'VungleSDK.embeddedframework/VungleSDK.framework'
+s.vendored_frameworks = 'VungleSDK.framework'
 s.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
 
 s.frameworks = 'AdSupport', 'AudioToolbox', 'AVFoundation', 'CFNetwork', 'CoreGraphics', 'CoreMedia', 'Foundation', 'MediaPlayer', 'QuartzCore', 'StoreKit', 'SystemConfiguration', 'UIKit', 'WebKit'
