@@ -1,4 +1,10 @@
 ## Changelog
+
+##VERSION 5.1.1
+* Made cache improvements
+* Updated MOAT framework
+* Added code to prevent SDK from initializing in iOS 7
+
 ## VERSION 5.1.0
 * Launched new Placements feature.
 * Added Native Flex View ad unit. 

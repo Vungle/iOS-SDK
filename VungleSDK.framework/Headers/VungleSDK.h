@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 5.1.0
+//  SDK Version: 5.1.1
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -42,6 +42,7 @@ extern NSString *VunglePlayAdOptionKeyIncentivizedAlertBodyText;
 extern NSString *VunglePlayAdOptionKeyIncentivizedAlertCloseButtonText;
 extern NSString *VunglePlayAdOptionKeyIncentivizedAlertContinueButtonText;
 extern NSString *VunglePlayAdOptionKeyOrientations;
+extern NSString *VunglePlayAdOptionKeyStartMuted;
 extern NSString *VunglePlayAdOptionKeyUser;
 extern NSString *VunglePlayAdOptionKeyExtraInfoDictionary;
 extern NSString *VunglePlayAdOptionKeyExtra1;
