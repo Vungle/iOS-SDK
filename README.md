@@ -8,11 +8,16 @@ Please refer to https://support.vungle.com/hc/en-us/articles/115000477452
 
 
 ### Version Info
-The Vungle iOS SDK supports iOS 8+, both 32bit and 64bit apps.  
+The Vungle iOS SDK supports iOS 8.1 and above, including iOS 11, both 32bit and 64bit apps.  
 
-Our newest iOS SDK (5.1.1) was released on September 1st, 2017. Please ensure you are using Xcode 8.0 or higher to ensure smooth integration.
+Our newest iOS SDK (5.2.0) was released on September 19th, 2017. Please ensure you are using Xcode 8 or 9 to ensure smooth integration.
 
 ## Release Notes
+### 5.2.0
+* Fixed a regression of clickedThrough in internal reporting. Advertiser will see accurate clicks in dashboard. 
+* Fixed user agent format for internal reporting. 
+* Fixed an issue with application lifecycle that can result in black screens.
+
 ### 5.1.1
 * Made cache improvements
 * Updated MOAT framework

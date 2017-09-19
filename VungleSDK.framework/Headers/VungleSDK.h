@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 5.1.1
+//  SDK Version: 5.2.0
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -124,7 +124,7 @@ typedef enum {
 
 @interface VungleSDK : NSObject
 @property (strong) NSDictionary *userData;
-@property (strong) id<VungleSDKDelegate> delegate;
+@property (nullable, strong) id<VungleSDKDelegate> delegate;
 @property (strong) id<VungleAssetLoader> assetLoader;
 @property (assign) BOOL muted;
 @property (atomic, readonly, getter=isInitialized) BOOL initialized;

@@ -2,19 +2,11 @@
 # Be sure to run `pod lib lint VungleSDK-iOS.podspec' to ensure this is a
 # valid spec before submitting.
 #
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
 
 Pod::Spec.new do |s|
 s.name             = "VungleSDK-iOS"
-s.version          = "5.1.1"
+s.version          = "5.2.0"
 s.summary          = "Vungle's iOS SDK'"
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
 s.description      = <<-DESC
 An SDK for video ad based monetization with the Vungle Network
 DESC
@@ -26,10 +18,11 @@ s.author           = { "Vungle" => "tech-support@vungle.com" }
 s.platform     = :ios, '8.0'
 s.requires_arc = true
 
-s.source           = { :git => "https://github.com/Vungle/iOS-SDK.git", :tag => "5.1.1" }
+s.source           = { :git => "https://github.com/Vungle/iOS-SDK.git", :tag => "5.2.0" }
 s.vendored_frameworks = 'VungleSDK.framework'
 s.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
 
-s.frameworks = 'AdSupport', 'AudioToolbox', 'AVFoundation', 'CFNetwork', 'CoreGraphics', 'CoreMedia', 'Foundation', 'MediaPlayer', 'QuartzCore', 'StoreKit', 'SystemConfiguration', 'UIKit', 'WebKit'
+s.frameworks = 'AdSupport', 'AudioToolbox', 'AVFoundation', 'CFNetwork', 'CoreGraphics', 'CoreMedia', 'Foundation', 'MediaPlayer', 'QuartzCore', 'StoreKit', 'SystemConfiguration', 'UIKit'
+s.weak_framework = 'WebKit'
 s.libraries = 'z'
 end
