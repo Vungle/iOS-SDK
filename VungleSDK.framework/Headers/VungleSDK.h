@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 5.2.0
+//  SDK Version: 5.3.0
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -61,7 +61,10 @@ typedef enum {
     VungleSDKErrorCannotPlayAd,
     VungleSDKErrorCannotPlayAdAlreadyPlaying,
     VungleSDKErrorCannotPlayAdWaiting,
+    VungleSDKErrorInvalidAdTypeForFeedBasedAdExperience,
     VungleSDKErrorNoAppID,
+    VungleSDKErrorFlexFeedContainerViewSizeError,
+    VungleSDKErrorFlexFeedContainerViewSizeRatioError,
     InvalidPlacementsArray,
     VungleSDKErrorInvalidiOSVersion,
     VungleSDKErrorTopMostViewControllerMismatch,
@@ -159,6 +162,23 @@ typedef enum {
  * @warning Should be called from the main-thread.
  */
 - (BOOL)playAd:(UIViewController *)controller options:(nullable NSDictionary *)options placementID:(nullable NSString *)placementID error:( NSError *__autoreleasing _Nullable *_Nullable)error;
+
+/**
+ * Pass in an UIView which acts as a container for the ad experience. This view container may be placed in random positions.
+ * @param publisherView container view in which an ad will be displayed
+ * @param options A reference to an instance of NSDictionary with customized ad playback options
+ * @param placementID The placement defined on the Vungle dashboard
+ * @param error An optional double reference to an NSError. In case this method returns `NO` it will be non-nil
+ * @return YES/NO in case of success/error while presenting an AdUnit
+ */
+- (BOOL)addAdViewToView:(UIView *)publisherView withOptions:(nullable NSDictionary *)options placementID:(nullable NSString *)placementID error:( NSError *__autoreleasing _Nullable *_Nullable)error;
+
+/**
+ * This method must be called when the publisher is confident that they are finished displaying the ad unit.
+ * This signals to the SDK that a new ad may be fetched or a different ad may be displayed. This will
+ * be called in conjunction with `addViewToView:containedInViewController:withOptions:placementID:error:`
+ */
+- (void)finishedDisplayingAd;
 
 /**
  * Returns `YES` when there is certainty that an ad will be able to play for a given placementID.

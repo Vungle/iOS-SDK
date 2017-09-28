@@ -1,68 +1,15 @@
-# Vungle's iOS-SDK
-[![Version](https://img.shields.io/cocoapods/v/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
-[![License](https://img.shields.io/cocoapods/l/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
-[![Platform](https://img.shields.io/cocoapods/p/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
+
+For information on how to get started, Version Information and Release Notes, please refer to the official [README](https://github.com/Vungle/iOS-SDK/blob/master/README.md)
+
+# Vungle's iOS SDK
 
 ## Getting Started
-Please refer to https://support.vungle.com/hc/en-us/articles/115000477452
+To get up and running with Vungle, you'll need to [Create an Account With Vungle](https://v.vungle.com/dashboard) and [Add an Application to the Vungle Dashboard](https://support.vungle.com/hc/en-us/articles/210468678)
 
+Once you've created an account you can follow our [Getting Started for iOS Guide](https://support.vungle.com/hc/en-us/articles/204430550-Get-Started-with-Vungle-iOS-SDK) to complete the integration. Remember to get the Vungle App ID from the Vungle dashboard.
 
-### Version Info
-The Vungle iOS SDK supports iOS 8.1 and above, including iOS 11, both 32bit and 64bit apps.  
-
-Our newest iOS SDK (5.2.0) was released on September 19th, 2017. Please ensure you are using Xcode 8 or 9 to ensure smooth integration.
-
-## Release Notes
-### 5.2.0
-* Fixed a regression of clickedThrough in internal reporting. Advertiser will see accurate clicks in dashboard. 
-* Fixed user agent format for internal reporting. 
-* Fixed an issue with application lifecycle that can result in black screens.
-
-### 5.1.1
-* Made cache improvements
-* Updated MOAT framework
-* Added code to prevent SDK from initializing in iOS 7
-
-### 5.1.0
-* Launched new Placements feature.
-* Added Native Flex View ad unit. 
-* Added Moat Viewability technology.
-* Added GZIP for faster network transfers.
-* Migrate MRAID to WKWebView on iOS 9 and 10 to address memory leak in UIWebView.
-* Disabled iOS 7 support.
-
-### 4.1.0
-* Fix for occurrence of a black screen at the end of video
-* Cache improvements
-* Migrate to UIWebView for end cards on iOS 9 and 10 to address memory leak in UIWebView
-* Set user-agent in HTTP header to platform user agent for all external requests
-* StoreKit support for MRAID ads
-
-### 4.0.9
-* Fix wrong behavior for the willCloseAdWithViewInfo: delegate method
-* Improved SDK initialization
-* Minor fixes and performance improvements
-* Fix user-agent field on requests
-
-### 4.0.8
-* Refresh the IDFA when app comes to foreground
-* Minor fixes
-
-### 4.0.6
-* Add cache early check to initial operation chain 
-* Prefix 3rd party zip/unzip lib functions 
-* Track and use the didDownload state for legacy ads
-
-### 4.0.5
-* Bug fixes
-* Performance improvement
-
-### 4.0.4
-* iOS 10 OS performance optimizations
-* CloudUX functionality support
-* Vungle unique id implementation to maintain publisher frequency capping
-* Fix click area around CTA button
-
+### Requirements
+* iOS 8.0 or later
 
 ## License
 The Vungle iOS-SDK is available under a commercial license. See the LICENSE file for more info.

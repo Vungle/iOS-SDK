@@ -1,4 +1,9 @@
 ## Changelog
+## VERSION 5.3.0
+* Allow cached ad to play when other placements are downloading. 
+* Allow cached ad to play when there is no reception. 
+* Fixed Flex View (ad unit) scaling issue.
+* Removed background dim in an interactive ad unit.
 
 ## VERSION 5.2.0
 * Fixed a regression of clickedThrough in internal reporting. Advertiser will see accurate clicks in dashboard. 
