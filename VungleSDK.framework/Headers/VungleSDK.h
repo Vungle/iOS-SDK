@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 5.3.0
+//  SDK Version: 5.3.2
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -54,6 +54,8 @@ extern NSString *VunglePlayAdOptionKeyExtra6;
 extern NSString *VunglePlayAdOptionKeyExtra7;
 extern NSString *VunglePlayAdOptionKeyExtra8;
 extern NSString *VunglePlayAdOptionKeyLargeButtons;
+extern NSString *VunglePlayAdOptionKeyOrdinal;
+extern NSString *VunglePlayAdOptionKeyFlexViewAutoDismissSeconds;
 
 typedef enum {
     VungleSDKErrorInvalidPlayAdOption = 1,
@@ -69,7 +71,8 @@ typedef enum {
     VungleSDKErrorInvalidiOSVersion,
     VungleSDKErrorTopMostViewControllerMismatch,
     VungleSDKErrorUnknownPlacementID,
-    VungleSDKErrorSDKNotInitialized
+    VungleSDKErrorSDKNotInitialized,
+    VungleSDKErrorSleepingPlacement,
 } VungleSDKErrorCode;
 
 @protocol VungleSDKLogger <NSObject>
@@ -163,6 +166,7 @@ typedef enum {
  */
 - (BOOL)playAd:(UIViewController *)controller options:(nullable NSDictionary *)options placementID:(nullable NSString *)placementID error:( NSError *__autoreleasing _Nullable *_Nullable)error;
 
+#pragma mark - Flex Feed
 /**
  * Pass in an UIView which acts as a container for the ad experience. This view container may be placed in random positions.
  * @param publisherView container view in which an ad will be displayed
@@ -174,9 +178,11 @@ typedef enum {
 - (BOOL)addAdViewToView:(UIView *)publisherView withOptions:(nullable NSDictionary *)options placementID:(nullable NSString *)placementID error:( NSError *__autoreleasing _Nullable *_Nullable)error;
 
 /**
- * This method must be called when the publisher is confident that they are finished displaying the ad unit.
- * This signals to the SDK that a new ad may be fetched or a different ad may be displayed. This will
- * be called in conjunction with `addViewToView:containedInViewController:withOptions:placementID:error:`
+ * This method will dismiss the currently playing Flex View or Flex Feed advertisement. If you have added an advertisement with `addAdViewToView:`
+ * or you are playing a placement that has been configured as a Flex View placement, then this method will remove the advertisement
+ * from the screen and perform any necessary clean up steps.
+ *
+ * This method will call the existing delegate callbacks as part of the lifecycle.
  */
 - (void)finishedDisplayingAd;
 
