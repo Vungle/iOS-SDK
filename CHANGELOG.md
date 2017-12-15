@@ -1,5 +1,13 @@
 ## Changelog
 
+## VERSION 5.3.2
+* Sleep code to be enforced at placement level 
+* Ordinal data reporting 
+* iOS 11 API for safeAreaLayoutGuide for iPhone X
+* Ability to close Flex-View ads through API or timer
+* iOS 11 API for safeAreaLayoutGuide for iPhone X
+* Bug fixes and performance improvements
+
 ## VERSION 5.3.0
 * Allow cached ad to play when other placements are downloading. 
 * Allow cached ad to play when there is no reception. 
