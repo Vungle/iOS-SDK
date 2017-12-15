@@ -18,7 +18,6 @@ Our newest iOS SDK (5.3.2) was released on December 15th, 2017. Please ensure yo
 * Ordinal data reporting 
 * iOS 11 API for safeAreaLayoutGuide for iPhone X
 * Ability to close Flex-View ads through API or timer
-* iOS 11 API for safeAreaLayoutGuide for iPhone X
 * Bug fixes and performance improvements
 
 ### 5.3.0
