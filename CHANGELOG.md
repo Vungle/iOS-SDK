@@ -5,7 +5,6 @@
 * Ordinal data reporting 
 * iOS 11 API for safeAreaLayoutGuide for iPhone X
 * Ability to close Flex-View ads through API or timer
-* iOS 11 API for safeAreaLayoutGuide for iPhone X
 * Bug fixes and performance improvements
 
 ## VERSION 5.3.0
