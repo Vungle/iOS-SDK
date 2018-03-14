@@ -10,9 +10,15 @@ Please refer to https://support.vungle.com/hc/en-us/articles/115000477452
 ### Version Info
 The Vungle iOS SDK supports iOS 8.0 and above, including iOS 11, both 32bit and 64bit apps.  
 
-Our newest iOS SDK (5.3.2) was released on December 15th, 2017. Please ensure you are using Xcode 8 or 9 to ensure smooth integration.
+Our newest iOS SDK (5.4.0) was released on March 13th, 2018. Please ensure you are using Xcode 8 or 9 to ensure smooth integration.
 
 ## Release Notes
+### 5.4.0
+* Fixed crashes on iOS 7 
+* Fixed crashes around Flex View layout logic
+* Improved Flex View and Flex Feed stability
+* Resolved duplicate symbol error on zipOpen4
+
 ### 5.3.2
 * Sleep code to be enforced at placement level 
 * Ordinal data reporting 
