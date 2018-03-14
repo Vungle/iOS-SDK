@@ -1,5 +1,11 @@
 ## Changelog
 
+## VERSION 5.4.0
+* Fixed crashes on iOS 7 
+* Fixed crashes around Flex View layout logic
+* Improved Flex View and Flex Feed stability
+* Resolved duplicate symbol error on zipOpen4
+
 ## VERSION 5.3.2
 * Sleep code to be enforced at placement level 
 * Ordinal data reporting 
