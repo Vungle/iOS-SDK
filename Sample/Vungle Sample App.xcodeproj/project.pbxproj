@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A89A21B51F0D9E3E00801592 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89A21B41F0D9E3E00801592 /* VungleSDK.framework */; };
+		23BF24052059BD4A00671A73 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BF24042059BD4A00671A73 /* VungleSDK.framework */; };
 		A8FC2B941EB3CF660024F089 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FC2B931EB3CF660024F089 /* libz.tbd */; };
 		A8FC2B961EB3CF7B0024F089 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FC2B951EB3CF7B0024F089 /* libsqlite3.tbd */; };
 		DE8F42381BBB0BC9009EC672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */; };
@@ -48,7 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A89A21B41F0D9E3E00801592 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VungleSDK.framework; path = ../VungleSDK.framework; sourceTree = "<group>"; };
+		23BF24042059BD4A00671A73 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VungleSDK.framework; sourceTree = "<group>"; };
 		A8FC2B931EB3CF660024F089 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A8FC2B951EB3CF7B0024F089 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		DE8F42351BBB09C7009EC672 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 				F45D601018E387FF00329123 /* SystemConfiguration.framework in Frameworks */,
 				F45D600E18E387EA00329123 /* QuartzCore.framework in Frameworks */,
 				F45D600C18E387E200329123 /* MediaPlayer.framework in Frameworks */,
-				A89A21B51F0D9E3E00801592 /* VungleSDK.framework in Frameworks */,
+				23BF24052059BD4A00671A73 /* VungleSDK.framework in Frameworks */,
 				F45D600818E3873A00329123 /* CoreMedia.framework in Frameworks */,
 				F45D600618E3872E00329123 /* AudioToolbox.framework in Frameworks */,
 				F45D5FC718E0F05300329123 /* CoreGraphics.framework in Frameworks */,
@@ -146,7 +146,7 @@
 		F45D5FC318E0F05300329123 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A89A21B41F0D9E3E00801592 /* VungleSDK.framework */,
+				23BF24042059BD4A00671A73 /* VungleSDK.framework */,
 				A8FC2B951EB3CF7B0024F089 /* libsqlite3.tbd */,
 				A8FC2B931EB3CF660024F089 /* libz.tbd */,
 				DEFCFF4E1BA1F2BB006414B2 /* WebKit.framework */,
@@ -259,6 +259,7 @@
 				ORGANIZATIONNAME = "Jordyn Chuhaloff";
 				TargetAttributes = {
 					F45D5FC018E0F05300329123 = {
+						DevelopmentTeam = GTA9LK7P23;
 						ProvisioningStyle = Automatic;
 					};
 					F45D5FE718E0F05300329123 = {
@@ -444,7 +445,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = GTA9LK7P23;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../",
@@ -453,7 +454,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vungle Sample App/Vungle Sample App-Prefix.pch";
 				INFOPLIST_FILE = "Vungle Sample App/Vungle Sample App-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3.4;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.Vungle-Sample-App-v5";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -470,7 +471,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = GTA9LK7P23;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../",
@@ -479,7 +480,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vungle Sample App/Vungle Sample App-Prefix.pch";
 				INFOPLIST_FILE = "Vungle Sample App/Vungle Sample App-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3.4;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.Vungle-Sample-App-v5";
 				PRODUCT_NAME = "$(TARGET_NAME)";
