@@ -4,37 +4,44 @@
 [![Platform](https://img.shields.io/cocoapods/p/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
 
 ## Getting Started
-Please refer to https://support.vungle.com/hc/en-us/articles/115000477452
+Please refer to https://support.vungle.com/hc/en-us/articles/360002925791
 
 
 ### Version Info
 The Vungle iOS SDK supports iOS 8.0 and above, including iOS 11, both 32bit and 64bit apps.  
 
-Our newest iOS SDK (5.4.0) was released on March 13th, 2018. Please ensure you are using Xcode 8 or 9 to ensure smooth integration.
+Our newest iOS SDK (6.2.0) was released on April 20th, 2018. Please ensure you are using Xcode 9 to ensure smooth integration.
+Please Note: Xcode 8 does not include support for iPhone X.
 
 ## Release Notes
+### 6.2.0
+* GDPR compliance.
+* Removed the requirement to have an auto-cached placement.
+* Removed the requirement to initialize Vungle SDK with all placements.
+* Bug fixes.
+
 ### 5.4.0
-* Fixed crashes on iOS 7 
+* Fixed crashes on iOS 7
 * Fixed crashes around Flex View layout logic
 * Improved Flex View and Flex Feed stability
 * Resolved duplicate symbol error on zipOpen4
 
 ### 5.3.2
-* Sleep code to be enforced at placement level 
-* Ordinal data reporting 
+* Sleep code to be enforced at placement level
+* Ordinal data reporting
 * iOS 11 API for safeAreaLayoutGuide for iPhone X
 * Ability to close Flex-View ads through API or timer
 * Bug fixes and performance improvements
 
 ### 5.3.0
-* Allow cached ad to play when other placements are downloading. 
-* Allow cached ad to play when there is no reception. 
+* Allow cached ad to play when other placements are downloading.
+* Allow cached ad to play when there is no reception.
 * Fixed Flex View (ad unit) scaling issue.
 * Removed background dim in an interactive ad unit.
 
 ### 5.2.0
-* Fixed a regression of clickedThrough in internal reporting. Advertiser will see accurate clicks in dashboard. 
-* Fixed user agent format for internal reporting. 
+* Fixed a regression of clickedThrough in internal reporting. Advertiser will see accurate clicks in dashboard.
+* Fixed user agent format for internal reporting.
 * Fixed an issue with application lifecycle that can result in black screens.
 
 ### 5.1.1
@@ -44,7 +51,7 @@ Our newest iOS SDK (5.4.0) was released on March 13th, 2018. Please ensure you a
 
 ### 5.1.0
 * Launched new Placements feature.
-* Added Native Flex View ad unit. 
+* Added Native Flex View ad unit.
 * Added Moat Viewability technology.
 * Added GZIP for faster network transfers.
 * Migrate MRAID to WKWebView on iOS 9 and 10 to address memory leak in UIWebView.
@@ -68,8 +75,8 @@ Our newest iOS SDK (5.4.0) was released on March 13th, 2018. Please ensure you a
 * Minor fixes
 
 ### 4.0.6
-* Add cache early check to initial operation chain 
-* Prefix 3rd party zip/unzip lib functions 
+* Add cache early check to initial operation chain
+* Prefix 3rd party zip/unzip lib functions
 * Track and use the didDownload state for legacy ads
 
 ### 4.0.5
