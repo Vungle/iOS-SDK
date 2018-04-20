@@ -2,6 +2,7 @@
 
 ### VERSION 6.2.0
 * GDPR compliance.
+* License updated
 * Removed the requirement to have an auto-cached placement.
 * Removed the requirement to initialize Vungle SDK with all placements.
 * Bug fixes.
