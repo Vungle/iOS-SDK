@@ -16,6 +16,7 @@ Please Note: Xcode 8 does not include support for iPhone X.
 ## Release Notes
 ### 6.2.0
 * GDPR compliance.
+* License updated
 * Removed the requirement to have an auto-cached placement.
 * Removed the requirement to initialize Vungle SDK with all placements.
 * Bug fixes.

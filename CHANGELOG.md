@@ -2,6 +2,7 @@
 
 ### VERSION 6.2.0
 * GDPR compliance.
+* License updated
 * Removed the requirement to have an auto-cached placement.
 * Removed the requirement to initialize Vungle SDK with all placements.
 * Bug fixes.
@@ -20,14 +21,14 @@
 * Bug fixes and performance improvements
 
 ## VERSION 5.3.0
-* Allow cached ad to play when other placements are downloading.
-* Allow cached ad to play when there is no reception.
+* Allow cached ad to play when other placements are downloading. 
+* Allow cached ad to play when there is no reception. 
 * Fixed Flex View (ad unit) scaling issue.
 * Removed background dim in an interactive ad unit.
 
 ## VERSION 5.2.0
-* Fixed a regression of clickedThrough in internal reporting. Advertiser will see accurate clicks in dashboard.
-* Fixed user agent format for internal reporting.
+* Fixed a regression of clickedThrough in internal reporting. Advertiser will see accurate clicks in dashboard. 
+* Fixed user agent format for internal reporting. 
 * Fixed an issue with application lifecycle that can result in black screens.
 
 ## VERSION 5.1.1
@@ -37,7 +38,7 @@
 
 ## VERSION 5.1.0
 * Launched new Placements feature.
-* Added Native Flex View ad unit.
+* Added Native Flex View ad unit. 
 * Added Moat Viewability technology.
 * Added GZIP for faster network transfers.
 * Migrate MRAID to WKWebView on iOS 9 and 10 to address memory leak in UIWebView.
@@ -61,8 +62,8 @@
 * Minor fixes
 
 ## VERSION 4.0.6
-* Add cache early check to initial operation chain
-* Prefix 3rd party zip/unzip lib functions
+* Add cache early check to initial operation chain 
+* Prefix 3rd party zip/unzip lib functions 
 * Track and use the didDownload state for legacy ads
 
 ## VERSION 4.0.5
@@ -73,9 +74,9 @@
 * iOS 10 OS performance optimizations
 * CloudUX functionality support
 * Vungle unique id implementation to maintain publisher frequency capping
-* Fix click area around CTA button
-* Resume video when app comes to foreground
-* Add logging when the publisher uses a wrong appId
+* Fix click area around CTA button 
+* Resume video when app comes to foreground 
+* Add logging when the publisher uses a wrong appId 
 
 
 ## VERSION 3.2.2
