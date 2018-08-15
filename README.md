@@ -33,11 +33,11 @@ Please Note: Xcode 8 does not include support for iPhone X.
 * Resolved duplicate symbol error on zipOpen4
 
 ### 5.3.2
-* Sleep code to be enforced at placement level.
-* Ordinal data reporting.
-* iOS 11 API for safeAreaLayoutGuide for iPhone X.
-* Ability to close Flex-View ads through API or timer.
-* Bug fixes and performance improvements.
+* Sleep code to be enforced at placement level
+* Ordinal data reporting
+* iOS 11 API for safeAreaLayoutGuide for iPhone X
+* Ability to close Flex-View ads through API or timer
+* Bug fixes and performance improvements
 
 ### 5.3.0
 * Allow cached ad to play when other placements are downloading.
