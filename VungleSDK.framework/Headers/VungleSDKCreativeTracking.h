@@ -9,7 +9,6 @@
 
 @optional
 /**
- * Update documentation
  * If implemented, this will get called when the SDK has an ad ready to be displayed.
  * The parameters will indicate that an ad associated with the included creative ID is
  * ready to play for the specified placement reference ID. Both parameters should return
