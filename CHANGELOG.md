@@ -1,11 +1,17 @@
 ## Changelog
 
+### VERSION 6.3.0
+### 6.3.0
+* StoreKit support for MRAID ads
+* Extend additional Moat support for our exchange
+* Stability improvements
+
 ### VERSION 6.2.0
-* GDPR compliance.
+* GDPR compliance
 * License updated
-* Removed the requirement to have an auto-cached placement.
-* Removed the requirement to initialize Vungle SDK with all placements.
-* Bug fixes.
+* Removed the requirement to have an auto-cached placement
+* Removed the requirement to initialize Vungle SDK with all placements
+* Bug fixes
 
 ## VERSION 5.4.0
 * Fixed crashes on iOS 7

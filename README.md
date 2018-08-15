@@ -10,16 +10,21 @@ Please refer to https://support.vungle.com/hc/en-us/articles/360002925791
 ### Version Info
 The Vungle iOS SDK supports iOS 8.0 and above, including iOS 11, both 32bit and 64bit apps.  
 
-Our newest iOS SDK (6.2.0) was released on April 20th, 2018. Please ensure you are using Xcode 9 to ensure smooth integration.
+Our newest iOS SDK (6.3.0) was released on August 14th, 2018. Please ensure you are using Xcode 9 to ensure smooth integration.
 Please Note: Xcode 8 does not include support for iPhone X.
 
 ## Release Notes
+### 6.3.0
+* StoreKit support for MRAID ads
+* Extend additional Moat support for our exchange
+* Stability improvements
+
 ### 6.2.0
-* GDPR compliance.
+* GDPR compliance
 * License updated
-* Removed the requirement to have an auto-cached placement.
-* Removed the requirement to initialize Vungle SDK with all placements.
-* Bug fixes.
+* Removed the requirement to have an auto-cached placement
+* Removed the requirement to initialize Vungle SDK with all placements
+* Bug fixes
 
 ### 5.4.0
 * Fixed crashes on iOS 7
@@ -28,11 +33,11 @@ Please Note: Xcode 8 does not include support for iPhone X.
 * Resolved duplicate symbol error on zipOpen4
 
 ### 5.3.2
-* Sleep code to be enforced at placement level
-* Ordinal data reporting
-* iOS 11 API for safeAreaLayoutGuide for iPhone X
-* Ability to close Flex-View ads through API or timer
-* Bug fixes and performance improvements
+* Sleep code to be enforced at placement level.
+* Ordinal data reporting.
+* iOS 11 API for safeAreaLayoutGuide for iPhone X.
+* Ability to close Flex-View ads through API or timer.
+* Bug fixes and performance improvements.
 
 ### 5.3.0
 * Allow cached ad to play when other placements are downloading.
