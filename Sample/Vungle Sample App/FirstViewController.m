@@ -44,8 +44,7 @@ static NSString *const kVungleTestPlacementID03 = @"PLMT03R77999";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self setViewDefault];    
+    [self setViewDefault];
 }
 
 
@@ -202,7 +201,7 @@ static NSString *const kVungleTestPlacementID03 = @"PLMT03R77999";
     [self.sdk setLoggingEnabled:YES];
     NSError *error = nil;
 
-    if(![self.sdk startWithAppId:kVungleTestAppID placements:self.placementIDsArray error:&error]) {
+    if(![self.sdk startWithAppId:kVungleTestAppID error:&error]) {
         NSLog(@"Error while starting VungleSDK %@", [error localizedDescription]);
         
         [self updateButtonState:self.sdkInitButton enabled:YES];
@@ -254,6 +253,8 @@ static NSString *const kVungleTestPlacementID03 = @"PLMT03R77999";
     [self updateButtonState:self.loadButton2 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID02]? NO:YES];
     [self updateButtonState:self.playButton3 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID03]? YES:NO];
     [self updateButtonState:self.loadButton3 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID03]? NO:YES];
+    [self updateButtonState:self.loadButton4 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID04]? NO:YES];
+    [self updateButtonState:self.playButton4 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID04]? YES:NO];
 }
 
 - (void)updateButtonState:(UIButton *) button enabled:(BOOL)enabled {
