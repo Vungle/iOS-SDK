@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		444C0B162112C701004E43FA /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444C0B152112C701004E43FA /* VungleSDK.framework */; };
+		444CE995214799E700489916 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444CE994214799E700489916 /* VungleSDK.framework */; };
 		DE8F42381BBB0BC9009EC672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */; };
 		F45D5FCF18E0F05300329123 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F45D5FCD18E0F05300329123 /* InfoPlist.strings */; };
 		F45D5FD118E0F05300329123 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F45D5FD018E0F05300329123 /* main.m */; };
@@ -30,7 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		444C0B152112C701004E43FA /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VungleSDK.framework; path = ../VungleSDK.framework; sourceTree = "<group>"; };
+		444CE994214799E700489916 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VungleSDK.framework; path = ../VungleSDK.framework; sourceTree = "<group>"; };
 		DE8F42351BBB09C7009EC672 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
 		DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEFCFF601BA34127006414B2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				444C0B162112C701004E43FA /* VungleSDK.framework in Frameworks */,
+				444CE995214799E700489916 /* VungleSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +94,7 @@
 		F45D5FC318E0F05300329123 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				444C0B152112C701004E43FA /* VungleSDK.framework */,
+				444CE994214799E700489916 /* VungleSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -305,7 +305,7 @@ static NSString *const kVungleTestPlacementID04 = @"PLMT04-8738960";
 
 - (void)updateButtonState:(UIButton *) button enabled:(BOOL)enabled {
     button.enabled = enabled;
-    button.alpha = (enabled? 1.0:0.45);
+    button.alpha = (enabled? 1.0:.5);
 }
 
 @end
