@@ -145,10 +145,13 @@ static NSString *const kVungleTestPlacementID04 = @"PLMT04-8738960";
     if ([placementID isEqualToString:kVungleTestPlacementID01]) {
         [self updateButtonState:self.playButton1 enabled:isAdPlayable];
     } else if ([placementID isEqualToString:kVungleTestPlacementID02]) {
+        [self updateButtonState:self.loadButton2 enabled:!isAdPlayable];
         [self updateButtonState:self.playButton2 enabled:isAdPlayable];
     } else if ([placementID isEqualToString:kVungleTestPlacementID03]) {
+        [self updateButtonState:self.loadButton3 enabled:!isAdPlayable];
         [self updateButtonState:self.playButton3 enabled:isAdPlayable];
     } else if ([placementID isEqualToString:kVungleTestPlacementID04]) {
+        [self updateButtonState:self.loadButton4 enabled:!isAdPlayable];
         [self updateButtonState:self.playButton4 enabled:isAdPlayable];
     }
 }
