@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 6.3.0
+//  SDK Version: 6.3.1
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
