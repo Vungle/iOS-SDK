@@ -19,7 +19,6 @@ Our newest iOS SDK (6.3.1) was released on September 18th, 2018. Please ensure y
 * Improved ad handling for placements
 * Bug Fixes
 
->>>>>>> 6.3.1
 ### 6.3.0
 * StoreKit support for MRAID ads
 * Extend additional Moat support for our exchange
