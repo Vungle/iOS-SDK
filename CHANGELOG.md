@@ -1,11 +1,22 @@
 ## Changelog
 
-### VERSION 6.2.0
-* GDPR compliance.
+## VERSION 6.3.1
+* iOS 12 Compatibility
+* Improved ad display on iPhone X
+* Improved ad handling for placements
+* Bug Fixes
+
+## VERSION 6.3.0
+* StoreKit support for MRAID ads
+* Extend additional Moat support for our exchange
+* Stability improvements
+
+## VERSION 6.2.0
+* GDPR compliance
 * License updated
-* Removed the requirement to have an auto-cached placement.
-* Removed the requirement to initialize Vungle SDK with all placements.
-* Bug fixes.
+* Removed the requirement to have an auto-cached placement
+* Removed the requirement to initialize Vungle SDK with all placements
+* Bug fixes
 
 ## VERSION 5.4.0
 * Fixed crashes on iOS 7
@@ -21,15 +32,15 @@
 * Bug fixes and performance improvements
 
 ## VERSION 5.3.0
-* Allow cached ad to play when other placements are downloading.
-* Allow cached ad to play when there is no reception.
-* Fixed Flex View (ad unit) scaling issue.
-* Removed background dim in an interactive ad unit.
+* Allow cached ad to play when other placements are downloading
+* Allow cached ad to play when there is no reception
+* Fixed Flex View (ad unit) scaling issue
+* Removed background dim in an interactive ad unit
 
 ## VERSION 5.2.0
-* Fixed a regression of clickedThrough in internal reporting. Advertiser will see accurate clicks in dashboard.
-* Fixed user agent format for internal reporting.
-* Fixed an issue with application lifecycle that can result in black screens.
+* Fixed a regression of clickedThrough in internal reporting. Advertiser will see accurate clicks in dashboard
+* Fixed user agent format for internal reporting
+* Fixed an issue with application lifecycle that can result in black screens
 
 ## VERSION 5.1.1
 * Made cache improvements
@@ -116,7 +127,7 @@
 * Move saved /reportAds from cache directory to app support directory
 * Option to modify incentivized alert text (title, body, close button, and continue button)
 
-### VERSION 3.0.11
+## VERSION 3.0.11
 * Deprecated VunglePlayAdOptionKeyShowClose
 * Deprecated VungleSDK#playAd: & VungleSDK#playAd:withOptions:
 * Fixed some minor memory leaks
@@ -124,17 +135,17 @@
 * Fixed some random crashes on very limited edge cases
 * Moved internal database from Documents to App Support
 
-### VERSION 3.0.10
+## VERSION 3.0.10
 * Fixed crash that killed the app when sent to the background (in rare conditions)
 * Fixed postroll and corrupted video bugs
 * Improved support for iOS 8
 
-### VERSION 3.0.9
+## VERSION 3.0.9
 
 * improved iOS 5 support
 * fixed TPAT bugs
 
-### VERSION 3.0.8
+## VERSION 3.0.8
 
 * added global playAd options
 * added placements for each play, as well as dev-defined extra keys
