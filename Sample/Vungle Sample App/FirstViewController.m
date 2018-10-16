@@ -244,7 +244,11 @@ static NSString *const kVungleTestPlacementID04 = @"PLMT04-8738960";
 - (IBAction)showAdForPlacement01 {
     // Play a Vungle ad (with ordinal)
     NSError *error;
-    [self.sdk playAd:self options:@{VunglePlayAdOptionKeyOrdinal: @11} placementID:kVungleTestPlacementID01 error:&error];
+    [self.sdk playAd:self options:@{VunglePlayAdOptionKeyUser:@"test_user_id",
+                                    VunglePlayAdOptionKeyIncentivizedAlertBodyText : @"If the video isn't completed you won't get your reward! Are you sure you want to close early?",
+                                    VunglePlayAdOptionKeyIncentivizedAlertCloseButtonText : @"Close",
+                                    VunglePlayAdOptionKeyIncentivizedAlertContinueButtonText : @"Keep Watching",
+                                    VunglePlayAdOptionKeyIncentivizedAlertTitleText : @"Careful!"} placementID:kVungleTestPlacementID01 error:&error];
     
     if (error) {
         NSLog(@"Error encountered playing ad: %@", error);
@@ -253,7 +257,11 @@ static NSString *const kVungleTestPlacementID04 = @"PLMT04-8738960";
 
 - (IBAction)showAdForPlacement02 {
     // Play a Vungle ad (with options). Dictionary to set custom ad options.
-    NSDictionary *options = @{VunglePlayAdOptionKeyOrientations: @(UIInterfaceOrientationMaskLandscape)};
+    NSDictionary *options = @{VunglePlayAdOptionKeyUser:@"test_user_id",
+                              VunglePlayAdOptionKeyIncentivizedAlertBodyText : @"If the video isn't completed you won't get your reward! Are you sure you want to close early?",
+                              VunglePlayAdOptionKeyIncentivizedAlertCloseButtonText : @"Close",
+                              VunglePlayAdOptionKeyIncentivizedAlertContinueButtonText : @"Keep Watching",
+                              VunglePlayAdOptionKeyIncentivizedAlertTitleText : @"Careful!"};
     
     NSError *error;
     [self.sdk playAd:self options:options placementID:kVungleTestPlacementID02 error:&error];

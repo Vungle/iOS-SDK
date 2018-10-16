@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4435EE7E2150D63F00830854 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4435EE7D2150D63F00830854 /* VungleSDK.framework */; };
+		446D30FE2175E78300B5737B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 446D30FD2175E78300B5737B /* libz.tbd */; };
+		446D31002175E7C500B5737B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446D30FF2175E7C500B5737B /* SystemConfiguration.framework */; };
+		446D31022175E99F00B5737B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446D31012175E99F00B5737B /* CoreTelephony.framework */; };
+		446D31042175E9F000B5737B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446D31032175E9F000B5737B /* StoreKit.framework */; };
+		446D31062175EE3300B5737B /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446D31052175EE3300B5737B /* VungleSDK.framework */; };
 		DE8F42381BBB0BC9009EC672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */; };
 		F45D5FCF18E0F05300329123 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F45D5FCD18E0F05300329123 /* InfoPlist.strings */; };
 		F45D5FD118E0F05300329123 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F45D5FD018E0F05300329123 /* main.m */; };
@@ -30,7 +34,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4435EE7D2150D63F00830854 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VungleSDK.framework; path = ../VungleSDK.framework; sourceTree = "<group>"; };
+		446D30FD2175E78300B5737B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		446D30FF2175E7C500B5737B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		446D31012175E99F00B5737B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		446D31032175E9F000B5737B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		446D31052175EE3300B5737B /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VungleSDK.framework; path = ../VungleSDK.framework; sourceTree = "<group>"; };
 		DE8F42351BBB09C7009EC672 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
 		DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEFCFF601BA34127006414B2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -56,7 +64,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4435EE7E2150D63F00830854 /* VungleSDK.framework in Frameworks */,
+				446D31062175EE3300B5737B /* VungleSDK.framework in Frameworks */,
+				446D31042175E9F000B5737B /* StoreKit.framework in Frameworks */,
+				446D31022175E99F00B5737B /* CoreTelephony.framework in Frameworks */,
+				446D31002175E7C500B5737B /* SystemConfiguration.framework in Frameworks */,
+				446D30FE2175E78300B5737B /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +106,11 @@
 		F45D5FC318E0F05300329123 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4435EE7D2150D63F00830854 /* VungleSDK.framework */,
+				446D31052175EE3300B5737B /* VungleSDK.framework */,
+				446D31032175E9F000B5737B /* StoreKit.framework */,
+				446D31012175E99F00B5737B /* CoreTelephony.framework */,
+				446D30FF2175E7C500B5737B /* SystemConfiguration.framework */,
+				446D30FD2175E78300B5737B /* libz.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -153,6 +169,7 @@
 				F45D5FBD18E0F05300329123 /* Sources */,
 				F45D5FBE18E0F05300329123 /* Frameworks */,
 				F45D5FBF18E0F05300329123 /* Resources */,
+				44FB6266215E770D003766B0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -239,6 +256,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44FB6266215E770D003766B0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F45D5FBD18E0F05300329123 /* Sources */ = {
