@@ -1,18 +1,28 @@
+
 # Vungle's iOS-SDK
 [![Version](https://img.shields.io/cocoapods/v/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
 [![License](https://img.shields.io/cocoapods/l/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
 [![Platform](https://img.shields.io/cocoapods/p/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
 
 ## Getting Started
-Please refer to https://support.vungle.com/hc/en-us/articles/360002925791
+Please refer to https://support.vungle.com/hc/en-us/articles/360014624231
 
 
 ### Version Info
 The Vungle iOS SDK supports iOS 8.0 and above, including iOS 12, both 32bit and 64bit apps.  
 
-Our newest iOS SDK (6.3.1) was released on September 18th, 2018. Please ensure you are using Xcode 9 to ensure smooth integration.
+Our newest iOS SDK (6.3.2) will be generally available in November 8th, 2018. Please ensure you are using Xcode 10 or later
+to ensure smooth integration.
+Please Note: Xcode 8 does not include support for iPhone X.
 
 ## Release Notes
+### 6.3.2
+* Support for iOS 12
+* StoreKit support for fullscreen MRAID ads
+* Improved Moat viewability tracking
+* Publishers can now track custom GDPR consent message versions
+* MRAID ads now mute according to SDK option
+
 ### 6.3.1
 * iOS 12 Compatibility
 * Improved ad display on iPhone X
@@ -25,11 +35,10 @@ Our newest iOS SDK (6.3.1) was released on September 18th, 2018. Please ensure y
 * Stability improvements
 
 ### 6.2.0
-* GDPR compliance
-* License updated
-* Removed the requirement to have an auto-cached placement
-* Removed the requirement to initialize Vungle SDK with all placements
-* Bug fixes
+* GDPR compliance.
+* Removed the requirement to have an auto-cached placement.
+* Removed the requirement to initialize Vungle SDK with all placements.
+* Bug fixes.
 
 ### 5.4.0
 * Fixed crashes on iOS 7
@@ -45,10 +54,10 @@ Our newest iOS SDK (6.3.1) was released on September 18th, 2018. Please ensure y
 * Bug fixes and performance improvements
 
 ### 5.3.0
-* Allow cached ad to play when other placements are downloading
-* Allow cached ad to play when there is no reception
-* Fixed Flex View (ad unit) scaling issue
-* Removed background dim in an interactive ad unit
+* Allow cached ad to play when other placements are downloading.
+* Allow cached ad to play when there is no reception.
+* Fixed Flex View (ad unit) scaling issue.
+* Removed background dim in an interactive ad unit.
 
 ### 5.2.0
 * Fixed a regression of clickedThrough in internal reporting. Advertiser will see accurate clicks in dashboard.

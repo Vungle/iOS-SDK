@@ -1,5 +1,12 @@
 ## Changelog
 
+## VERSION 6.3.2
+* Support for iOS 12
+* StoreKit support for fullscreen MRAID ads
+* Improved Moat viewability tracking
+* Publishers can now track custom GDPR consent message versions
+* MRAID ads now mute according to SDK option
+
 ## VERSION 6.3.1
 * iOS 12 Compatibility
 * Improved ad display on iPhone X
