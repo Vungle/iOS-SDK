@@ -114,7 +114,7 @@ Please Note: Xcode 8 does not include support for iPhone X.
 | Component | Description                                                                                         | License                                         |
 |-----------|-----------------------------------------------------------------------------------------------------|-------------------------------------------------|
 | Webkit    | WebKit provides a set of classes to display web content in windows, and implements browser features | [LGPL BSD](https://webkit.org/licensing-webkit) |
-| libz      | Type-safe HTTP client for Android and Java                                                          | [ZLIB](https://www.zlib.net/zlib_license.html)  |
+| zlib      | zlib is a compression library                                                          | [ZLIB](https://www.zlib.net/zlib_license.html)  |
 | libsqlite | SQLite is a C-language library that implements a small, self-contained SQL database engine          | [PD](https://www.sqlite.org/copyright.html)     |
 
 
