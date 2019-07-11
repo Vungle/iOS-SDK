@@ -11,7 +11,8 @@ Please refer to https://support.vungle.com/hc/en-us/articles/360002925791
 ### Version Info
 The Vungle iOS SDK supports iOS 8.0 and above, including iOS 12, both 32bit and 64bit apps.  
 
-Our newest iOS SDK (6.3.2) will be generally available in November, 2018. Please ensure you are using Xcode 10 to ensure smooth integration.
+Our newest iOS SDK (6.3.2) will be generally available in November 8th, 2018. Please ensure you are using Xcode 10 or later
+to ensure smooth integration.
 Please Note: Xcode 8 does not include support for iPhone X.
 
 ## Release Notes
