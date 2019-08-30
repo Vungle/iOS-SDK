@@ -1,5 +1,15 @@
 ## Changelog
 
+## VERSION 6.4.3
+* iOS 13 Support and Enhancements
+* Cache Optimization — Automatically optimizes ad caching to ensure ads are available faster. No additional work from developer needed.
+* Introduced new MREC Video placement type to serve higher performing banners.
+* Privacy by Design — Removed latitude and longitude collection to protect users.
+* Updated Moat to no longer collect location data.
+* Reduced App Store loading delay to reduce blank loading screens.
+* Removed UIWebView references.
+* Publisher controls to override minimum disk requirements, helping to ensure good user experiences.
+
 ## VERSION 6.3.2
 * Support for iOS 12
 * StoreKit support for fullscreen MRAID ads
