@@ -193,6 +193,7 @@
 				ORGANIZATIONNAME = "Jordyn Chuhaloff";
 				TargetAttributes = {
 					F45D5FC018E0F05300329123 = {
+						DevelopmentTeam = 6ST76YX9G6;
 						ProvisioningStyle = Automatic;
 					};
 					F45D5FE718E0F05300329123 = {
@@ -405,6 +406,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6ST76YX9G6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../",
@@ -415,6 +417,7 @@
 				INFOPLIST_FILE = "Vungle Sample App/Vungle Sample App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vungle.sdksample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -430,7 +433,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3N326644S2;
+				DEVELOPMENT_TEAM = 6ST76YX9G6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../",
