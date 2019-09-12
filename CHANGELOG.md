@@ -7,7 +7,7 @@
 * Privacy by Design — Removed latitude and longitude collection to protect users.
 * Updated Moat to no longer collect location data.
 * Reduced App Store loading delay to reduce blank loading screens.
-* Removed UIWebView references.
+* Removed UIWebView references due to Apple no longer accepting submissions of apps that use UIWebView APIs.
 * Publisher controls to override minimum disk requirements, helping to ensure good user experiences.
 
 ## VERSION 6.3.2

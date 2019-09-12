@@ -5,7 +5,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
 
 ## Getting Started
-https://support.vungle.com/hc/en-us/articles/360027712712-BETA-Get-Started-with-Vungle-iOS-SDK-v6-4-3
+https://support.vungle.com/hc/en-us/articles/360002925791--Get-Started-with-Vungle-iOS-SDK-v-6
 
 Vungle SDK for iOS 
 =======================
