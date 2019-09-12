@@ -11,11 +11,11 @@
 static NSString *const kVungleAppIDPrefix = @"AppID: ";
 static NSString *const kVunglePlacementIDPrefix = @"PlacementID: ";
 
-static NSString *const kVungleTestAppID = @"58fe200484fbd5b9670000e3";
-static NSString *const kVungleTestPlacementID01 = @"PLMT01-41570"; // Auto Cached
-static NSString *const kVungleTestPlacementID02 = @"PLMT02-05269";
-static NSString *const kVungleTestPlacementID03 = @"PLMT03-8358426";
-static NSString *const kVungleTestPlacementID04 = @"PLMT04-8738960";
+static NSString *const kVungleTestAppID =@"58fe200484fbd5b9670000e3";
+static NSString *const kVungleTestPlacementID01 =@"PLMT01-41570"; // Auto Cached
+static NSString *const kVungleTestPlacementID02 =@"PLMT02-05269";
+static NSString *const kVungleTestPlacementID03 =@"PLMT03-8358426";
+static NSString *const kVungleTestPlacementID04 =@"PLMT04-8738960";
 
 @interface FirstViewController ()
 
@@ -38,7 +38,9 @@ static NSString *const kVungleTestPlacementID04 = @"PLMT04-8738960";
 @property (weak, nonatomic) IBOutlet UIButton *checkCurrentStatusButton;
 
 @property (weak, nonatomic) IBOutlet UIView *flexFeedView;
+@property (strong, nonatomic) UIView *tempFlexFeedView;
 
+@property (nonatomic, assign, getter=isPlaying) BOOL playing;
 @property (nonatomic, strong) VungleSDK *sdk;
 
 @end
@@ -115,6 +117,8 @@ static NSString *const kVungleTestPlacementID04 = @"PLMT04-8738960";
         [self updateButtonState:self.playButton4 enabled:NO];
         [self showAdForPlacement04];
     }
+    [self setPlaying:YES];
+    [self disablePlayLoadButtons];
 }
 
 - (IBAction)onDismissButtonTapped:(id)sender {
@@ -123,6 +127,8 @@ static NSString *const kVungleTestPlacementID04 = @"PLMT04-8738960";
     } else if (sender == self.dismissButton4) {
         [self.sdk finishedDisplayingAd];
     }
+    [self setPlaying:NO];
+    [self updateButtons];
 }
 
 - (IBAction)onCheckCurrentStatusButtonTapped:(id)sender {
@@ -148,10 +154,14 @@ static NSString *const kVungleTestPlacementID04 = @"PLMT04-8738960";
         [self updateButtonState:self.loadButton2 enabled:!isAdPlayable];
         [self updateButtonState:self.playButton2 enabled:isAdPlayable];
     } else if ([placementID isEqualToString:kVungleTestPlacementID03]) {
-        [self updateButtonState:self.loadButton3 enabled:!isAdPlayable];
+        if(![self isPlaying]) {
+            [self updateButtonState:self.loadButton3 enabled:!isAdPlayable];
+        }
         [self updateButtonState:self.playButton3 enabled:isAdPlayable];
     } else if ([placementID isEqualToString:kVungleTestPlacementID04]) {
-        [self updateButtonState:self.loadButton4 enabled:!isAdPlayable];
+        if(![self isPlaying]) {
+            [self updateButtonState:self.loadButton4 enabled:!isAdPlayable];
+        }
         [self updateButtonState:self.playButton4 enabled:isAdPlayable];
     }
 }
@@ -193,13 +203,16 @@ static NSString *const kVungleTestPlacementID04 = @"PLMT04-8738960";
     } else if ([placementID isEqualToString:kVungleTestPlacementID04]) {
         NSLog(@"-->> Ad is closed for %@", kVungleTestPlacementID04);
         [self updateButtonState:self.dismissButton4 enabled:NO];
+        // clean up required to completely remove flex feed ad from view controller
+        [self.tempFlexFeedView removeFromSuperview];
+        self.tempFlexFeedView = nil;
     }
     
     if (info) {
         NSLog(@"Info about ad viewed: %@", info);
     }
-    
     [self updateButtons];
+    [self setPlaying:NO];
 }
 
 - (void)vungleSDKDidInitialize {
@@ -285,8 +298,14 @@ static NSString *const kVungleTestPlacementID04 = @"PLMT04-8738960";
 
 - (IBAction)showAdForPlacement04 {
     // Play a Vungle ad (with default options)
+    if (!self.tempFlexFeedView) {
+        // This view has the same size as the corresponding view created in interface builder
+        self.tempFlexFeedView = [[UIView alloc] initWithFrame:self.flexFeedView.bounds];
+    }
+    // add temp view as subview to view created in Interface Builder
+    [self.flexFeedView addSubview:self.tempFlexFeedView];
     NSError *error;
-    [self.sdk addAdViewToView:self.flexFeedView withOptions:nil placementID:kVungleTestPlacementID04 error:&error];
+    [self.sdk addAdViewToView:self.tempFlexFeedView withOptions:nil placementID:kVungleTestPlacementID04 error:&error];
     
     if (error) {
         NSLog(@"Error encountered playing ad: %@", error);
@@ -304,6 +323,16 @@ static NSString *const kVungleTestPlacementID04 = @"PLMT04-8738960";
     [self updateButtonState:self.playButton3 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID03]? YES:NO];
     [self updateButtonState:self.loadButton4 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID04]? NO:YES];
     [self updateButtonState:self.playButton4 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID04]? YES:NO];
+}
+
+- (void)disablePlayLoadButtons {
+    [self updateButtonState:self.playButton1 enabled:NO];
+    [self updateButtonState:self.loadButton2 enabled:NO];
+    [self updateButtonState:self.playButton2 enabled:NO];
+    [self updateButtonState:self.loadButton3 enabled:NO];
+    [self updateButtonState:self.playButton3 enabled:NO];
+    [self updateButtonState:self.loadButton4 enabled:NO];
+    [self updateButtonState:self.playButton4 enabled:NO];
 }
 
 - (void)updateButtonState:(UIButton *) button enabled:(BOOL)enabled {

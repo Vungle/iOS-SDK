@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 6.3.2
+//  SDK Version: 6.4.3
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -72,6 +72,8 @@ typedef enum {
     VungleSDKErrorSDKNotInitialized,
     VungleSDKErrorSleepingPlacement,
     VungleSDKErrorNoAdsAvailable,
+    VungleSDKErrorNotEnoughFileSystemSize,
+    VungleDiscSpaceProviderErrorNoFileSystemAttributes,
 } VungleSDKErrorCode;
 
 typedef NS_ENUM (NSInteger, VungleConsentStatus) {
@@ -107,6 +109,12 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
  * @param placementID The placement which is about to be shown.
  */
 - (void)vungleWillShowAdForPlacementID:(nullable NSString *)placementID;
+
+/**
+ * If implemented, this will get called when the SDK has just begun showing an ad.
+ * @param placementID The placement which is about to be shown.
+ */
+- (void)vungleDidShowAdForPlacementID:(nullable NSString *)placementID;
 
 /**
  * If implemented, this method gets called when a Vungle Ad Unit is about to be completely dismissed.
@@ -152,6 +160,19 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
  */
 + (VungleSDK *)sharedSDK;
 
+/**
+ * Sets the publish IDFV flag
+ * This value is persistent and so may be set once.
+ * @param publish whether to publish the IDFV value
+ */
++ (void)setPublishIDFV:(BOOL)publish;
+
+/**
+ * Returns the value of the persistent publish IDFV flag.
+ * @return the current value of the publish IDFV flag
+ */
++ (BOOL)shouldPublishIDFV;
+
 #pragma mark - Initialization
 /**
  * Initializes the SDK. You can get your app id on Vungle's dashboard: https://v.vungle.com
@@ -183,10 +204,12 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
  */
 - (BOOL)playAd:(UIViewController *)controller options:(nullable NSDictionary *)options placementID:(nullable NSString *)placementID error:(NSError *__autoreleasing _Nullable *_Nullable)error;
 
-#pragma mark - Flex Feed Ad lifecycle
+#pragma mark - Flex Feed / MREC Ad lifecycle
 /**
  * Pass in an UIView which acts as a container for the ad experience. This view container may be placed in random positions.
- * @note This method should only be called using placements that have the `flexfeed` template type.
+ * @note This method should only be called using placements that have the `flexfeed` or `mrec` template type. ALSO, for the
+ *      `mrec` template type, note that the UIView must have a width of 300 and a height of 250. If the view is provided without
+ *      these dimensions, an error message will be returned and the ad will not be shown.
  * @param publisherView container view in which an ad will be displayed
  * @param options A reference to an instance of NSDictionary with customized ad playback options
  * @param placementID The placement defined on the Vungle dashboard
@@ -196,8 +219,8 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
 - (BOOL)addAdViewToView:(UIView *)publisherView withOptions:(nullable NSDictionary *)options placementID:(nullable NSString *)placementID error:(NSError *__autoreleasing _Nullable *_Nullable)error;
 
 /**
- * This method will dismiss the currently playing Flex View or Flex Feed advertisement. If you have added an advertisement with `addAdViewToView:`
- * or you are playing a placement that has been configured as a Flex View placement, then this method will remove the advertisement
+ * This method will dismiss the currently playing Flex View, Flex Feed or MREC advertisement. If you have added an advertisement with `addAdViewToView:`
+ * or you are playing a placement that has been configured as a Flex View, Flex Feed or MREC placement, then this method will remove the advertisement
  * from the screen and perform any necessary clean up steps.
  *
  * This method will call the existing delegate callbacks as part of the lifecycle.
