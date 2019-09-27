@@ -10,7 +10,7 @@ https://support.vungle.com/hc/en-us/articles/360002925791--Get-Started-with-Vung
 Vungle SDK for iOS 
 =======================
 
-**Version 6.4.3**
+**Version 6.4.5**
 
 Welcome to the Vungle SDK which has been battle-tested to unlock amazing monetization opportunities for you.  The Vungle SDK enables the very best creatives in mobile advertising. 
 

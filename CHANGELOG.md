@@ -1,5 +1,9 @@
 ## Changelog
 
+## VERSION 6.4.5
+* Updated Moat
+* Bug Fixes
+
 ## VERSION 6.4.3
 * iOS 13 Support and Enhancements
 * Cache Optimization — Automatically optimizes ad caching to ensure ads are available faster. No additional work from developer needed.
