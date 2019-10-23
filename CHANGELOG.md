@@ -1,5 +1,11 @@
 ## Changelog
 
+## VERSION 6.5.0
+* Introduction of Banner Format
+* Continuous improvements to ad caching
+* Updated Moat framework
+* Squashed many other bugs 
+
 ## VERSION 6.4.5
 * Updated Moat
 * Bug Fixes

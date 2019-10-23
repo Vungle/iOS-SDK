@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 6.4.5
+//  SDK Version: 6.5.0
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -74,11 +74,20 @@ typedef enum {
     VungleSDKErrorNoAdsAvailable,
     VungleSDKErrorNotEnoughFileSystemSize,
     VungleDiscSpaceProviderErrorNoFileSystemAttributes,
+    VungleSDKErrorUnknownBannerSize,
+    VungleSDKResetPlacementForDifferentAdSize,
 } VungleSDKErrorCode;
 
 typedef NS_ENUM (NSInteger, VungleConsentStatus) {
     VungleConsentAccepted = 1,
     VungleConsentDenied,
+};
+
+typedef NS_ENUM (NSInteger, VungleAdSize) {
+    VungleAdSizeUnknown = 1,
+    VungleAdSizeBanner,                     // width = 320.0f, .height = 50.0f
+    VungleAdSizeBannerShort,                // width = 300.0f, .height = 50.0f
+    VungleAdSizeBannerLeaderboard,          // width = 728.0f, .height = 90.0f
 };
 
 @protocol VungleSDKLogger <NSObject>
@@ -230,10 +239,19 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
 #pragma mark - Placements support
 /**
  * Returns `YES` when there is certainty that an ad will be able to play for a given placementID.
- * Returning `NO`, you can still try to play and get a streaming Ad.
+ * Returning `NO`.
  * @param placementID the specific ID of the placement you are trying to present
  */
 - (BOOL)isAdCachedForPlacementID:(nonnull NSString *)placementID;
+
+/**
+* (Overloaded method)
+ * Returns `YES` when there is certainty that an ad will be able to play for a given placementID.
+ * Returning `NO`.
+ * @param size the VungleAdSize (enum) you would like to request (only for banner ad type at the moment)
+ * @param placementID the specific ID of the placement you are trying to present
+ */
+- (BOOL)isAdCachedForPlacementID:(nonnull NSString *)placementID withSize:(VungleAdSize)size;
 
 /**
  * Prepares a placement when you know that you will want
@@ -242,6 +260,16 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
  * @return NO if something goes immediately wrong with loading, YES otherwise
  */
 - (BOOL)loadPlacementWithID:(NSString *)placementID error:(NSError **)error;
+
+/**
+ * (Overloaded method)
+ * Prepares a placement when you know that you will want
+ * to show an ad experience tied to a specific placementID.
+ * @param placementID the specific ID of the placement you would like to present at some point soon
+ * @param size the VungleAdSize (enum) you would like to request (only for banner ad type at the moment)
+ * @return NO if something goes immediately wrong with loading, YES otherwise
+ */
+- (BOOL)loadPlacementWithID:(NSString *)placementID withSize:(VungleAdSize)size error:(NSError **)error;
 
 #pragma mark - Utility methods
 /**
@@ -293,6 +321,11 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
  *  the method returns nil.
  */
 - (NSString *)getConsentMessageVersion;
+
+/**
+ * This method disables refresh functionality for all banner and MREC placements.
+ */
+- (void)disableBannerRefresh;
 
 @end
 
