@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 6.5.0
+//  SDK Version: 6.5.1
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -213,12 +213,14 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
  */
 - (BOOL)playAd:(UIViewController *)controller options:(nullable NSDictionary *)options placementID:(nullable NSString *)placementID error:(NSError *__autoreleasing _Nullable *_Nullable)error;
 
-#pragma mark - Flex Feed / MREC Ad lifecycle
+#pragma mark - Flex Feed / MREC / Banner Ad lifecycle
 /**
  * Pass in an UIView which acts as a container for the ad experience. This view container may be placed in random positions.
- * @note This method should only be called using placements that have the `flexfeed` or `mrec` template type. ALSO, for the
- *      `mrec` template type, note that the UIView must have a width of 300 and a height of 250. If the view is provided without
- *      these dimensions, an error message will be returned and the ad will not be shown.
+ * @note This method should only be called using placements that have the `flexfeed` or `mrec` or `banner` template type. For
+ *      the `mrec` template type, note that the UIView must have a width of 300 and a height of 250. If the view is provided without
+ *      these dimensions, an error message will be returned and the ad will not be shown. For the  `banner` template type, note that
+ *      the UIView must have the same width and height as the banner size (320x50, 300x50, or 728x90) which you requested. If the
+ *      view is provided with a different banner size, an error message will be returned and the ad will not be shown.
  * @param publisherView container view in which an ad will be displayed
  * @param options A reference to an instance of NSDictionary with customized ad playback options
  * @param placementID The placement defined on the Vungle dashboard
@@ -228,9 +230,10 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
 - (BOOL)addAdViewToView:(UIView *)publisherView withOptions:(nullable NSDictionary *)options placementID:(nullable NSString *)placementID error:(NSError *__autoreleasing _Nullable *_Nullable)error;
 
 /**
- * This method will dismiss the currently playing Flex View, Flex Feed or MREC advertisement. If you have added an advertisement with `addAdViewToView:`
- * or you are playing a placement that has been configured as a Flex View, Flex Feed or MREC placement, then this method will remove the advertisement
- * from the screen and perform any necessary clean up steps.
+ * This method will dismiss the currently playing Flex View, Flex Feed, Banner or MREC advertisement. If you have added an
+ * advertisement with `addAdViewToView:` or you are playing a placement that has been configured as a Flex View, Flex Feed,
+ * Banner or MREC placement, then this method will remove the advertisement from the screen and perform any necessary clean up
+ * steps.
  *
  * This method will call the existing delegate callbacks as part of the lifecycle.
  */
