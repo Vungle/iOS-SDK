@@ -19,6 +19,9 @@
 * Updated Moat framework
 * Squashed many other bugs 
 
+## VERSION 6.4.6
+* Bug Fixes
+
 ## VERSION 6.4.5
 * Updated Moat
 * Bug Fixes

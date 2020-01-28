@@ -5,13 +5,17 @@
 [![Platform](https://img.shields.io/cocoapods/p/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
 
 ## Getting Started
-https://support.vungle.com/hc/en-us/articles/360002925791--Get-Started-with-Vungle-iOS-SDK-v-6
+https://support.vungle.com/hc/en-us/articles/360002925791
 
 
 Vungle SDK for iOS 
 =======================
 
+<<<<<<< HEAD
 **Version 6.5.1**
+=======
+**Version 6.4.6**
+>>>>>>> master
 
 Welcome to the Vungle SDK which has been battle-tested to unlock amazing monetization opportunities for you.  The Vungle SDK enables the very best creatives in mobile advertising. 
 
