@@ -10,10 +10,10 @@
 		1845D00722D74269006E882F /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1845D00622D74269006E882F /* VungleSDK.framework */; };
 		1845D00822D74269006E882F /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1845D00622D74269006E882F /* VungleSDK.framework */; };
 		DE8F42381BBB0BC9009EC672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */; };
+		E319A21B230CE6D200EE8EC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E319A219230CE6D200EE8EC8 /* Main.storyboard */; };
 		F45D5FCF18E0F05300329123 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F45D5FCD18E0F05300329123 /* InfoPlist.strings */; };
 		F45D5FD118E0F05300329123 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F45D5FD018E0F05300329123 /* main.m */; };
 		F45D5FD518E0F05300329123 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F45D5FD418E0F05300329123 /* AppDelegate.m */; };
-		F45D5FD818E0F05300329123 /* VungleSample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45D5FD618E0F05300329123 /* VungleSample.storyboard */; };
 		F45D5FDE18E0F05300329123 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F45D5FDD18E0F05300329123 /* FirstViewController.m */; };
 		F45D5FE318E0F05300329123 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45D5FE218E0F05300329123 /* Images.xcassets */; };
 		F45D5FF418E0F05300329123 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F45D5FF218E0F05300329123 /* InfoPlist.strings */; };
@@ -35,6 +35,8 @@
 		DE8F42351BBB09C7009EC672 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
 		DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEFCFF601BA34127006414B2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E319A21A230CE6D200EE8EC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E319A514230E2A0D00EE8EC8 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		F45D5FC118E0F05300329123 /* Vungle Sample App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vungle Sample App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45D5FCC18E0F05300329123 /* Vungle Sample App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Vungle Sample App-Info.plist"; sourceTree = "<group>"; };
 		F45D5FCE18E0F05300329123 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -42,7 +44,6 @@
 		F45D5FD218E0F05300329123 /* Vungle Sample App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vungle Sample App-Prefix.pch"; sourceTree = "<group>"; };
 		F45D5FD318E0F05300329123 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F45D5FD418E0F05300329123 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F45D5FD718E0F05300329123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VungleSample.storyboard; sourceTree = "<group>"; };
 		F45D5FDC18E0F05300329123 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		F45D5FDD18E0F05300329123 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		F45D5FE218E0F05300329123 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -104,12 +105,13 @@
 		F45D5FCA18E0F05300329123 /* Vungle Sample App */ = {
 			isa = PBXGroup;
 			children = (
+				E319A219230CE6D200EE8EC8 /* Main.storyboard */,
 				F45D5FD318E0F05300329123 /* AppDelegate.h */,
 				F45D5FD418E0F05300329123 /* AppDelegate.m */,
-				F45D5FD618E0F05300329123 /* VungleSample.storyboard */,
 				DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */,
 				F45D5FDC18E0F05300329123 /* FirstViewController.h */,
 				F45D5FDD18E0F05300329123 /* FirstViewController.m */,
+				E319A514230E2A0D00EE8EC8 /* Constants.h */,
 				F45D5FE218E0F05300329123 /* Images.xcassets */,
 				F45D5FCB18E0F05300329123 /* Supporting Files */,
 			);
@@ -227,7 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F45D5FE318E0F05300329123 /* Images.xcassets in Resources */,
-				F45D5FD818E0F05300329123 /* VungleSample.storyboard in Resources */,
+				E319A21B230CE6D200EE8EC8 /* Main.storyboard in Resources */,
 				F45D5FCF18E0F05300329123 /* InfoPlist.strings in Resources */,
 				DE8F42381BBB0BC9009EC672 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -273,20 +275,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E319A219230CE6D200EE8EC8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E319A21A230CE6D200EE8EC8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		F45D5FCD18E0F05300329123 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F45D5FCE18E0F05300329123 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		F45D5FD618E0F05300329123 /* VungleSample.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F45D5FD718E0F05300329123 /* Base */,
-			);
-			name = VungleSample.storyboard;
 			sourceTree = "<group>";
 		};
 		F45D5FF218E0F05300329123 /* InfoPlist.strings */ = {

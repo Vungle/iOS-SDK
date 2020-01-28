@@ -1,4 +1,23 @@
-## Changelog
+### Changelog
+
+## VERSION 6.5.1
+* Optimized caching logic to reduce data usage
+* Added additional support for new banner sizes (320x50, 300x50, 728x90)
+* Improved user experience and fixed issues related to Apple's StoreKit on iOS 13
+* Improved how our SDK handles orientation settings and changes
+* Eliminated main thread checker warnings
+* Updated device information provider
+* Made background webview of banner transparent
+* Ad reporting improvements
+* Removed VunglePlayAdOptionKeyBannerViewSize from pladAdOption
+* Updated Moat version to 3.7.5
+* Various bugs squashed and stability improvements
+
+## VERSION 6.5.0
+* Introduction of Banner Format
+* Continuous improvements to ad caching
+* Updated Moat framework
+* Squashed many other bugs 
 
 ## VERSION 6.4.6
 * Bug Fixes
