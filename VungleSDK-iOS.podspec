@@ -5,11 +5,7 @@
 
 Pod::Spec.new do |s|
 s.name             = "VungleSDK-iOS"
-<<<<<<< HEAD
 s.version          = "6.5.1"
-=======
-s.version          = "6.4.6"
->>>>>>> master
 s.summary          = "Vungle's iOS SDK'"
 s.description      = <<-DESC
 An SDK for video ad based monetization with the Vungle Network
