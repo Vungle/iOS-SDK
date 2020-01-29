@@ -18,11 +18,7 @@ s.author           = { "Vungle" => "tech-support@vungle.com" }
 s.platform     = :ios, '9.0'
 s.requires_arc = true
 
-<<<<<<< HEAD
 s.source           = { :git => "https://github.com/Vungle/iOS-SDK.git", :tag => "6.5.1" }
-=======
-s.source           = { :git => "https://github.com/Vungle/iOS-SDK.git", :tag => "6.4.6" }
->>>>>>> master
 
 s.vendored_frameworks = 'VungleSDK.framework'
 s.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
