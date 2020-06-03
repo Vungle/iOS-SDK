@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -80,6 +80,23 @@
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78J-rL-1vi">
+                                                        <rect key="frame" x="38" y="24" width="105" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Show banner"/>
+                                                        <connections>
+                                                            <action selector="onShowBannerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E6Q-Bz-RGd"/>
+                                                            <segue destination="CVV-Pw-MiD" kind="show" id="Hj9-t4-AJe"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeO-fW-KUZ">
+                                                        <rect key="frame" x="167" y="24" width="67" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="MultiView"/>
+                                                        <connections>
+                                                            <segue destination="9u3-Wa-Us1" kind="show" identifier="" id="Pz6-s9-go5"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -634,6 +651,7 @@
                         <outlet property="loadButton5" destination="g5a-i9-kp7" id="Ij1-nM-su9"/>
                         <outlet property="loadButton6" destination="SP3-zR-GOX" id="1fb-B5-v1c"/>
                         <outlet property="loadButton7" destination="HkH-wa-SOc" id="kdp-79-uwp"/>
+                        <outlet property="multiBannerViewButton" destination="LeO-fW-KUZ" id="gAL-Cx-bMK"/>
                         <outlet property="placementIdLabel1" destination="VzG-W6-Ib0" id="3tL-ca-yx5"/>
                         <outlet property="placementIdLabel2" destination="zyM-gw-tT6" id="iyS-bl-QAO"/>
                         <outlet property="placementIdLabel3" destination="Si3-bk-xtv" id="oiW-do-Dyq"/>
@@ -650,11 +668,275 @@
                         <outlet property="playButton7" destination="MCS-2p-Cdj" id="ow2-so-HHM"/>
                         <outlet property="scrollView" destination="wXx-Q1-rwQ" id="xc3-l9-L08"/>
                         <outlet property="sdkInitButton" destination="Ntw-Za-Aym" id="Htw-yV-bfZ"/>
+                        <outlet property="showBannerButton" destination="78J-rL-1vi" id="qbg-bL-3zo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48.550724637681164" y="20.758928571428569"/>
+            <point key="canvasLocation" x="-547" y="18"/>
+        </scene>
+        <!--Banner List-->
+        <scene sceneID="2Hy-P4-wnq">
+            <objects>
+                <viewController id="CVV-Pw-MiD" customClass="BannerList" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="48F-mu-ib1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ycA-0k-KBV">
+                                <rect key="frame" x="20" y="27" width="374" height="788"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="displayCell" rowHeight="62" id="seu-l5-GHg" userLabel="displayCell">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="62"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="seu-l5-GHg" id="Ngj-Cs-Nb2">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="62"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="adCell" rowHeight="62" id="Xpa-j7-6zR" customClass="DisplayTableViewCell">
+                                        <rect key="frame" x="0.0" y="90" width="374" height="62"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xpa-j7-6zR" id="2q8-gF-oDX">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="62"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wKk-yg-bPp">
+                                                    <rect key="frame" x="37" y="6" width="300" height="55"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="adView" destination="wKk-yg-bPp" id="UVt-dy-6sD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mrecCell" rowHeight="275" id="TgU-T7-l1s" userLabel="mrecCell" customClass="DisplayTableViewCell">
+                                        <rect key="frame" x="0.0" y="152" width="374" height="275"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TgU-T7-l1s" id="qpE-qO-hwh">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="275"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iTO-NA-rEd">
+                                                    <rect key="frame" x="37" y="12" width="300" height="250"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mrecView" destination="iTO-NA-rEd" id="IuK-DH-t9S"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="wfq-5Q-lt6"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ySp-dB-exG"/>
+                    <connections>
+                        <outlet property="tableView" destination="ycA-0k-KBV" id="s5h-k4-RUu"/>
+                        <outlet property="view" destination="48F-mu-ib1" id="miw-Kp-SM5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pE9-yU-1KP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="-356"/>
+        </scene>
+        <!--Multi Ad View Controller-->
+        <scene sceneID="xg0-AM-nEF">
+            <objects>
+                <viewController id="9u3-Wa-Us1" customClass="MultiAdViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I93-cv-AyU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deC-bK-GJQ">
+                                <rect key="frame" x="26" y="44" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Load"/>
+                                <connections>
+                                    <action selector="loadFullScreenTapped:" destination="9u3-Wa-Us1" eventType="touchUpInside" id="sRY-26-ywb"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HtX-Bf-kZG">
+                                <rect key="frame" x="20" y="89" width="374" height="711"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bannerCell" rowHeight="200" id="PSg-2q-XTa" customClass="MultiAdViewTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PSg-2q-XTa" id="V0J-7D-bpt">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ja-Gf-Bir">
+                                                    <rect key="frame" x="43" y="31" width="34" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Load"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iW-az-2AJ">
+                                                    <rect key="frame" x="172" y="32" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Play"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwm-Vg-Wbz">
+                                                    <rect key="frame" x="292" y="32" width="54" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Dismiss"/>
+                                                </button>
+                                                <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Lm-hM-qq8">
+                                                    <rect key="frame" x="27" y="121" width="320" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="adView" destination="6Lm-hM-qq8" id="ezv-O2-CaS"/>
+                                            <outlet property="dismissButton01" destination="Pwm-Vg-Wbz" id="RvX-wW-Pqw"/>
+                                            <outlet property="loadButton01" destination="5ja-Gf-Bir" id="W9g-NI-Yj5"/>
+                                            <outlet property="playButton01" destination="0iW-az-2AJ" id="csk-fh-neZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bannerCell2" rowHeight="200" id="mhV-nq-vFS" customClass="MultiAdViewTableViewCell">
+                                        <rect key="frame" x="0.0" y="228" width="374" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mhV-nq-vFS" id="brP-jf-pZ1">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZ8-e7-z0K">
+                                                    <rect key="frame" x="43" y="31" width="34" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Load"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ys7-H4-33H">
+                                                    <rect key="frame" x="172" y="32" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Play"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE0-mr-a60">
+                                                    <rect key="frame" x="292" y="32" width="54" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Dismiss"/>
+                                                </button>
+                                                <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ctC-et-ylB">
+                                                    <rect key="frame" x="27" y="121" width="320" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="adView" destination="ctC-et-ylB" id="cx1-7d-xgr"/>
+                                            <outlet property="dismissButton01" destination="LE0-mr-a60" id="afc-CM-XSZ"/>
+                                            <outlet property="loadButton01" destination="hZ8-e7-z0K" id="9ag-VP-q1k"/>
+                                            <outlet property="playButton01" destination="ys7-H4-33H" id="wbC-fZ-9ZJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mrecCell2" rowHeight="400" id="hjy-1x-JOz" userLabel="mrecCell2" customClass="MultiAdViewTableViewCell">
+                                        <rect key="frame" x="0.0" y="428" width="374" height="400"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hjy-1x-JOz" id="doG-gH-jkH">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="400"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEr-SQ-fxZ">
+                                                    <rect key="frame" x="49" y="37" width="34" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Load"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKf-tt-kh2">
+                                                    <rect key="frame" x="172" y="37" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Play"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfu-ix-tLD">
+                                                    <rect key="frame" x="289" y="37" width="54" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Dismiss"/>
+                                                </button>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jm6-wK-MXB">
+                                                    <rect key="frame" x="37" y="118" width="300" height="255"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dismissButton02" destination="Vfu-ix-tLD" id="bhh-bN-sR5"/>
+                                            <outlet property="loadButton02" destination="tEr-SQ-fxZ" id="eFY-x6-YVm"/>
+                                            <outlet property="mrecView" destination="Jm6-wK-MXB" id="PEx-j0-7QD"/>
+                                            <outlet property="playButton02" destination="rKf-tt-kh2" id="ub8-1i-Ppn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mrecCell" rowHeight="400" id="Xsg-Ty-8hX" customClass="MultiAdViewTableViewCell">
+                                        <rect key="frame" x="0.0" y="828" width="374" height="400"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xsg-Ty-8hX" id="c7V-bX-1th">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="400"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tg1-A2-c7g">
+                                                    <rect key="frame" x="49" y="37" width="34" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Load"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2p-GR-I1Z">
+                                                    <rect key="frame" x="172" y="37" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Play"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UT-jy-z5i">
+                                                    <rect key="frame" x="289" y="37" width="54" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Dismiss"/>
+                                                </button>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W2O-ku-vyC">
+                                                    <rect key="frame" x="37" y="118" width="300" height="255"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dismissButton02" destination="5UT-jy-z5i" id="Vhc-GQ-NP6"/>
+                                            <outlet property="loadButton02" destination="Tg1-A2-c7g" id="pDK-VY-iXK"/>
+                                            <outlet property="mrecView" destination="W2O-ku-vyC" id="hCF-9R-H7g"/>
+                                            <outlet property="playButton02" destination="f2p-GR-I1Z" id="mPm-SA-rkG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsL-7P-GBI">
+                                <rect key="frame" x="332" y="44" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playFullScreenTapped:" destination="9u3-Wa-Us1" eventType="touchUpInside" id="t0W-a0-ZOC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="XT3-Tu-yLP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WFy-v0-W5g"/>
+                    <connections>
+                        <outlet property="multiAdTableView" destination="HtX-Bf-kZG" id="A0j-30-oCV"/>
+                        <outlet property="playFullScreen" destination="dsL-7P-GBI" id="YmZ-cH-CIl"/>
+                        <outlet property="view" destination="I93-cv-AyU" id="Hd8-te-hat"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ydr-aP-bwh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="766.66666666666674" y="-184.15178571428569"/>
         </scene>
     </scenes>
 </document>

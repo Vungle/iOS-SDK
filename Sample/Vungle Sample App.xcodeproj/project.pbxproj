@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1845D00722D74269006E882F /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1845D00622D74269006E882F /* VungleSDK.framework */; };
-		1845D00822D74269006E882F /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1845D00622D74269006E882F /* VungleSDK.framework */; };
+		903A2290240701CE00365E15 /* DisplayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 903A228F240701CE00365E15 /* DisplayTableViewCell.m */; };
+		903A22C4243BF10F00365E15 /* MultiAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 903A22C3243BF10F00365E15 /* MultiAdViewController.m */; };
+		903A22C7243BFD5200365E15 /* MultiAdViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 903A22C6243BFD5100365E15 /* MultiAdViewTableViewCell.m */; };
+		90464A44246F43E7006D4F96 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90464A43246F43E7006D4F96 /* VungleSDK.framework */; };
+		90C0F81023ECE952006057B7 /* BannerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 90C0F80F23ECE952006057B7 /* BannerList.m */; };
 		DE8F42381BBB0BC9009EC672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */; };
 		E319A21B230CE6D200EE8EC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E319A219230CE6D200EE8EC8 /* Main.storyboard */; };
 		F45D5FCF18E0F05300329123 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F45D5FCD18E0F05300329123 /* InfoPlist.strings */; };
@@ -31,7 +34,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1845D00622D74269006E882F /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VungleSDK.framework; path = ../VungleSDK.framework; sourceTree = "<group>"; };
+		903A228E240701CE00365E15 /* DisplayTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayTableViewCell.h; sourceTree = "<group>"; };
+		903A228F240701CE00365E15 /* DisplayTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisplayTableViewCell.m; sourceTree = "<group>"; };
+		903A22C2243BF10F00365E15 /* MultiAdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiAdViewController.h; sourceTree = "<group>"; };
+		903A22C3243BF10F00365E15 /* MultiAdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiAdViewController.m; sourceTree = "<group>"; };
+		903A22C5243BFD5100365E15 /* MultiAdViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiAdViewTableViewCell.h; sourceTree = "<group>"; };
+		903A22C6243BFD5100365E15 /* MultiAdViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiAdViewTableViewCell.m; sourceTree = "<group>"; };
+		90464A43246F43E7006D4F96 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VungleSDK.framework; path = ../VungleSDK.framework; sourceTree = "<group>"; };
+		90C0F80E23ECE952006057B7 /* BannerList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerList.h; sourceTree = "<group>"; };
+		90C0F80F23ECE952006057B7 /* BannerList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerList.m; sourceTree = "<group>"; };
 		DE8F42351BBB09C7009EC672 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
 		DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEFCFF601BA34127006414B2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -58,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1845D00722D74269006E882F /* VungleSDK.framework in Frameworks */,
+				90464A44246F43E7006D4F96 /* VungleSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1845D00822D74269006E882F /* VungleSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +107,7 @@
 		F45D5FC318E0F05300329123 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1845D00622D74269006E882F /* VungleSDK.framework */,
+				90464A43246F43E7006D4F96 /* VungleSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,6 +124,14 @@
 				E319A514230E2A0D00EE8EC8 /* Constants.h */,
 				F45D5FE218E0F05300329123 /* Images.xcassets */,
 				F45D5FCB18E0F05300329123 /* Supporting Files */,
+				90C0F80E23ECE952006057B7 /* BannerList.h */,
+				90C0F80F23ECE952006057B7 /* BannerList.m */,
+				903A228E240701CE00365E15 /* DisplayTableViewCell.h */,
+				903A228F240701CE00365E15 /* DisplayTableViewCell.m */,
+				903A22C2243BF10F00365E15 /* MultiAdViewController.h */,
+				903A22C3243BF10F00365E15 /* MultiAdViewController.m */,
+				903A22C5243BFD5100365E15 /* MultiAdViewTableViewCell.h */,
+				903A22C6243BFD5100365E15 /* MultiAdViewTableViewCell.m */,
 			);
 			path = "Vungle Sample App";
 			sourceTree = "<group>";
@@ -250,7 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				903A2290240701CE00365E15 /* DisplayTableViewCell.m in Sources */,
+				903A22C4243BF10F00365E15 /* MultiAdViewController.m in Sources */,
 				F45D5FD518E0F05300329123 /* AppDelegate.m in Sources */,
+				903A22C7243BFD5200365E15 /* MultiAdViewTableViewCell.m in Sources */,
+				90C0F81023ECE952006057B7 /* BannerList.m in Sources */,
 				F45D5FDE18E0F05300329123 /* FirstViewController.m in Sources */,
 				F45D5FD118E0F05300329123 /* main.m in Sources */,
 			);
@@ -459,7 +481,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Vungle Sample App.app/Vungle Sample App";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vungle Sample App/Vungle Sample App-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -478,7 +503,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Vungle Sample App.app/Vungle Sample App";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vungle Sample App/Vungle Sample App-Prefix.pch";
 				INFOPLIST_FILE = "Vungle Sample AppTests/Vungle Sample AppTests-Info.plist";
