@@ -33,7 +33,6 @@
     self.multiAdTableView.delegate = self;
     self.multiAdTableView.dataSource = self;
     //CCPA status accepted
-    
     [self.sdk updateCCPAStatus:VungleCCPAAccepted];
     //CCPA status denied
 //    [self.sdk updateCCPAStatus:VungleCCPADenied];
@@ -71,13 +70,8 @@
     NSDictionary *options = @{VungleSDKInitOptionKeyPriorityPlacementID:kVungleTestPlacementID08,VungleSDKInitOptionKeyPriorityPlacementAdSize:[NSNumber numberWithInt:VungleAdSizeBanner]};
     if(![self.sdk startWithAppId:kVungleTestAppID options:options error:&error]) {
         NSLog(@"Error while starting VungleSDK %@",[error localizedDescription]);
-//        [self updateButtonState:self.sdkInitButton enabled:YES];
         return;
     }
-//    if(![self.sdk startWithAppId:kVungleTestAppID error:&error]) {
-//        NSLog(@"Error while starting VungleSDK %@", [error localizedDescription]);
-//        return;
-//    }
 }
 
 #pragma mark - UITableView methods
@@ -297,10 +291,7 @@
 -(void)dismissVungleMrecBottom {
     [self.sdk finishDisplayingAd:kVungleTestPlacementID09];
 }
-//- (void)dismissButtonAction:(UIButton *)sender
-//{
-//    [self performSelector:@selector(dismissVungleBanner:) withObject:k];
-//}
+
 - (void)updateButtons {
     [self updateButtonState:self.bannerCell.loadButton01 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? NO:YES];
     [self updateButtonState:self.bannerCell.playButton01 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? YES:NO];

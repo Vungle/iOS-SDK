@@ -60,8 +60,6 @@
     [super viewDidLoad];
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
-//    [[NSUserDefaults standardUserDefaults] setInteger:2000000000 forKey:@"vungleMinimumFileSystemSizeForInit"];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
     // Do any additional setup after loading the view.
     [self setViewDefault];
 }
@@ -187,8 +185,7 @@
 
 - (IBAction)onDismissButtonTapped:(id)sender {
     if (sender == self.dismissButton5) {
-//        [self.sdk finishDisplayingAd:kVungleTestPlacementID05];
-        [self.sdk finishedDisplayingAd];
+        [self.sdk finishDisplayingAd:kVungleTestPlacementID05];
         [self setPlayingMREC:NO];
         [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, 0)
                                  animated:YES];
@@ -197,8 +194,7 @@
         }
         [self updateButtonState:self.dismissButton5 enabled:NO];
     } else if (sender == self.dismissButton6) {
-//        [self.sdk finishDisplayingAd:kVungleTestPlacementID06];
-        [self.sdk finishedDisplayingAd];
+        [self.sdk finishDisplayingAd:kVungleTestPlacementID06];
         [self setPlayingBanner:NO];
         [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, 0)
                                  animated:YES];
@@ -207,8 +203,7 @@
         }
         [self updateButtonState:self.dismissButton6 enabled:NO];
     }else if (sender == self.dismissButton7) {
-//        [self.sdk finishDisplayingAd:kVungleTestPlacementID07];
-        [self.sdk finishedDisplayingAd];
+        [self.sdk finishDisplayingAd:kVungleTestPlacementID07];
         [self setPlayingBanner:NO];
         [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, 0)
                                  animated:YES];
@@ -402,20 +397,11 @@
     [self.sdk setDelegate:self];  
     [self.sdk setLoggingEnabled:YES];
     NSError *error = nil;
-//    NSDictionary *options = @{VungleSDKInitOptionKeyPriorityPlacementID:kVungleTestPlacementID06,VungleSDKInitOptionKeyPriorityPlacementAdSize:[NSNumber numberWithInt:VungleAdSizeBannerShort]};
-    NSDictionary *options = @{VungleSDKInitOptionKeyPriorityPlacementID:kVungleTestPlacementID06,VungleSDKInitOptionKeyPriorityPlacementAdSize:[NSNumber numberWithInt:VungleAdSizeBannerShort]};
-    if(![self.sdk startWithAppId:kVungleTestAppID options:options error:&error]) {
+    if(![self.sdk startWithAppId:kVungleTestAppID options:nil error:&error]) {
         NSLog(@"Error while starting VungleSDK %@",[error localizedDescription]);
         [self updateButtonState:self.sdkInitButton enabled:YES];
         return;
     }
-//    if(![self.sdk startWithAppId:kVungleTestAppID error:&error]) {
-//        NSLog(@"Error while starting VungleSDK %@", [error localizedDescription]);
-//        [self updateButtonState:self.sdkInitButton enabled:YES];
-//        return;
-//    }
-//    [self.sdk updateCCPAStatus:VungleCCPADenied];
-//    NSLog(@"The updated CCPA status is %ld",(long)[self.sdk getCurrentCCPAStatus]);
 }
 
 #pragma mark - Button Actions

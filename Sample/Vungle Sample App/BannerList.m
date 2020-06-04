@@ -61,15 +61,6 @@
                    
                    
         }
-//        else if (indexPath.row == 3) {
-//            cell = [self.tableView dequeueReusableCellWithIdentifier:@"adCell" forIndexPath:indexPath];
-//                    CGFloat cellWidth = cell.contentView.frame.size.width;
-//            DisplayTableViewCell *bannerCell = (DisplayTableViewCell*) cell;
-//            bannerCell.adView.frame = CGRectMake((cellWidth - 320)/2.0, 10, 320.0, 50.0);
-//            [self displayBannerAd:kVungleTestPlacementID07];
-//            [self.sdk addAdViewToView:bannerCell.adView withOptions:@{} placementID:kVungleTestPlacementID08 error:&error];
-//            NSLog(@"The ID is: %@",kVungleTestPlacementID06);
-//        }
         else if (indexPath.row == (self.totalSize - 4)) {
             cell = [self.tableView dequeueReusableCellWithIdentifier:@"mrecCell" forIndexPath:indexPath];
                     CGFloat cellWidth = cell.contentView.frame.size.width;
@@ -119,7 +110,6 @@
 #pragma mark - VungleSDKDelegate Methods
 - (void)vungleSDKDidInitialize {
     NSLog(@"-->> Delegate Callback: vungleSDKDidInitialize - SDK initialized SUCCESSFULLY");
-//    [self updateButtons];
 }
 -(void)vungleWillShowAdForPlacementID:(NSString *)placementID {
     NSLog(@"VungleWillShowAdForPlacement is called");
