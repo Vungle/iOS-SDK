@@ -225,6 +225,7 @@
 }
 
 #pragma mark - VungleSDKDelegate Methods
+
 - (void)vungleRewardUserForPlacementID:(nullable NSString *)placementID {
     NSLog(@"-->> Delegate Callback: vungleRewardUserForPlacementID: Rewarded for Placement ID: %@", placementID);
 }
