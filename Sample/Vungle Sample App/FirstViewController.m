@@ -229,9 +229,11 @@
 - (void)vungleRewardUserForPlacementID:(nullable NSString *)placementID {
     NSLog(@"-->> Delegate Callback: vungleRewardUserForPlacementID: Rewarded for Placement ID: %@", placementID);
 }
+
 - (void)vungleTrackClickForPlacementID:(nullable NSString *)placementID {
     NSLog(@"-->> Delegate Callback: vungleTrackClickForPlacementID %@",placementID);
 }
+
 - (void)vungleAdPlayabilityUpdate:(BOOL)isAdPlayable placementID:(NSString *)placementID error:(NSError *)error {
     if (isAdPlayable) {
         NSLog(@"-->> Delegate Callback: vungleAdPlayabilityUpdate: Ad is available for Placement ID: %@", placementID);
@@ -270,15 +272,17 @@
            [self updateButtonState:self.playButton7 enabled:isAdPlayable];
        }
 }
+
 - (void)vungleWillLeaveApplicationForPlacementID:(nullable NSString *)placementID {
     NSLog(@"-->> Delegate Callback: vungleWillLeaveApplicationForPlacementId is pressed on %@",placementID);
 }
+
 - (void)vungleDidShowAdForPlacementID:(nullable NSString *)placementID {
     NSLog(@"-->> Delegate Callback: vungleDidShowAdForPlacementID for %@",placementID);
 }
+
 - (void)vungleWillShowAdForPlacementID:(nullable NSString *)placementID {
     NSLog(@"-->> Delegate Callback: vungleWillShowAdForPlacementID");
-    
     if ([placementID isEqualToString:kVungleTestPlacementID01]) {
         NSLog(@"-->> Ad will show for %@", kVungleTestPlacementID01);
         [self updateButtonState:self.playButton1 enabled:NO];
@@ -305,47 +309,13 @@
         [self updateButtonState:self.dismissButton7 enabled:YES];
     }
 }
+
 - (void)vungleWillCloseAdForPlacementID:(nonnull NSString *)placementID {
     NSLog(@"-->> Delegate callback: vungleWillCloseAdForPlacement for %@",placementID);
 }
-//- (void)vungleWillCloseAdWithViewInfo:(VungleViewInfo *)info placementID:(NSString *)placementID {
-////    NSLog(@"-->> Delegate Callback: vungleWillCloseAdWithViewInfo");
-////    NSLog(@"-->> Completed view %@",info.completedView);
-////    NSLog(@"-->> Play Time %@",info.playTime);
-////    NSLog(@"-->> Did download %@",info.didDownload);
-//}
 
-- (void)vungleDidCloseAdWithViewInfo:(VungleViewInfo *)info placementID:(NSString *)placementID {
-    NSLog(@"-->> Delegate Callback: vungleDidCloseAdWithViewInfo %@",placementID);
-    NSLog(@"-->> Completed view %@",info.completedView);
-    NSLog(@"-->> Play Time %@",info.playTime);
-    NSLog(@"-->> Did download %@",info.didDownload);
-
-    if ([placementID isEqualToString:kVungleTestPlacementID01]) {
-        NSLog(@"-->> Ad is closed for %@", kVungleTestPlacementID01);
-    } else if ([placementID isEqualToString:kVungleTestPlacementID02]) {
-        NSLog(@"-->> Ad is closed for %@", kVungleTestPlacementID02);
-    } else if ([placementID isEqualToString:kVungleTestPlacementID03]) {
-        NSLog(@"-->> Ad is closed for %@", kVungleTestPlacementID03);
-    } else if ([placementID isEqualToString:kVungleTestPlacementID04]) {
-        NSLog(@"-->> Ad is closed for %@", kVungleTestPlacementID04);
-    } else if ([placementID isEqualToString:kVungleTestPlacementID05]) {
-        NSLog(@"-->> Ad is closed for %@", kVungleTestPlacementID05);
-        [self updateButtonState:self.dismissButton5 enabled:NO];
-        [self setPlayingMREC:NO];
-    }else if ([placementID isEqualToString:kVungleTestPlacementID06]) {
-        NSLog(@"-->> Ad is closed for %@", kVungleTestPlacementID06);
-        [self updateButtonState:self.dismissButton6 enabled:NO];
-        [self setPlayingBanner:NO];
-    }else if ([placementID isEqualToString:kVungleTestPlacementID07]) {
-        NSLog(@"-->> Ad is closed for %@", kVungleTestPlacementID07);
-        [self updateButtonState:self.dismissButton7 enabled:NO];
-        [self setPlayingBanner:NO];
-    }
-
-    if (info) {
-        NSLog(@"Info about ad viewed: %@", info);
-    }
+-(void)vungleDidCloseAdForPlacementID:(NSString *)placementID {
+    NSLog(@"-->> Delegate callback: vungleDidCloseAdForPlacementID for %@", placementID);
     [self updateButtons];
 }
 
@@ -386,14 +356,14 @@
 - (void)startVungle {
     [self updateButtonState:self.sdkInitButton enabled:NO];
     self.sdk = [VungleSDK sharedSDK];
-    //GDPR status
-    
-//     [self.sdk updateConsentStatus:VungleConsentDenied consentMessageVersion:@"Denied"];
     [self.sdk updateConsentStatus:VungleConsentAccepted consentMessageVersion:@"Accepted"];
-    NSLog(@"The GDPR status is %ld",(long)[self.sdk getCurrentConsentStatus]);
-    //CCPA status
-//    [[VungleSDK sharedSDK] updateCCPAStatus:VungleCCPADenied];
+    /**GDPR status option to opt_out
+     [self.sdk updateConsentStatus:VungleConsentDenied consentMessageVersion:@"Denied"];
+     */
     [self.sdk updateCCPAStatus:VungleCCPAAccepted];
+    /**CCPA Status Opt_Out API Call
+     [self.sdk updateCCPAStatus:VungleCCPADenied];
+     */
     [self.sdk setDelegate:self];  
     [self.sdk setLoggingEnabled:YES];
     NSError *error = nil;
@@ -407,19 +377,15 @@
 #pragma mark - Button Actions
 
 - (IBAction)showAdForPlacement01 {
-    // Play a Vungle ad (with ordinal)
     NSError *error;
-    [self.sdk playAd:self options:@{VunglePlayAdOptionKeyOrdinal: @20031023} placementID:kVungleTestPlacementID01 error:&error];
-    
+    [self.sdk playAd:self options:nil placementID:kVungleTestPlacementID01 error:&error];
     if (error) {
         NSLog(@"Error encountered playing ad: %@", error);
     }
 }
 
 - (IBAction)showAdForPlacement02 {
-    // Play a Vungle ad (with options). Dictionary to set custom ad options.
     NSDictionary *options = @{VunglePlayAdOptionKeyOrientations: @(UIInterfaceOrientationMaskAll),VunglePlayAdOptionKeyOrdinal: @20031023};
-    
     NSError *error;
     [self.sdk playAd:self options:options placementID:kVungleTestPlacementID02 error:&error];
     if (error) {
@@ -429,17 +395,13 @@
 }
 
 - (IBAction)showAdForPlacement03 {
-	// Play a Vungle ad (with options). Dictionary to set custom ad options.
     NSDictionary *options = @{VunglePlayAdOptionKeyUser:@"test_user_id",
-                              VunglePlayAdOptionKeyOrdinal: @20031023,
                               VunglePlayAdOptionKeyIncentivizedAlertBodyText : @"If the video isn't completed you won't get your reward! Are you sure you want to close early?",
 							  VunglePlayAdOptionKeyIncentivizedAlertCloseButtonText : @"Close",
 							  VunglePlayAdOptionKeyIncentivizedAlertContinueButtonText : @"Keep Watching",
 							  VunglePlayAdOptionKeyIncentivizedAlertTitleText : @"Careful!"};
-	
 	NSError *error;
 	[self.sdk playAd:self options:options placementID:kVungleTestPlacementID03 error:&error];
-    
     if (error) {
         NSLog(@"Error encountered playing ad: %@", error);
         [self updateButtonState:self.loadButton3 enabled:YES];
@@ -447,10 +409,8 @@
 }
 
 - (IBAction)showAdForPlacement04 {
-    // Play a Vungle ad without any options
     NSError *error;
     [self.sdk playAd:self options:nil placementID:kVungleTestPlacementID04 error:&error];
-    
     if (error) {
         NSLog(@"Error encountered playing ad: %@", error);
         [self updateButtonState:self.loadButton4 enabled:YES];
@@ -459,7 +419,6 @@
 
 - (IBAction)showAdForPlacement05 {
     NSLog(@"showAdForPlacement05");
-    // Scroll the view to see the ad completely
     CGPoint bottomOffset = CGPointMake(0.0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height-30.0);
     [self.scrollView setContentOffset:bottomOffset animated:YES];
     NSError *error;
@@ -467,7 +426,6 @@
     self.adView = [[UIView alloc]initWithFrame:CGRectMake((screenWidth / 2) - (MREC_AD_WIDTH / 2), screenHeight - MREC_AD_HEIGHT, MREC_AD_WIDTH, MREC_AD_HEIGHT)];
     [self.view addSubview:self.adView];
     [self.sdk addAdViewToView:self.adView withOptions:nil placementID:kVungleTestPlacementID05 error:&error];
-    
     if (error) {
         NSLog(@"Error encountered playing ad: %@", error);
         [self updateButtonState:self.loadButton5 enabled:YES];
@@ -482,15 +440,12 @@
     CGPoint bottomOffset = CGPointMake(0.0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height-30.0);
     [self.scrollView setContentOffset:bottomOffset animated:YES];
     NSError *error;
-    
     [self getScreenDimension];
-    
     CGFloat viewYAxis = screenHeight - BANNER_AD_HEIGHT;
     NSLog(@"viewYAxis is %f",viewYAxis);
        self.adView = [[UIView alloc]initWithFrame:CGRectMake((screenWidth / 2) - (BANNER_SHORT_AD_WIDTH / 2), screenHeight - BANNER_AD_HEIGHT-20, BANNER_SHORT_AD_WIDTH, BANNER_AD_HEIGHT)];
     [self.view addSubview:self.adView];
    [self.sdk addAdViewToView:self.adView withOptions:nil placementID:kVungleTestPlacementID06 error:&error];
-    
     if (error) {
         NSLog(@"Error encountered playing ad: %@", error);
         [self updateButtonState:self.loadButton6 enabled:YES];
