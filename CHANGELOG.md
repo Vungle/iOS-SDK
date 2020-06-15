@@ -1,5 +1,8 @@
 ### Changelog
 
+## VERSION 6.5.3
+* Bugs and issues resolved.
+
 ## VERSION 6.5.1
 * Optimized caching logic to reduce data usage
 * Added additional support for new banner sizes (320x50, 300x50, 728x90)
