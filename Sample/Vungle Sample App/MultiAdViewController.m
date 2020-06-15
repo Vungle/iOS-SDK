@@ -8,20 +8,22 @@
 
 #import "MultiAdViewController.h"
 #import "Constants.h"
-#import "MultiAdViewTableViewCell.h"
+#import "BannerTableViewCell.h"
+#import "MRECTableViewCell.h"
 
 @interface MultiAdViewController () {
         CGFloat screenHeight;
         CGFloat screenWidth;
 }
-@property (strong, nonatomic) IBOutlet UIView *view;
 
+@property (strong, nonatomic) IBOutlet UIView *view;
 @property (nonatomic, strong) VungleSDK *sdk;
-@property MultiAdViewTableViewCell *bannerCell;
-@property MultiAdViewTableViewCell *mrecCell;
-@property MultiAdViewTableViewCell *bannerCell2;
-@property MultiAdViewTableViewCell *mrecCell2;
-@property (nonatomic, assign, getter=isPlayingBanner) BOOL playingBanner;
+@property (nonatomic, assign, getter=isPlayingBanner1) BOOL playingBanner1;
+@property (nonatomic, assign, getter=isPlayingBanner2) BOOL playingBanner2;
+@property (nonatomic, assign, getter=isPlayingMREC1) BOOL playingMREC1;
+@property (nonatomic, assign, getter=isPlayingMREC2) BOOL playingMREC2;
+
+
 @end
 
 @implementation MultiAdViewController
@@ -32,13 +34,13 @@
     [self.view addSubview:self.multiAdTableView];
     self.multiAdTableView.delegate = self;
     self.multiAdTableView.dataSource = self;
-    //CCPA status accepted
     [self.sdk updateCCPAStatus:VungleCCPAAccepted];
-    //CCPA status denied
-//    [self.sdk updateCCPAStatus:VungleCCPADenied];
-    // Do any additional setup after loading the view.
+    /**CCPA Status Denied API call
+     [self.sdk updateCCPAStatus:VungleCCPADenied];
+     */
 }
 -(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self.multiAdTableView reloadData];
 }
 - (IBAction)loadFullScreenTapped:(id)sender {
@@ -60,21 +62,19 @@
         }
     }
 }
-
 - (void)startVungle {
-    NSLog(@"Starting the VungleSDK in banner");
     self.sdk = [VungleSDK sharedSDK];
     [self.sdk setDelegate:self];
     [self.sdk setLoggingEnabled:YES];
     NSError *error = nil;
-    NSDictionary *options = @{VungleSDKInitOptionKeyPriorityPlacementID:kVungleTestPlacementID08,VungleSDKInitOptionKeyPriorityPlacementAdSize:[NSNumber numberWithInt:VungleAdSizeBanner]};
-    if(![self.sdk startWithAppId:kVungleTestAppID options:options error:&error]) {
+    if(![self.sdk startWithAppId:kVungleTestAppID options:nil error:&error]) {
         NSLog(@"Error while starting VungleSDK %@",[error localizedDescription]);
         return;
     }
 }
 
 #pragma mark - UITableView methods
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     CGFloat height = 200.0;
@@ -91,216 +91,278 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView*) tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UITableViewCell *cell;
+    UITableViewCell *cell = [[UITableViewCell alloc] init];
     if (indexPath.row == 0) {
-         cell = [self.multiAdTableView dequeueReusableCellWithIdentifier:@"bannerCell" forIndexPath:indexPath];
-         CGFloat cellWidth = cell.contentView.frame.size.width;
-        NSLog(@"The cellWidth is %f",cellWidth);
-         self.bannerCell = (MultiAdViewTableViewCell*) cell;
-        self.bannerCell.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.bannerCell.adView.frame = CGRectMake((cellWidth - 320)/2.0, 121, 320.0, 50.0);
-        NSLog(@"The adWidth is %f",self.bannerCell.adView.frame.size.width);
-        NSLog(@"The adHeight is %f",self.bannerCell.adView.frame.size.height);
-        [self.bannerCell.loadButton01 addTarget:self action:@selector(loadVungleBannerAd) forControlEvents:UIControlEventTouchUpInside];
-        [self.bannerCell.playButton01 addTarget:self action:@selector(playVungleBannerAd) forControlEvents:UIControlEventTouchUpInside];
-        [self.bannerCell.dismissButton01 addTarget:self action:@selector(dismissVungleBanner) forControlEvents:UIControlEventTouchUpInside];
+        cell = [self.multiAdTableView dequeueReusableCellWithIdentifier:@"bannerCell" forIndexPath:indexPath];
+        BannerTableViewCell *bannerCell = (BannerTableViewCell*) cell;
+        bannerCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [bannerCell.loadBannerButton addTarget:self action:@selector(loadVungleBannerAd) forControlEvents:UIControlEventTouchUpInside];
+        [bannerCell.playBannerButton addTarget:self action:@selector(playVungleBannerAd) forControlEvents:UIControlEventTouchUpInside];
+        [bannerCell.dismissBannerButton addTarget:self action:@selector(dismissVungleBanner) forControlEvents:UIControlEventTouchUpInside];
     } else if (indexPath.row == 1) {
         cell = [self.multiAdTableView dequeueReusableCellWithIdentifier:@"mrecCell" forIndexPath:indexPath];
-         CGFloat cellWidth = cell.contentView.frame.size.width;
-         self.mrecCell = (MultiAdViewTableViewCell*) cell;
-        self.mrecCell.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.mrecCell.mrecView.frame = CGRectMake((cellWidth - 320)/2.0, 118, 300.0, 250.0);
-        NSLog(@"The mrecWidth is %f",self.mrecCell.mrecView.frame.size.width);
-        NSLog(@"The mrecHeight is %f",self.mrecCell.mrecView.frame.size.height);
-        [self.mrecCell.loadButton02 addTarget:self action:@selector(loadVungleMrecAd) forControlEvents:UIControlEventTouchUpInside];
-        [self.mrecCell.playButton02 addTarget:self action:@selector(playVungleMrecAd) forControlEvents:UIControlEventTouchUpInside];
-        [self.mrecCell.dismissButton02 addTarget:self action:@selector(dismissVungleMrec) forControlEvents:UIControlEventTouchUpInside];
+        
+        MRECTableViewCell *mrecCell = (MRECTableViewCell*) cell;
+        mrecCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [mrecCell.loadMRECButton addTarget:self action:@selector(loadVungleMrecAd) forControlEvents:UIControlEventTouchUpInside];
+        [mrecCell.playMRECButton addTarget:self action:@selector(playVungleMrecAd) forControlEvents:UIControlEventTouchUpInside];
+        [mrecCell.dismissMRECButton addTarget:self action:@selector(dismissVungleMrec) forControlEvents:UIControlEventTouchUpInside];
     } else if (indexPath.row == 2) {
-        cell = [self.multiAdTableView dequeueReusableCellWithIdentifier:@"bannerCell2" forIndexPath:indexPath];
-         CGFloat cellWidth = cell.contentView.frame.size.width;
-        NSLog(@"The cellWidth is %f",cellWidth);
-         self.bannerCell2 = (MultiAdViewTableViewCell*) cell;
-        self.bannerCell2.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.bannerCell2.adView.frame = CGRectMake((cellWidth - 320)/2.0, 121, 320.0, 50.0);
-        NSLog(@"The adWidth is %f",self.bannerCell2.adView.frame.size.width);
-        NSLog(@"The adHeight is %f",self.bannerCell2.adView.frame.size.height);
-        [self.bannerCell2.loadButton01 addTarget:self action:@selector(loadVungleBannerAdBottom) forControlEvents:UIControlEventTouchUpInside];
-        [self.bannerCell2.playButton01 addTarget:self action:@selector(playVungleBannerAdBottom) forControlEvents:UIControlEventTouchUpInside];
-        [self.bannerCell2.dismissButton01 addTarget:self action:@selector(dismissVungleBannerBottom) forControlEvents:UIControlEventTouchUpInside];
+        cell = [self.multiAdTableView dequeueReusableCellWithIdentifier:@"bannerCell" forIndexPath:indexPath];
+        BannerTableViewCell *bannerCell2 = (BannerTableViewCell*) cell;
+        bannerCell2.selectionStyle = UITableViewCellSelectionStyleNone;
+        [bannerCell2.loadBannerButton addTarget:self action:@selector(loadVungleBannerAdBottom) forControlEvents:UIControlEventTouchUpInside];
+        [bannerCell2.playBannerButton addTarget:self action:@selector(playVungleBannerAdBottom) forControlEvents:UIControlEventTouchUpInside];
+        [bannerCell2.dismissBannerButton addTarget:self action:@selector(dismissVungleBannerBottom) forControlEvents:UIControlEventTouchUpInside];
     } else if (indexPath.row == 3) {
-        cell = [self.multiAdTableView dequeueReusableCellWithIdentifier:@"mrecCell2" forIndexPath:indexPath];
-         CGFloat cellWidth = cell.contentView.frame.size.width;
-         self.mrecCell2 = (MultiAdViewTableViewCell*) cell;
-        self.mrecCell2.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.mrecCell2.mrecView.frame = CGRectMake((cellWidth - 320)/2.0, 118, 300.0, 250.0);
-        NSLog(@"The mrecWidth is %f",self.mrecCell2.mrecView.frame.size.width);
-        NSLog(@"The mrecHeight is %f",self.mrecCell2.mrecView.frame.size.height);
-        [self.mrecCell2.loadButton02 addTarget:self action:@selector(loadVungleMrecAdBottom) forControlEvents:UIControlEventTouchUpInside];
-        [self.mrecCell2.playButton02 addTarget:self action:@selector(playVungleMrecAdBottom) forControlEvents:UIControlEventTouchUpInside];
-        [self.mrecCell2.dismissButton02 addTarget:self action:@selector(dismissVungleMrecBottom) forControlEvents:UIControlEventTouchUpInside];
+        cell = [self.multiAdTableView dequeueReusableCellWithIdentifier:@"mrecCell" forIndexPath:indexPath];
+        MRECTableViewCell *mrecCell2 = (MRECTableViewCell*) cell;
+        mrecCell2.selectionStyle = UITableViewCellSelectionStyleNone;
+        [mrecCell2.loadMRECButton addTarget:self action:@selector(loadVungleMrecAdBottom) forControlEvents:UIControlEventTouchUpInside];
+        [mrecCell2.playMRECButton addTarget:self action:@selector(playVungleMrecAdBottom) forControlEvents:UIControlEventTouchUpInside];
+        [mrecCell2.dismissMRECButton addTarget:self action:@selector(dismissVungleMrecBottom) forControlEvents:UIControlEventTouchUpInside];
     }
     return cell;
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 #pragma mark - VungleSDKDelegate Methods
+
 - (void)vungleSDKDidInitialize {
     NSLog(@"-->> Delegate Callback: vungleSDKDidInitialize - SDK initialized SUCCESSFULLY");
     [self updateButtons];
 }
 -(void)vungleWillShowAdForPlacementID:(NSString *)placementID {
-    NSLog(@"VungleWillShowAdForPlacement is called %@", placementID);
+    NSLog(@"-->> Delegate Callback: vungleWillShowAdForPlacement is called %@", placementID);
 }
 -(void)vungleAdPlayabilityUpdate:(BOOL)isAdPlayable placementID:(NSString *)placementID error:(NSError *)error {
     if (isAdPlayable) {
-        NSLog(@"vungleAdPlayabilityUpdate is available to be played for %@",placementID);
+        NSLog(@"-->> Delegate Callback: vungleAdPlayabilityUpdate is available to be played for %@",placementID);
+    } else {
+        NSLog(@"-->> Delegate Callback: vungleAdPlayabilityUpdate is NOT available to be played for %@",placementID);
     }
     if ([placementID isEqualToString:kVungleTestPlacementID05]) {
         NSLog(@"vungleAdPlayability for 05");
-        [self updateButtonState:self.mrecCell.playButton02 enabled:isAdPlayable];
+        NSIndexPath *indexPath2 = [NSIndexPath indexPathForItem:1 inSection:0];
+        UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath2];
+        MRECTableViewCell *mCell = (MRECTableViewCell*)cell;
+        if(![self isPlayingMREC1]) {
+            [self updateButtonState:mCell.loadMRECButton enabled:!isAdPlayable];
+        }
+        [self updateButtonState:mCell.playMRECButton enabled:isAdPlayable];
     } else if ([placementID isEqualToString:kVungleTestPlacementID07]) {
         NSLog(@"vungleAdPlayability for 07");
-        [self updateButtonState:self.bannerCell.playButton01 enabled:isAdPlayable];
+        NSIndexPath *indexPath1 = [NSIndexPath indexPathForItem:0 inSection:0];
+        UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath1];
+        BannerTableViewCell *bCell = (BannerTableViewCell*)cell;
+        if (![self isPlayingBanner1]) {
+            [self updateButtonState:bCell.loadBannerButton enabled:!isAdPlayable];
+        }
+        [self updateButtonState:bCell.playBannerButton enabled:isAdPlayable];
     } else if ([placementID isEqualToString:kVungleTestPlacementID08]) {
         NSLog(@"vungleAdPlayability for 08");
-        [self updateButtonState:self.bannerCell2.playButton01 enabled:isAdPlayable];
+        NSIndexPath *indexPath3 = [NSIndexPath indexPathForItem:2 inSection:0];
+        UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath3];
+        BannerTableViewCell *bCell = (BannerTableViewCell*)cell;
+        if (![self isPlayingBanner2]) {
+            [self updateButtonState:bCell.loadBannerButton enabled:!isAdPlayable];
+        }
+        [self updateButtonState:bCell.playBannerButton enabled:isAdPlayable];
     } else if ([placementID isEqualToString:kVungleTestPlacementID09]) {
         NSLog(@"vungleAdPlayability for 09");
-        [self updateButtonState:self.mrecCell2.playButton02 enabled:isAdPlayable];
+        NSIndexPath *indexPath4 = [NSIndexPath indexPathForItem:3 inSection:0];
+        UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath4];
+        MRECTableViewCell *mCell = (MRECTableViewCell*)cell;
+        if (![self isPlayingMREC2]) {
+            [self updateButtonState:mCell.loadMRECButton enabled:!isAdPlayable];
+        }
+        [self updateButtonState:mCell.playMRECButton enabled:isAdPlayable];
+    } else if ([placementID isEqualToString:kVungleTestPlacementID02]) {
+        [self updateButtonState:self.loadFullScreen enabled:!isAdPlayable];
+        [self updateButtonState:self.playFullScreen enabled:isAdPlayable];
     }
 }
 -(void)vungleWillCloseAdForPlacementID:(nonnull NSString *)placementID {
-    NSLog(@"vungleWillCloseAdForPlacementID on %@",placementID);
+    NSLog(@"-->> Delegate Callback: vungleWillCloseAdForPlacementID for %@",placementID);
 }
 - (void)vungleDidCloseAdForPlacementID:(nonnull NSString *)placementID {
-    NSLog(@"vungleDidCloseAdForPlacementID");
+    NSLog(@"-->> Delegate Callback: vungleDidCloseAdForPlacementID for %@", placementID);
 }
 - (void)vungleTrackClickForPlacementID:(nullable NSString *)placementID {
-    NSLog(@"vungleTrackClickForPlacementID");
+    NSLog(@"-->> Delegate Callback: vungleTrackClickForPlacementID for %@", placementID);
 }
 - (void)vungleWillLeaveApplicationForPlacementID:(nullable NSString *)placementID {
-    NSLog(@"vungleWillLeaveApplicationForPlacementID");
+    NSLog(@"-->> Delegate Callback: vungleWillLeaveApplicationForPlacementID for %@", placementID);
 }
+
 #pragma mark - AdTableViewControllerDelegate
+
 - (void)presentedViewControllerWillDismiss:(NSDictionary *)selectedPlacement {
     
 }
 
 #pragma mark - Helper Methods
+
 -(void)loadVungleBannerAd {
-        NSLog(@"ad view dimension is %@",self.bannerCell.adView);
-    NSLog(@"Attempting to load banner ad on MultiAdViewController");
     NSError *error;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+    UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath];
+    BannerTableViewCell *bCell = (BannerTableViewCell*)cell;
     if (![self.sdk loadPlacementWithID:kVungleTestPlacementID07 withSize:VungleAdSizeBanner error:&error]) {
-        [self updateButtonState:self.bannerCell.loadButton01 enabled:YES];
+        [self updateButtonState:bCell.loadBannerButton enabled:YES];
         if (error) {
             NSLog(@"Error encountered trying to load banner ad %@",error);
         }
     } else {
-        [self updateButtonState:self.bannerCell.loadButton01 enabled:NO];
+        [self updateButtonState:bCell.loadBannerButton enabled:NO];
     }
 }
 -(void)loadVungleMrecAd {
-    NSLog(@"Pressing the load MREC button");
     NSError *error;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:1 inSection:0];
+    UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath];
+    MRECTableViewCell *mCell = (MRECTableViewCell*)cell;
     if (![self.sdk loadPlacementWithID:kVungleTestPlacementID05 error:&error]) {
-        [self updateButtonState:self.bannerCell.loadButton02 enabled:YES];
+        [self updateButtonState:mCell.loadMRECButton enabled:YES];
         if (error) {
             NSLog(@"Error encountered trying to load MRECad %@",error);
         }
     } else {
-        [self updateButtonState:self.mrecCell.loadButton02 enabled:NO];
+        [self updateButtonState:mCell.loadMRECButton enabled:NO];
     }
 }
 -(void)loadVungleMrecAdBottom {
-    NSLog(@"Pressing the load MREC button");
     NSError *error;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:3 inSection:0];
+    UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath];
+    MRECTableViewCell *mCell = (MRECTableViewCell*)cell;
     if (![self.sdk loadPlacementWithID:kVungleTestPlacementID09 error:&error]) {
-        [self updateButtonState:self.bannerCell.loadButton02 enabled:YES];
+        [self updateButtonState:mCell.loadMRECButton enabled:YES];
         if (error) {
             NSLog(@"Error encountered trying to load MRECad %@",error);
         }
     } else {
-        [self updateButtonState:self.mrecCell2.loadButton02 enabled:NO];
+        [self updateButtonState:mCell.loadMRECButton enabled:NO];
     }
 }
 -(void)playVungleBannerAd {
-    NSLog(@"ad view dimension is %@",self.bannerCell.adView);
-     NSLog(@"Pressing the play banner button");
     NSError *error;
-    if(![self.sdk addAdViewToView:self.bannerCell.adView withOptions:nil placementID:kVungleTestPlacementID07 error:&error]) {
-        NSLog(@"The play error message is %@",error);
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+    UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath];
+    BannerTableViewCell *bCell = (BannerTableViewCell*)cell;
+    CGFloat cellWidth = cell.contentView.frame.size.width;
+    bCell.bannerView.frame = CGRectMake((cellWidth - 320)/2.0, 121, 320.0, 50.0);
+    bCell.bannerView = [[UIView alloc] initWithFrame:bCell.bannerView.frame];
+    [bCell addSubview:bCell.bannerView];
+    if(![self.sdk addAdViewToView:bCell.bannerView withOptions:nil placementID:kVungleTestPlacementID07 error:&error]) {
+        if(error) {
+            NSLog(@"Error encountered when trying to display banner %@",error);
+        }
     }
-    
+    [self setPlayingBanner1:YES];
 }
 -(void)playVungleMrecAd {
     NSError *error;
-    if (![self.sdk addAdViewToView:self.mrecCell.mrecView withOptions:nil placementID:kVungleTestPlacementID05 error:&error]) {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:1 inSection:0];
+    UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath];
+    MRECTableViewCell *mCell = (MRECTableViewCell*)cell;
+    CGFloat cellWidth = cell.contentView.frame.size.width;
+    mCell.mrecView.frame = CGRectMake((cellWidth - 320)/2.0, 118, 300.0, 250.0);
+    mCell.mrecView = [[UIView alloc] initWithFrame:mCell.mrecView.frame];
+    [mCell addSubview:mCell.mrecView];
+    if (![self.sdk addAdViewToView:mCell.mrecView withOptions:nil placementID:kVungleTestPlacementID05 error:&error]) {
         if (error) {
             NSLog(@"Error encountered trying to load ad %@",error);
         }
     }
-    NSLog(@"mrec view dimension is %f",self.mrecCell.mrecView.bounds.size.width);
+    [self setPlayingMREC1:YES];
 }
 -(void)playVungleMrecAdBottom {
     NSError *error;
-    if (![self.sdk addAdViewToView:self.mrecCell2.mrecView withOptions:nil placementID:kVungleTestPlacementID09 error:&error]) {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:3 inSection:0];
+    UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath];
+    MRECTableViewCell *mCell = (MRECTableViewCell*)cell;
+    CGFloat cellWidth = cell.contentView.frame.size.width;
+    mCell.mrecView.frame = CGRectMake((cellWidth - 320)/2.0, 118, 300.0, 250.0);
+       mCell.mrecView = [[UIView alloc] initWithFrame:mCell.mrecView.frame];
+       [mCell addSubview:mCell.mrecView];
+    if (![self.sdk addAdViewToView:mCell.mrecView withOptions:nil placementID:kVungleTestPlacementID09 error:&error]) {
         if (error) {
             NSLog(@"Error encountered trying to load ad %@",error);
         }
     }
-    NSLog(@"mrec view dimension is %f",self.mrecCell.mrecView.bounds.size.width);
+    [self setPlayingMREC2:YES];
 }
 -(void)loadVungleBannerAdBottom {
-    NSLog(@"Attempting to load the bottom banner");
     NSError *error;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:2 inSection:0];
+    UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath];
+    BannerTableViewCell *bCell = (BannerTableViewCell*)cell;
     if(![self.sdk loadPlacementWithID:kVungleTestPlacementID08 withSize:VungleAdSizeBanner error:&error]) {
-        [self updateButtonState:self.bannerCell2.loadButton01 enabled:YES];
+        [self updateButtonState:bCell.loadBannerButton enabled:YES];
         if(error) {
             NSLog(@"Error encountered when attempting to load the bottom banner %@",error);
         }
     } else {
-        [self updateButtonState:self.bannerCell2.loadButton01 enabled:NO];
+        [self updateButtonState:bCell.loadBannerButton enabled:NO];
     }
 }
 -(void)playVungleBannerAdBottom {
     NSError *error;
-    if (![self.sdk addAdViewToView:self.bannerCell2.adView withOptions:nil placementID:kVungleTestPlacementID08 error:&error]) {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:2 inSection:0];
+    UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath];
+    BannerTableViewCell *bCell = (BannerTableViewCell*)cell;
+    CGFloat cellWidth = cell.contentView.frame.size.width;
+    bCell.bannerView.frame = CGRectMake((cellWidth - 320)/2.0, 121, 320.0, 50.0);
+    bCell.bannerView = [[UIView alloc] initWithFrame:bCell.bannerView.frame];
+    [bCell addSubview:bCell.bannerView];
+    if (![self.sdk addAdViewToView:bCell.bannerView withOptions:nil placementID:kVungleTestPlacementID08 error:&error]) {
         if (error) {
             NSLog(@"Error encountered trying to load ad %@",error);
         }
     }
-    NSLog(@"mrec view dimension is %f",self.bannerCell2.adView.bounds.size.width);
+    [self setPlayingBanner2:YES];
 }
 -(void)dismissVungleBanner {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+    UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath];
+    BannerTableViewCell *bCell = (BannerTableViewCell*)cell;
     [self.sdk finishDisplayingAd:kVungleTestPlacementID07];
+    if (bCell.bannerView != nil) {
+        [bCell.bannerView removeFromSuperview];
+    }
 }
 -(void)dismissVungleMrec {
     [self.sdk finishDisplayingAd:kVungleTestPlacementID05];
 }
 -(void)dismissVungleBannerBottom {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:2 inSection:0];
+    UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath];
+    BannerTableViewCell *bCell = (BannerTableViewCell*)cell;
     [self.sdk finishDisplayingAd:kVungleTestPlacementID08];
+    if (bCell.bannerView != nil) {
+        [bCell.bannerView removeFromSuperview];
+    }
 }
 -(void)dismissVungleMrecBottom {
     [self.sdk finishDisplayingAd:kVungleTestPlacementID09];
 }
 
 - (void)updateButtons {
-    [self updateButtonState:self.bannerCell.loadButton01 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? NO:YES];
-    [self updateButtonState:self.bannerCell.playButton01 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? YES:NO];
-    [self updateButtonState:self.mrecCell.loadButton02 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID05]? NO:YES];
-    [self updateButtonState:self.mrecCell.playButton02 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID05]? YES:NO];
-    [self updateButtonState:self.bannerCell2.loadButton01 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID08]? NO:YES];
-    [self updateButtonState:self.bannerCell2.playButton01 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID08]? YES:NO];
-    [self updateButtonState:self.mrecCell2.loadButton02 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID09]? NO:YES];
-    [self updateButtonState:self.mrecCell2.playButton02 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID09]? YES:NO];
+    NSIndexPath *indexPath1 = [NSIndexPath indexPathForItem:0 inSection:0];
+    NSIndexPath *indexPath2 = [NSIndexPath indexPathForItem:1 inSection:0];
+    NSIndexPath *indexPath3 = [NSIndexPath indexPathForItem:2 inSection:0];
+    NSIndexPath *indexPath4 = [NSIndexPath indexPathForItem:3 inSection:0];
+    BannerTableViewCell *bCell1 = (BannerTableViewCell*)([self.multiAdTableView cellForRowAtIndexPath:indexPath1]);
+    BannerTableViewCell *bCell2 = (BannerTableViewCell*)([self.multiAdTableView cellForRowAtIndexPath:indexPath3]);
+    MRECTableViewCell *mCell1 = (MRECTableViewCell*)([self.multiAdTableView cellForRowAtIndexPath:indexPath2]);
+    MRECTableViewCell *mCell2 = (MRECTableViewCell*)([self.multiAdTableView cellForRowAtIndexPath:indexPath4]);
+    [self updateButtonState:bCell1.loadBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? YES:NO];
+    [self updateButtonState:bCell1.playBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? NO:YES];
+    [self updateButtonState:mCell1.loadMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID05]? YES:NO];
+    [self updateButtonState:mCell1.playMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID05]? NO:YES];
+    [self updateButtonState:bCell2.loadBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID08]? YES:NO];
+    [self updateButtonState:bCell2.playBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID08]? NO:YES];
+    [self updateButtonState:mCell2.loadMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID09]? YES:NO];
+    [self updateButtonState:mCell2.playMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID09]? NO:YES];
 }
 
 - (void)updateButtonState:(UIButton *) button enabled:(BOOL)enabled {

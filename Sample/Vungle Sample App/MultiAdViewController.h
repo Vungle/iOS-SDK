@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MultiAdViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,VungleSDKDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *multiAdTableView;
 @property (weak, nonatomic) IBOutlet UIButton *playFullScreen;
+@property (weak, nonatomic) IBOutlet UIButton *loadFullScreen;
 
 @end
 

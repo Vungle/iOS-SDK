@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="FirstViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1446"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXx-Q1-rwQ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1466"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1412"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OQt-uT-8yO">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="950"/>
@@ -51,13 +51,6 @@
                                                             <action selector="onInitButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="alf-rQ-xa8"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhW-Bo-I1n">
-                                                        <rect key="frame" x="246" y="24" width="78" height="30"/>
-                                                        <state key="normal" title="Log Status "/>
-                                                        <connections>
-                                                            <action selector="onCheckCurrentStatusButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GFU-BL-DA8"/>
-                                                        </connections>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVB-zZ-rjX">
                                                         <rect key="frame" x="8" y="158" width="359" height="30"/>
                                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -80,19 +73,14 @@
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78J-rL-1vi">
-                                                        <rect key="frame" x="38" y="24" width="105" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Show banner"/>
-                                                        <connections>
-                                                            <action selector="onShowBannerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E6Q-Bz-RGd"/>
-                                                            <segue destination="CVV-Pw-MiD" kind="show" id="Hj9-t4-AJe"/>
-                                                        </connections>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeO-fW-KUZ">
-                                                        <rect key="frame" x="167" y="24" width="67" height="30"/>
+                                                        <rect key="frame" x="70" y="8" width="234" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="MultiView"/>
+                                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <state key="normal" title="Multiple Banner/MREC display">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <segue destination="9u3-Wa-Us1" kind="show" identifier="" id="Pz6-s9-go5"/>
                                                         </connections>
@@ -102,7 +90,6 @@
                                                 <constraints>
                                                     <constraint firstItem="VzG-W6-Ib0" firstAttribute="top" secondItem="awW-kQ-Qcw" secondAttribute="top" constant="125" id="22E-gD-lq1"/>
                                                     <constraint firstAttribute="trailing" secondItem="iHZ-kI-Kbh" secondAttribute="trailing" constant="-5" id="2Le-EJ-rQO"/>
-                                                    <constraint firstItem="Ntw-Za-Aym" firstAttribute="top" secondItem="lhW-Bo-I1n" secondAttribute="bottom" constant="27" id="5LS-O4-oqV"/>
                                                     <constraint firstAttribute="bottom" secondItem="Ntw-Za-Aym" secondAttribute="bottom" constant="89" id="D5B-z5-oD5"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W6v-3J-Cuk" secondAttribute="trailing" constant="20" symbolic="YES" id="E54-Mf-MMH"/>
                                                     <constraint firstItem="Ntw-Za-Aym" firstAttribute="leading" secondItem="awW-kQ-Qcw" secondAttribute="leading" constant="8" id="JfH-cb-xQc"/>
@@ -111,8 +98,6 @@
                                                     <constraint firstAttribute="bottom" secondItem="W6v-3J-Cuk" secondAttribute="bottom" constant="133.5" id="Od0-DX-6wh"/>
                                                     <constraint firstItem="MVB-zZ-rjX" firstAttribute="top" secondItem="awW-kQ-Qcw" secondAttribute="top" constant="158" id="Ojf-h5-zx2"/>
                                                     <constraint firstItem="Ntw-Za-Aym" firstAttribute="top" secondItem="awW-kQ-Qcw" secondAttribute="top" constant="81" id="UCK-mP-BNI"/>
-                                                    <constraint firstItem="lhW-Bo-I1n" firstAttribute="top" secondItem="awW-kQ-Qcw" secondAttribute="top" constant="24" id="Xg0-8N-AT6"/>
-                                                    <constraint firstAttribute="trailing" secondItem="lhW-Bo-I1n" secondAttribute="trailing" constant="51" id="YUh-vd-FKL"/>
                                                     <constraint firstItem="iHZ-kI-Kbh" firstAttribute="top" secondItem="awW-kQ-Qcw" secondAttribute="top" constant="202" id="YVg-vg-wmt"/>
                                                     <constraint firstItem="W6v-3J-Cuk" firstAttribute="top" secondItem="awW-kQ-Qcw" secondAttribute="top" constant="46" id="dMm-64-zw5"/>
                                                     <constraint firstAttribute="trailing" secondItem="Ntw-Za-Aym" secondAttribute="trailing" constant="8" id="jMS-2Y-mRd"/>
@@ -121,7 +106,6 @@
                                                     <constraint firstAttribute="bottom" secondItem="MVB-zZ-rjX" secondAttribute="bottom" constant="12" id="pRJ-Ae-s6C"/>
                                                     <constraint firstAttribute="trailing" secondItem="MVB-zZ-rjX" secondAttribute="trailing" constant="8" id="q5Q-e7-0f2"/>
                                                     <constraint firstItem="iHZ-kI-Kbh" firstAttribute="leading" secondItem="awW-kQ-Qcw" secondAttribute="leading" id="qbc-ds-jIh"/>
-                                                    <constraint firstItem="lhW-Bo-I1n" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="awW-kQ-Qcw" secondAttribute="leading" constant="20" symbolic="YES" id="rsN-jZ-adZ"/>
                                                     <constraint firstAttribute="bottom" secondItem="iHZ-kI-Kbh" secondAttribute="bottom" constant="-5" id="xPL-TW-h1i"/>
                                                     <constraint firstItem="MVB-zZ-rjX" firstAttribute="leading" secondItem="awW-kQ-Qcw" secondAttribute="leading" constant="8" id="zdS-sG-Twu"/>
                                                 </constraints>
@@ -637,11 +621,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bwL-TS-oyJ"/>
                     <value key="contentSizeForViewInPopover" type="size" width="375" height="1500"/>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
                         <outlet property="appIdLabel" destination="W6v-3J-Cuk" id="CNU-UL-QWv"/>
-                        <outlet property="checkCurrentStatusButton" destination="lhW-Bo-I1n" id="EJm-zG-jBs"/>
                         <outlet property="dismissButton5" destination="piz-tM-D3r" id="cbK-98-gOK"/>
                         <outlet property="dismissButton6" destination="Mm7-bP-5p1" id="0Rp-hM-bTX"/>
                         <outlet property="dismissButton7" destination="iDo-ao-9Rd" id="qtu-vr-9kQ"/>
@@ -668,7 +652,6 @@
                         <outlet property="playButton7" destination="MCS-2p-Cdj" id="ow2-so-HHM"/>
                         <outlet property="scrollView" destination="wXx-Q1-rwQ" id="xc3-l9-L08"/>
                         <outlet property="sdkInitButton" destination="Ntw-Za-Aym" id="Htw-yV-bfZ"/>
-                        <outlet property="showBannerButton" destination="78J-rL-1vi" id="qbg-bL-3zo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -680,7 +663,7 @@
             <objects>
                 <viewController id="CVV-Pw-MiD" customClass="BannerList" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="48F-mu-ib1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ycA-0k-KBV">
@@ -746,7 +729,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pE9-yU-1KP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="-356"/>
+            <point key="canvasLocation" x="-104" y="-950"/>
         </scene>
         <!--Multi Ad View Controller-->
         <scene sceneID="xg0-AM-nEF">
@@ -757,9 +740,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deC-bK-GJQ">
-                                <rect key="frame" x="26" y="44" width="34" height="30"/>
+                                <rect key="frame" x="107" y="45" width="131" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Load"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Load FullScreen">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="loadFullScreenTapped:" destination="9u3-Wa-Us1" eventType="touchUpInside" id="sRY-26-ywb"/>
                                 </connections>
@@ -769,7 +756,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bannerCell" rowHeight="200" id="PSg-2q-XTa" customClass="MultiAdViewTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bannerCell" rowHeight="200" id="PSg-2q-XTa" customClass="BannerTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="374" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PSg-2q-XTa" id="V0J-7D-bpt">
@@ -777,148 +764,116 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ja-Gf-Bir">
-                                                    <rect key="frame" x="43" y="31" width="34" height="30"/>
+                                                    <rect key="frame" x="41" y="32" width="59" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Load"/>
+                                                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <state key="normal" title="Load">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iW-az-2AJ">
-                                                    <rect key="frame" x="172" y="32" width="30" height="30"/>
+                                                    <rect key="frame" x="151" y="33" width="73" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Play"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwm-Vg-Wbz">
-                                                    <rect key="frame" x="292" y="32" width="54" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Dismiss"/>
+                                                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <state key="normal" title="Play">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
                                                 </button>
                                                 <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Lm-hM-qq8">
                                                     <rect key="frame" x="27" y="121" width="320" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwm-Vg-Wbz">
+                                                    <rect key="frame" x="265" y="31" width="69" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <state key="normal" title="Dismiss">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="adView" destination="6Lm-hM-qq8" id="ezv-O2-CaS"/>
-                                            <outlet property="dismissButton01" destination="Pwm-Vg-Wbz" id="RvX-wW-Pqw"/>
-                                            <outlet property="loadButton01" destination="5ja-Gf-Bir" id="W9g-NI-Yj5"/>
-                                            <outlet property="playButton01" destination="0iW-az-2AJ" id="csk-fh-neZ"/>
+                                            <outlet property="bannerView" destination="6Lm-hM-qq8" id="pZ7-T3-ee9"/>
+                                            <outlet property="dismissBannerButton" destination="Pwm-Vg-Wbz" id="V0n-y6-iPk"/>
+                                            <outlet property="loadBannerButton" destination="5ja-Gf-Bir" id="eSP-4G-ujp"/>
+                                            <outlet property="playBannerButton" destination="0iW-az-2AJ" id="Ihp-gi-6zQ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bannerCell2" rowHeight="200" id="mhV-nq-vFS" customClass="MultiAdViewTableViewCell">
-                                        <rect key="frame" x="0.0" y="228" width="374" height="200"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mhV-nq-vFS" id="brP-jf-pZ1">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZ8-e7-z0K">
-                                                    <rect key="frame" x="43" y="31" width="34" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Load"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ys7-H4-33H">
-                                                    <rect key="frame" x="172" y="32" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Play"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE0-mr-a60">
-                                                    <rect key="frame" x="292" y="32" width="54" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Dismiss"/>
-                                                </button>
-                                                <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ctC-et-ylB">
-                                                    <rect key="frame" x="27" y="121" width="320" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                </view>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="adView" destination="ctC-et-ylB" id="cx1-7d-xgr"/>
-                                            <outlet property="dismissButton01" destination="LE0-mr-a60" id="afc-CM-XSZ"/>
-                                            <outlet property="loadButton01" destination="hZ8-e7-z0K" id="9ag-VP-q1k"/>
-                                            <outlet property="playButton01" destination="ys7-H4-33H" id="wbC-fZ-9ZJ"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mrecCell2" rowHeight="400" id="hjy-1x-JOz" userLabel="mrecCell2" customClass="MultiAdViewTableViewCell">
-                                        <rect key="frame" x="0.0" y="428" width="374" height="400"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hjy-1x-JOz" id="doG-gH-jkH">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="400"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEr-SQ-fxZ">
-                                                    <rect key="frame" x="49" y="37" width="34" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Load"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKf-tt-kh2">
-                                                    <rect key="frame" x="172" y="37" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Play"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfu-ix-tLD">
-                                                    <rect key="frame" x="289" y="37" width="54" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Dismiss"/>
-                                                </button>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jm6-wK-MXB">
-                                                    <rect key="frame" x="37" y="118" width="300" height="255"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                </view>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="dismissButton02" destination="Vfu-ix-tLD" id="bhh-bN-sR5"/>
-                                            <outlet property="loadButton02" destination="tEr-SQ-fxZ" id="eFY-x6-YVm"/>
-                                            <outlet property="mrecView" destination="Jm6-wK-MXB" id="PEx-j0-7QD"/>
-                                            <outlet property="playButton02" destination="rKf-tt-kh2" id="ub8-1i-Ppn"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mrecCell" rowHeight="400" id="Xsg-Ty-8hX" customClass="MultiAdViewTableViewCell">
-                                        <rect key="frame" x="0.0" y="828" width="374" height="400"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mrecCell" rowHeight="400" id="Xsg-Ty-8hX" customClass="MRECTableViewCell">
+                                        <rect key="frame" x="0.0" y="228" width="374" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xsg-Ty-8hX" id="c7V-bX-1th">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="400"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tg1-A2-c7g">
-                                                    <rect key="frame" x="49" y="37" width="34" height="30"/>
+                                                    <rect key="frame" x="37" y="37" width="68" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Load"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2p-GR-I1Z">
-                                                    <rect key="frame" x="172" y="37" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Play"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UT-jy-z5i">
-                                                    <rect key="frame" x="289" y="37" width="54" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Dismiss"/>
+                                                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <state key="normal" title="Load">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
                                                 </button>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W2O-ku-vyC">
-                                                    <rect key="frame" x="37" y="118" width="300" height="255"/>
+                                                    <rect key="frame" x="37" y="118" width="300" height="250"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2p-GR-I1Z">
+                                                    <rect key="frame" x="146" y="37" width="82" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <state key="normal" title="Play">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UT-jy-z5i">
+                                                    <rect key="frame" x="265" y="37" width="72" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <state key="normal" title="Dismiss">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dismissButton02" destination="5UT-jy-z5i" id="Vhc-GQ-NP6"/>
-                                            <outlet property="loadButton02" destination="Tg1-A2-c7g" id="pDK-VY-iXK"/>
-                                            <outlet property="mrecView" destination="W2O-ku-vyC" id="hCF-9R-H7g"/>
-                                            <outlet property="playButton02" destination="f2p-GR-I1Z" id="mPm-SA-rkG"/>
+                                            <outlet property="dismissMRECButton" destination="5UT-jy-z5i" id="gqH-0B-NoO"/>
+                                            <outlet property="loadMRECButton" destination="Tg1-A2-c7g" id="D1P-py-pAr"/>
+                                            <outlet property="mrecView" destination="W2O-ku-vyC" id="wfV-i3-9Xc"/>
+                                            <outlet property="playMRECButton" destination="f2p-GR-I1Z" id="0Hk-qh-IDk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsL-7P-GBI">
-                                <rect key="frame" x="332" y="44" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhv-tO-jH3">
+                                <rect key="frame" x="53" y="45" width="39" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ypa-LK-NYX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsL-7P-GBI">
+                                <rect key="frame" x="246" y="44" width="119" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Play FullScreen">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="playFullScreenTapped:" destination="9u3-Wa-Us1" eventType="touchUpInside" id="t0W-a0-ZOC"/>
                                 </connections>
@@ -929,6 +884,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="WFy-v0-W5g"/>
                     <connections>
+                        <outlet property="loadFullScreen" destination="deC-bK-GJQ" id="wzn-9m-G9O"/>
                         <outlet property="multiAdTableView" destination="HtX-Bf-kZG" id="A0j-30-oCV"/>
                         <outlet property="playFullScreen" destination="dsL-7P-GBI" id="YmZ-cH-CIl"/>
                         <outlet property="view" destination="I93-cv-AyU" id="Hd8-te-hat"/>
@@ -936,7 +892,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydr-aP-bwh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766.66666666666674" y="-184.15178571428569"/>
+            <point key="canvasLocation" x="88" y="-218"/>
         </scene>
     </scenes>
 </document>
