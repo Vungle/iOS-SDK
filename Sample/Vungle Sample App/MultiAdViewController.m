@@ -376,14 +376,14 @@
     BannerTableViewCell *bCell2 = (BannerTableViewCell*)([self.multiAdTableView cellForRowAtIndexPath:indexPath3]);
     MRECTableViewCell *mCell1 = (MRECTableViewCell*)([self.multiAdTableView cellForRowAtIndexPath:indexPath2]);
     MRECTableViewCell *mCell2 = (MRECTableViewCell*)([self.multiAdTableView cellForRowAtIndexPath:indexPath4]);
-    [self updateButtonState:bCell1.loadBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? YES:NO];
-    [self updateButtonState:bCell1.playBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? NO:YES];
-    [self updateButtonState:mCell1.loadMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID05]? YES:NO];
-    [self updateButtonState:mCell1.playMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID05]? NO:YES];
-    [self updateButtonState:bCell2.loadBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID08]? YES:NO];
-    [self updateButtonState:bCell2.playBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID08]? NO:YES];
-    [self updateButtonState:mCell2.loadMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID09]? YES:NO];
-    [self updateButtonState:mCell2.playMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID09]? NO:YES];
+    [self updateButtonState:bCell1.loadBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? NO:YES];
+    [self updateButtonState:bCell1.playBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? YES:NO];
+    [self updateButtonState:mCell1.loadMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID05]? NO:YES];
+    [self updateButtonState:mCell1.playMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID05]? YES:NO];
+    [self updateButtonState:bCell2.loadBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID08]? NO:YES];
+    [self updateButtonState:bCell2.playBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID08]? YES:NO];
+    [self updateButtonState:mCell2.loadMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID09]? NO:YES];
+    [self updateButtonState:mCell2.playMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID09]? YES:NO];
 }
 
 - (void)updateButtonState:(UIButton *) button enabled:(BOOL)enabled {
