@@ -23,7 +23,6 @@
 @property (nonatomic, assign, getter=isPlayingMREC1) BOOL playingMREC1;
 @property (nonatomic, assign, getter=isPlayingMREC2) BOOL playingMREC2;
 
-
 @end
 
 @implementation MultiAdViewController
@@ -39,10 +38,12 @@
      [self.sdk updateCCPAStatus:VungleCCPADenied];
      */
 }
+
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.multiAdTableView reloadData];
 }
+
 - (IBAction)loadFullScreenTapped:(id)sender {
     NSError* error;
     if (![self.sdk loadPlacementWithID:kVungleTestPlacementID02 error:&error]) {
@@ -54,6 +55,7 @@
         [self updateButtonState:sender enabled:NO];
     }
 }
+
 - (IBAction)playFullScreenTapped:(id)sender {
     NSError* error;
     if (![self.sdk playAd:self options:nil placementID:kVungleTestPlacementID02 error:&error]) {
@@ -62,6 +64,7 @@
         }
     }
 }
+
 - (void)startVungle {
     self.sdk = [VungleSDK sharedSDK];
     [self.sdk setDelegate:self];
@@ -83,9 +86,11 @@
     }
     return height;
 }
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 4;
 }
@@ -124,15 +129,18 @@
     }
     return cell;
 }
+
 #pragma mark - VungleSDKDelegate Methods
 
 - (void)vungleSDKDidInitialize {
     NSLog(@"-->> Delegate Callback: vungleSDKDidInitialize - SDK initialized SUCCESSFULLY");
     [self updateButtons];
 }
+
 -(void)vungleWillShowAdForPlacementID:(NSString *)placementID {
     NSLog(@"-->> Delegate Callback: vungleWillShowAdForPlacement is called %@", placementID);
 }
+
 -(void)vungleAdPlayabilityUpdate:(BOOL)isAdPlayable placementID:(NSString *)placementID error:(NSError *)error {
     if (isAdPlayable) {
         NSLog(@"-->> Delegate Callback: vungleAdPlayabilityUpdate is available to be played for %@",placementID);
@@ -180,15 +188,19 @@
         [self updateButtonState:self.playFullScreen enabled:isAdPlayable];
     }
 }
+
 -(void)vungleWillCloseAdForPlacementID:(nonnull NSString *)placementID {
     NSLog(@"-->> Delegate Callback: vungleWillCloseAdForPlacementID for %@",placementID);
 }
+
 - (void)vungleDidCloseAdForPlacementID:(nonnull NSString *)placementID {
     NSLog(@"-->> Delegate Callback: vungleDidCloseAdForPlacementID for %@", placementID);
 }
+
 - (void)vungleTrackClickForPlacementID:(nullable NSString *)placementID {
     NSLog(@"-->> Delegate Callback: vungleTrackClickForPlacementID for %@", placementID);
 }
+
 - (void)vungleWillLeaveApplicationForPlacementID:(nullable NSString *)placementID {
     NSLog(@"-->> Delegate Callback: vungleWillLeaveApplicationForPlacementID for %@", placementID);
 }
@@ -215,6 +227,7 @@
         [self updateButtonState:bCell.loadBannerButton enabled:NO];
     }
 }
+
 -(void)loadVungleMrecAd {
     NSError *error;
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:1 inSection:0];
@@ -229,6 +242,7 @@
         [self updateButtonState:mCell.loadMRECButton enabled:NO];
     }
 }
+
 -(void)loadVungleMrecAdBottom {
     NSError *error;
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:3 inSection:0];
@@ -243,6 +257,7 @@
         [self updateButtonState:mCell.loadMRECButton enabled:NO];
     }
 }
+
 -(void)playVungleBannerAd {
     NSError *error;
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
@@ -259,6 +274,7 @@
     }
     [self setPlayingBanner1:YES];
 }
+
 -(void)playVungleMrecAd {
     NSError *error;
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:1 inSection:0];
@@ -275,6 +291,7 @@
     }
     [self setPlayingMREC1:YES];
 }
+
 -(void)playVungleMrecAdBottom {
     NSError *error;
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:3 inSection:0];
@@ -291,6 +308,7 @@
     }
     [self setPlayingMREC2:YES];
 }
+
 -(void)loadVungleBannerAdBottom {
     NSError *error;
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:2 inSection:0];
@@ -305,6 +323,7 @@
         [self updateButtonState:bCell.loadBannerButton enabled:NO];
     }
 }
+
 -(void)playVungleBannerAdBottom {
     NSError *error;
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:2 inSection:0];
@@ -321,6 +340,7 @@
     }
     [self setPlayingBanner2:YES];
 }
+
 -(void)dismissVungleBanner {
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
     UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath];
@@ -342,6 +362,7 @@
         [bCell.bannerView removeFromSuperview];
     }
 }
+
 -(void)dismissVungleMrecBottom {
     [self.sdk finishDisplayingAd:kVungleTestPlacementID09];
 }
@@ -369,4 +390,5 @@
     button.enabled = enabled;
     button.alpha = (enabled? 1.0:.5);
 }
+
 @end
