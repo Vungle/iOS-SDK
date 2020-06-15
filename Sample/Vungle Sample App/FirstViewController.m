@@ -43,7 +43,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *dismissButton6;
 @property (weak, nonatomic) IBOutlet UIButton *dismissButton7;
 @property (weak, nonatomic) IBOutlet UIButton *checkCurrentStatusButton;
-@property (weak, nonatomic) IBOutlet UIButton *showBannerButton;
 @property (weak, nonatomic) IBOutlet UIButton *multiBannerViewButton;
 @property (nonatomic, strong) VungleSDK *sdk;
 @property (retain, nonatomic) UIView *adView;
