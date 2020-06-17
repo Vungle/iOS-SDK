@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *loadBannerButton;
 @property (weak, nonatomic) IBOutlet UIButton *playBannerButton;
 @property (weak, nonatomic) IBOutlet UIButton *dismissBannerButton;
+@property (weak, nonatomic) IBOutlet UILabel *bannerLabel;
 @property (retain, nonatomic) IBOutlet UIView *bannerView;
 
 @end
