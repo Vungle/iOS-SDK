@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *loadMRECButton;
 @property (weak, nonatomic) IBOutlet UIButton *playMRECButton;
 @property (weak, nonatomic) IBOutlet UIButton *dismissMRECButton;
+@property (weak, nonatomic) IBOutlet UILabel *mrecLabel;
 @property (retain, nonatomic) IBOutlet UIView *mrecView;
 
 @end
