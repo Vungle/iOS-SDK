@@ -18,10 +18,10 @@
 
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (nonatomic, strong) VungleSDK *sdk;
-@property (nonatomic, assign, getter=isPlayingBanner1) BOOL playingBanner1;
-@property (nonatomic, assign, getter=isPlayingBanner2) BOOL playingBanner2;
-@property (nonatomic, assign, getter=isPlayingMREC1) BOOL playingMREC1;
-@property (nonatomic, assign, getter=isPlayingMREC2) BOOL playingMREC2;
+@property (nonatomic, assign, getter = isPlayingBanner1) BOOL playingBanner1;
+@property (nonatomic, assign, getter = isPlayingBanner2) BOOL playingBanner2;
+@property (nonatomic, assign, getter = isPlayingMREC1) BOOL playingMREC1;
+@property (nonatomic, assign, getter = isPlayingMREC2) BOOL playingMREC2;
 
 @end
 
@@ -29,7 +29,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self startVungle];
     [self.view addSubview:self.multiAdTableView];
     self.multiAdTableView.delegate = self;
     self.multiAdTableView.dataSource = self;
@@ -41,7 +40,12 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [self setFullscreenDefault];
     [self.multiAdTableView reloadData];
+}
+
+- (IBAction)startTapped:(id)sender {
+    [self startVungle];
 }
 
 - (IBAction)loadFullScreenTapped:(id)sender {
@@ -62,17 +66,6 @@
         if (error) {
             NSLog(@"Error when attempting to play fullscreen ad %@",error);
         }
-    }
-}
-
-- (void)startVungle {
-    self.sdk = [VungleSDK sharedSDK];
-    [self.sdk setDelegate:self];
-    [self.sdk setLoggingEnabled:YES];
-    NSError *error = nil;
-    if(![self.sdk startWithAppId:kVungleTestAppID options:nil error:&error]) {
-        NSLog(@"Error while starting VungleSDK %@",[error localizedDescription]);
-        return;
     }
 }
 
@@ -101,14 +94,31 @@
         cell = [self.multiAdTableView dequeueReusableCellWithIdentifier:@"bannerCell" forIndexPath:indexPath];
         BannerTableViewCell *bannerCell = (BannerTableViewCell*) cell;
         bannerCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        bannerCell.bannerLabel.text = [kVunglePlacementID7Prefix stringByAppendingString:kVungleTestPlacementID07];
+        if (![self.sdk isInitialized]) {
+            [self updateButtonState:bannerCell.loadBannerButton enabled:NO];
+            [self updateButtonState:bannerCell.playBannerButton enabled:NO];
+            [self updateButtonState:bannerCell.dismissBannerButton enabled:NO];
+        } else {
+            [self updateButtonState:bannerCell.loadBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? NO:YES];
+            [self updateButtonState:bannerCell.playBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? YES:NO];
+        }
         [bannerCell.loadBannerButton addTarget:self action:@selector(loadVungleBannerAd) forControlEvents:UIControlEventTouchUpInside];
         [bannerCell.playBannerButton addTarget:self action:@selector(playVungleBannerAd) forControlEvents:UIControlEventTouchUpInside];
         [bannerCell.dismissBannerButton addTarget:self action:@selector(dismissVungleBanner) forControlEvents:UIControlEventTouchUpInside];
     } else if (indexPath.row == 1) {
         cell = [self.multiAdTableView dequeueReusableCellWithIdentifier:@"mrecCell" forIndexPath:indexPath];
-        
         MRECTableViewCell *mrecCell = (MRECTableViewCell*) cell;
         mrecCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        mrecCell.mrecLabel.text = [kVunglePlacementID5Prefix stringByAppendingString:kVungleTestPlacementID05];
+        if (![self.sdk isInitialized]) {
+            [self updateButtonState:mrecCell.loadMRECButton enabled:NO];
+            [self updateButtonState:mrecCell.playMRECButton enabled:NO];
+            [self updateButtonState:mrecCell.dismissMRECButton enabled:NO];
+        } else {
+            [self updateButtonState:mrecCell.loadMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID05]? NO:YES];
+            [self updateButtonState:mrecCell.playMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID05]? YES:NO];
+        }
         [mrecCell.loadMRECButton addTarget:self action:@selector(loadVungleMrecAd) forControlEvents:UIControlEventTouchUpInside];
         [mrecCell.playMRECButton addTarget:self action:@selector(playVungleMrecAd) forControlEvents:UIControlEventTouchUpInside];
         [mrecCell.dismissMRECButton addTarget:self action:@selector(dismissVungleMrec) forControlEvents:UIControlEventTouchUpInside];
@@ -116,6 +126,15 @@
         cell = [self.multiAdTableView dequeueReusableCellWithIdentifier:@"bannerCell" forIndexPath:indexPath];
         BannerTableViewCell *bannerCell2 = (BannerTableViewCell*) cell;
         bannerCell2.selectionStyle = UITableViewCellSelectionStyleNone;
+        bannerCell2.bannerLabel.text = [kVunglePlacementID8Prefix stringByAppendingFormat:kVungleTestPlacementID08];
+        if (![self.sdk isInitialized]) {
+            [self updateButtonState:bannerCell2.loadBannerButton enabled:NO];
+            [self updateButtonState:bannerCell2.playBannerButton enabled:NO];
+            [self updateButtonState:bannerCell2.dismissBannerButton enabled:NO];
+        } else {
+            [self updateButtonState:bannerCell2.loadBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID08]? NO:YES];
+            [self updateButtonState:bannerCell2.playBannerButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID08]? YES:NO];
+        }
         [bannerCell2.loadBannerButton addTarget:self action:@selector(loadVungleBannerAdBottom) forControlEvents:UIControlEventTouchUpInside];
         [bannerCell2.playBannerButton addTarget:self action:@selector(playVungleBannerAdBottom) forControlEvents:UIControlEventTouchUpInside];
         [bannerCell2.dismissBannerButton addTarget:self action:@selector(dismissVungleBannerBottom) forControlEvents:UIControlEventTouchUpInside];
@@ -123,6 +142,15 @@
         cell = [self.multiAdTableView dequeueReusableCellWithIdentifier:@"mrecCell" forIndexPath:indexPath];
         MRECTableViewCell *mrecCell2 = (MRECTableViewCell*) cell;
         mrecCell2.selectionStyle = UITableViewCellSelectionStyleNone;
+        mrecCell2.mrecLabel.text = [kVunglePlacementID9Prefix stringByAppendingFormat:kVungleTestPlacementID09];
+        if (![self.sdk isInitialized]) {
+            [self updateButtonState:mrecCell2.loadMRECButton enabled:NO];
+            [self updateButtonState:mrecCell2.playMRECButton enabled:NO];
+            [self updateButtonState:mrecCell2.dismissMRECButton enabled:NO];
+        } else {
+            [self updateButtonState:mrecCell2.loadMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID09]? NO:YES];
+            [self updateButtonState:mrecCell2.playMRECButton enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID09]? YES:NO];
+        }
         [mrecCell2.loadMRECButton addTarget:self action:@selector(loadVungleMrecAdBottom) forControlEvents:UIControlEventTouchUpInside];
         [mrecCell2.playMRECButton addTarget:self action:@selector(playVungleMrecAdBottom) forControlEvents:UIControlEventTouchUpInside];
         [mrecCell2.dismissMRECButton addTarget:self action:@selector(dismissVungleMrecBottom) forControlEvents:UIControlEventTouchUpInside];
@@ -195,6 +223,7 @@
 
 - (void)vungleDidCloseAdForPlacementID:(nonnull NSString *)placementID {
     NSLog(@"-->> Delegate Callback: vungleDidCloseAdForPlacementID for %@", placementID);
+    [self updateButtons];
 }
 
 - (void)vungleTrackClickForPlacementID:(nullable NSString *)placementID {
@@ -205,13 +234,25 @@
     NSLog(@"-->> Delegate Callback: vungleWillLeaveApplicationForPlacementID for %@", placementID);
 }
 
-#pragma mark - AdTableViewControllerDelegate
+#pragma mark - Helper Methods
 
-- (void)presentedViewControllerWillDismiss:(NSDictionary *)selectedPlacement {
-    
+- (void)startVungle {
+    [self updateButtonState:self.startButton enabled:NO];
+    self.sdk = [VungleSDK sharedSDK];
+    [self.sdk setDelegate:self];
+    [self.sdk setLoggingEnabled:YES];
+    NSError *error = nil;
+    if(![self.sdk startWithAppId:kVungleTestAppID options:nil error:&error]) {
+        NSLog(@"Error while starting VungleSDK %@",[error localizedDescription]);
+        return;
+    }
 }
 
-#pragma mark - Helper Methods
+-(void)setFullscreenDefault {
+    self.fullScreenLabel.text = [kVunglePlacementID2Prefix stringByAppendingString:kVungleTestPlacementID02];
+    [self updateButtonState:self.loadFullScreen enabled:NO];
+    [self updateButtonState:self.playFullScreen enabled:NO];
+}
 
 -(void)loadVungleBannerAd {
     NSError *error;
@@ -270,7 +311,10 @@
     if(![self.sdk addAdViewToView:bCell.bannerView withOptions:nil placementID:kVungleTestPlacementID07 error:&error]) {
         if(error) {
             NSLog(@"Error encountered when trying to display banner %@",error);
+            [self updateButtonState:bCell.loadBannerButton enabled:YES];
         }
+    } else {
+        [self updateButtonState:bCell.dismissBannerButton enabled:YES];
     }
     [self setPlayingBanner1:YES];
 }
@@ -287,7 +331,10 @@
     if (![self.sdk addAdViewToView:mCell.mrecView withOptions:nil placementID:kVungleTestPlacementID05 error:&error]) {
         if (error) {
             NSLog(@"Error encountered trying to load ad %@",error);
+            [self updateButtonState:mCell.loadMRECButton enabled:YES];
         }
+    } else {
+        [self updateButtonState:mCell.dismissMRECButton enabled:YES];
     }
     [self setPlayingMREC1:YES];
 }
@@ -304,7 +351,10 @@
     if (![self.sdk addAdViewToView:mCell.mrecView withOptions:nil placementID:kVungleTestPlacementID09 error:&error]) {
         if (error) {
             NSLog(@"Error encountered trying to load ad %@",error);
+            [self updateButtonState:mCell.loadMRECButton enabled:YES];
         }
+    } else {
+        [self updateButtonState:mCell.dismissMRECButton enabled:YES];
     }
     [self setPlayingMREC2:YES];
 }
@@ -336,7 +386,10 @@
     if (![self.sdk addAdViewToView:bCell.bannerView withOptions:nil placementID:kVungleTestPlacementID08 error:&error]) {
         if (error) {
             NSLog(@"Error encountered trying to load ad %@",error);
+            [self updateButtonState:bCell.loadBannerButton enabled:YES];
         }
+    } else {
+        [self updateButtonState:bCell.dismissBannerButton enabled:YES];
     }
     [self setPlayingBanner2:YES];
 }
@@ -348,10 +401,18 @@
     [self.sdk finishDisplayingAd:kVungleTestPlacementID07];
     if (bCell.bannerView != nil) {
         [bCell.bannerView removeFromSuperview];
+        [self updateButtonState:bCell.dismissBannerButton enabled:NO];
     }
 }
 -(void)dismissVungleMrec {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:1 inSection:0];
+    UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath];
+    MRECTableViewCell *mCell = (MRECTableViewCell*)cell;
     [self.sdk finishDisplayingAd:kVungleTestPlacementID05];
+    if (mCell.mrecView != nil) {
+        [mCell.mrecView removeFromSuperview];
+        [self updateButtonState:mCell.dismissMRECButton enabled:NO];
+    }
 }
 -(void)dismissVungleBannerBottom {
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:2 inSection:0];
@@ -360,14 +421,24 @@
     [self.sdk finishDisplayingAd:kVungleTestPlacementID08];
     if (bCell.bannerView != nil) {
         [bCell.bannerView removeFromSuperview];
+        [self updateButtonState:bCell.dismissBannerButton enabled:NO];
     }
 }
 
 -(void)dismissVungleMrecBottom {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:3 inSection:0];
+    UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath];
+    MRECTableViewCell *mCell = (MRECTableViewCell*)cell;
     [self.sdk finishDisplayingAd:kVungleTestPlacementID09];
+    if (mCell.mrecView != nil) {
+        [mCell.mrecView removeFromSuperview];
+        [self updateButtonState:mCell.dismissMRECButton enabled:NO];
+    }
 }
 
 - (void)updateButtons {
+    [self updateButtonState:self.loadFullScreen enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID02]? NO:YES];
+    [self updateButtonState:self.playFullScreen enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID02]? YES:NO];
     NSIndexPath *indexPath1 = [NSIndexPath indexPathForItem:0 inSection:0];
     NSIndexPath *indexPath2 = [NSIndexPath indexPathForItem:1 inSection:0];
     NSIndexPath *indexPath3 = [NSIndexPath indexPathForItem:2 inSection:0];
@@ -389,6 +460,14 @@
 - (void)updateButtonState:(UIButton *) button enabled:(BOOL)enabled {
     button.enabled = enabled;
     button.alpha = (enabled? 1.0:.5);
+}
+
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(UIInterfaceOrientationMask) supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 @end

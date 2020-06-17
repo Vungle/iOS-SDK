@@ -220,8 +220,8 @@
     NSLog(@"-->> %@ - an ad loaded: %@", kVungleTestPlacementID03, ([self.sdk isAdCachedForPlacementID:kVungleTestPlacementID03]? @"YES":@"NO"));
     NSLog(@"-->> %@ - an ad loaded: %@", kVungleTestPlacementID04, ([self.sdk isAdCachedForPlacementID:kVungleTestPlacementID04]? @"YES":@"NO"));
     NSLog(@"-->> %@ - an ad loaded: %@", kVungleTestPlacementID05, ([self.sdk isAdCachedForPlacementID:kVungleTestPlacementID05]? @"YES":@"NO"));
-        NSLog(@"-->> %@ - an ad loaded: %@", kVungleTestPlacementID06, ([self.sdk isAdCachedForPlacementID:kVungleTestPlacementID06]? @"YES":@"NO"));
-        NSLog(@"-->> %@ - an ad loaded: %@", kVungleTestPlacementID07, ([self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? @"YES":@"NO"));
+    NSLog(@"-->> %@ - an ad loaded: %@", kVungleTestPlacementID06, ([self.sdk isAdCachedForPlacementID:kVungleTestPlacementID06]? @"YES":@"NO"));
+    NSLog(@"-->> %@ - an ad loaded: %@", kVungleTestPlacementID07, ([self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? @"YES":@"NO"));
 }
 
 #pragma mark - VungleSDKDelegate Methods
@@ -260,17 +260,17 @@
         [self updateButtonState:self.playButton5 enabled:isAdPlayable];
     }
     else if ([placementID isEqualToString:kVungleTestPlacementID06]) {
-           if(![self isPlayingBanner]) {
-               [self updateButtonState:self.loadButton6 enabled:!isAdPlayable];
-           }
-           [self updateButtonState:self.playButton6 enabled:isAdPlayable];
+        if(![self isPlayingBanner]) {
+            [self updateButtonState:self.loadButton6 enabled:!isAdPlayable];
+        }
+            [self updateButtonState:self.playButton6 enabled:isAdPlayable];
        }
     else if ([placementID isEqualToString:kVungleTestPlacementID07]) {
-           if(![self isPlayingBanner]) {
-               [self updateButtonState:self.loadButton7 enabled:!isAdPlayable];
-           }
-           [self updateButtonState:self.playButton7 enabled:isAdPlayable];
-       }
+        if(![self isPlayingBanner]) {
+            [self updateButtonState:self.loadButton7 enabled:!isAdPlayable];
+        }
+        [self updateButtonState:self.playButton7 enabled:isAdPlayable];
+    }
 }
 
 - (void)vungleWillLeaveApplicationForPlacementID:(nullable NSString *)placementID {
@@ -299,11 +299,11 @@
         NSLog(@"-->> Ad will show for %@", kVungleTestPlacementID05);
         [self updateButtonState:self.playButton5 enabled:NO];
         [self updateButtonState:self.dismissButton5 enabled:YES];
-    }else if ([placementID isEqualToString:kVungleTestPlacementID06]) {
+    } else if ([placementID isEqualToString:kVungleTestPlacementID06]) {
         NSLog(@"-->> Ad will show for %@", kVungleTestPlacementID06);
         [self updateButtonState:self.playButton6 enabled:NO];
         [self updateButtonState:self.dismissButton6 enabled:YES];
-    }else if ([placementID isEqualToString:kVungleTestPlacementID07]) {
+    } else if ([placementID isEqualToString:kVungleTestPlacementID07]) {
         NSLog(@"-->> Ad will show for %@", kVungleTestPlacementID07);
         [self updateButtonState:self.playButton7 enabled:NO];
         [self updateButtonState:self.dismissButton7 enabled:YES];
@@ -333,8 +333,8 @@
     self.placementIdLabel3.text = [kVunglePlacementID3Prefix stringByAppendingString:kVungleTestPlacementID03];
     self.placementIdLabel4.text = [kVunglePlacementID4Prefix stringByAppendingString:kVungleTestPlacementID04];
     self.placementIdLabel5.text = [kVunglePlacementID5Prefix stringByAppendingString:kVungleTestPlacementID05];
-        self.placementIdLabel6.text = [kVunglePlacementID6Prefix stringByAppendingString:kVungleTestPlacementID06];
-        self.placementIdLabel7.text = [kVunglePlacementID7Prefix stringByAppendingString:kVungleTestPlacementID07];
+    self.placementIdLabel6.text = [kVunglePlacementID6Prefix stringByAppendingString:kVungleTestPlacementID06];
+    self.placementIdLabel7.text = [kVunglePlacementID7Prefix stringByAppendingString:kVungleTestPlacementID07];
     [self updateButtonState:self.loadButton2 enabled:NO];
     [self updateButtonState:self.loadButton3 enabled:NO];
     [self updateButtonState:self.loadButton4 enabled:NO];
@@ -445,7 +445,7 @@
     NSLog(@"viewYAxis is %f",viewYAxis);
        self.adView = [[UIView alloc]initWithFrame:CGRectMake((screenWidth / 2) - (BANNER_SHORT_AD_WIDTH / 2), screenHeight - BANNER_AD_HEIGHT-20, BANNER_SHORT_AD_WIDTH, BANNER_AD_HEIGHT)];
     [self.view addSubview:self.adView];
-   [self.sdk addAdViewToView:self.adView withOptions:nil placementID:kVungleTestPlacementID06 error:&error];
+    [self.sdk addAdViewToView:self.adView withOptions:nil placementID:kVungleTestPlacementID06 error:&error];
     if (error) {
         NSLog(@"Error encountered playing ad: %@", error);
         [self updateButtonState:self.loadButton6 enabled:YES];
@@ -461,10 +461,9 @@
     [self.scrollView setContentOffset:bottomOffset animated:YES];
     NSError *error;
     [self getScreenDimension];
-   self.adView = [[UIView alloc]initWithFrame:CGRectMake((screenWidth / 2) - (BANNER_AD_WIDTH / 2), screenHeight - BANNER_AD_HEIGHT-20, BANNER_AD_WIDTH, BANNER_AD_HEIGHT)];
+    self.adView = [[UIView alloc]initWithFrame:CGRectMake((screenWidth / 2) - (BANNER_AD_WIDTH / 2), screenHeight - BANNER_AD_HEIGHT-20, BANNER_AD_WIDTH, BANNER_AD_HEIGHT)];
     [self.view addSubview:self.adView];
-   [self.sdk addAdViewToView:self.adView withOptions:nil placementID:kVungleTestPlacementID07 error:&error];
-    
+    [self.sdk addAdViewToView:self.adView withOptions:nil placementID:kVungleTestPlacementID07 error:&error];
     if (error) {
         NSLog(@"Error encountered playing ad: %@", error);
         [self updateButtonState:self.loadButton7 enabled:YES];
@@ -483,8 +482,8 @@
     [self updateButtonState:self.playButton4 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID04]? YES:NO];
     [self updateButtonState:self.loadButton5 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID05]? NO:YES];
     [self updateButtonState:self.playButton5 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID05]? YES:NO];
-     [self updateButtonState:self.loadButton6 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID06]? NO:YES];
-     [self updateButtonState:self.playButton6 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID06]? YES:NO];
+    [self updateButtonState:self.loadButton6 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID06]? NO:YES];
+    [self updateButtonState:self.playButton6 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID06]? YES:NO];
     [self updateButtonState:self.loadButton7 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? NO:YES];
     [self updateButtonState:self.playButton7 enabled:[self.sdk isAdCachedForPlacementID:kVungleTestPlacementID07]? YES:NO];
 }
@@ -513,12 +512,9 @@
 #pragma mark - Screen Orientation related helpers
 
 -(void)deviceOrientationDidChange {
-    if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation))
-    {
+    if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
         [self getScreenDimension];
-    }
-    else if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
-    {
+    } else if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)) {
         [self getScreenDimension];
     }
 }
@@ -526,6 +522,14 @@
 -(void)getScreenDimension {
     screenHeight = SCREEN_HEIGHT;
     screenWidth = SCREEN_WIDTH;
+}
+
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(UIInterfaceOrientationMask) supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 @end
