@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 6.5.3
+//  SDK Version: 6.7.0
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -33,6 +33,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSNumber *didDownload;
 
 @end
+
+extern NSString *VungleSDKInitOptionKeyPriorityPlacementID;
+extern NSString *VungleSDKInitOptionKeyPriorityPlacementAdSize;
 
 extern NSString *VungleSDKVersion;
 extern NSString *VunglePlayAdOptionKeyIncentivizedAlertTitleText;
@@ -83,6 +86,11 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
     VungleConsentDenied,
 };
 
+typedef NS_ENUM (NSInteger, VungleCCPAStatus) {
+    VungleCCPAAccepted = 1,
+    VungleCCPADenied,
+};
+
 typedef NS_ENUM (NSInteger, VungleAdSize) {
     VungleAdSizeUnknown = 1,
     VungleAdSizeBanner,                     // width = 320.0f, .height = 50.0f
@@ -129,18 +137,41 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
  * If implemented, this method gets called when a Vungle Ad Unit is about to be completely dismissed.
  * At this point, it's recommended to resume your Game or App.
  */
-- (void)vungleWillCloseAdWithViewInfo:(nonnull VungleViewInfo *)info placementID:(nonnull NSString *)placementID;
+- (void)vungleWillCloseAdForPlacementID:(nonnull NSString *)placementID;
+
+- (void)vungleWillCloseAdWithViewInfo:(nonnull VungleViewInfo *)info placementID:(nonnull NSString *)placementID __attribute__((deprecated("Use vungleWillCloseAdForPlacementID: instead.")));
 
 - (void)vungleSDKwillCloseAdWithViewInfo:(NSDictionary *)viewInfo
-                 willPresentProductSheet:(BOOL)willPresentProductSheet __attribute__((deprecated("Use vungleSDKWillCloseAdWithViewInfo: instead.")));
+                 willPresentProductSheet:(BOOL)willPresentProductSheet __attribute__((deprecated("Use vungleWillCloseAdForPlacementID: instead.")));
 
-- (void)vungleSDKwillCloseProductSheet:(id)productSheet __attribute__((deprecated("Use vungleSDKWillCloseAdWithViewInfo: instead.")));
+- (void)vungleSDKwillCloseProductSheet:(id)productSheet __attribute__((deprecated("Use vungleWillCloseAdForPlacementID: instead.")));
 
 /**
  * If implemented, this method gets called when a Vungle Ad Unit has been completely dismissed.
  * At this point, you can load another ad for non-auto-cached placement if necessary.
  */
-- (void)vungleDidCloseAdWithViewInfo:(nonnull VungleViewInfo *)info placementID:(nonnull NSString *)placementID;
+- (void)vungleDidCloseAdForPlacementID:(nonnull NSString *)placementID;
+
+- (void)vungleDidCloseAdWithViewInfo:(nonnull VungleViewInfo *)info placementID:(nonnull NSString *)placementID __attribute__((deprecated("Use vungleDidCloseAdForPlacementID: instead.")));
+
+/**
+ * If implemented, this method gets called when user clicks the Vungle Ad.
+ * At this point, it's recommended to track the click event.
+ */
+- (void)vungleTrackClickForPlacementID:(nullable NSString *)placementID;
+
+/**
+ * If implemented, this method gets called when user taps the Vungle Ad
+ * which will cause them to leave the current application(e.g. the ad action
+ * opens the iTunes store, Mobile Safari, etc).
+ */
+- (void)vungleWillLeaveApplicationForPlacementID:(nullable NSString *)placementID;
+
+/**
+ * This method is called when the user should be rewarded for watching a Rewarded Video Ad.
+ * At this point, it's recommended to reward the user.
+ */
+- (void)vungleRewardUserForPlacementID:(nullable NSString *)placementID;
 
 /**
  * If implemented, this will get called when VungleSDK has finished initialization.
@@ -200,6 +231,15 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
  */
 - (BOOL)startWithAppId:(nonnull NSString *)appID error:(NSError **)error;
 
+/**
+ * Initializes the SDK. You can get your app id on Vungle's dashboard: https://v.vungle.com
+ * @param appID the unique identifier for your app
+ * @param options A reference to an instance of NSDictionary with customized ad SDK initilize options
+ * @param error An error object containing information about why initialization failed
+ * @return YES if the SDK has started, NO otherwise
+ */
+- (BOOL)startWithAppId:(nonnull NSString *)appID options:(nullable NSDictionary *)options error:(NSError **)error;
+
 #pragma mark - Interstitial, Flex View Ad playback
 /**
  * Will play Ad Unit presenting it over the `controller` parameter
@@ -237,7 +277,19 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
  *
  * This method will call the existing delegate callbacks as part of the lifecycle.
  */
-- (void)finishedDisplayingAd;
+- (void)finishedDisplayingAd __attribute((deprecated("Use finishDisplayingAd: with the placementID of the ad to finish.")));
+
+/**
+ * This method will dismiss the currently playing Flex View, Flex Feed, Banner or MREC advertisement with the placementId specified.
+ * If you have added an advertisement with `addAdViewToView:` or you are playing a placement that has been configured as a
+ * Flex View, Flex Feed, Banner or MREC placement, then this method will remove the advertisement from the screen and perform any
+ * necessary clean up steps.
+ *
+ * This method will call the existing delegate callbacks as part of the lifecycle.
+ *
+ * @param placementId Thje placement identifier for the ad to dismiss.
+ */
+- (void)finishDisplayingAd:(NSString *)placementId;
 
 #pragma mark - Placements support
 /**
@@ -324,6 +376,19 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
  *  the method returns nil.
  */
 - (NSString *)getConsentMessageVersion;
+
+#pragma mark - CCPA support
+/**
+ * This method takes the CCPA status of users. If CCPA status is accepted, Vungle will be able to send targeted ads.
+ * @param status the enum to be set for user CCPA status.
+ */
+- (void)updateCCPAStatus:(VungleCCPAStatus)status;
+
+/**
+ * This method returns the current CCPA status for the user recorded in the SDK. If no status is found,
+ *  the method returns 0.
+ */
+- (VungleCCPAStatus)getCurrentCCPAStatus;
 
 /**
  * This method disables refresh functionality for all banner and MREC placements.

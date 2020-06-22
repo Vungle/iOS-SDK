@@ -1,11 +1,7 @@
 ### Changelog
 
 ## VERSION 6.5.3
-* Bugs and issues resolved
-
-## VERSION 6.5.2
-* Programmatic Demand Banner Support
-* Bug Fixes
+* Bugs and issues resolved.
 
 ## VERSION 6.5.1
 * Optimized caching logic to reduce data usage
