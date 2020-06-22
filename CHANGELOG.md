@@ -1,5 +1,14 @@
 ### Changelog
 
+## VERSION 6.7.0
+* CCPA Support – Compliance with new government regulations while assuring your users their personal data is being used the way they want
+* Multiple banner ad support – Display multiple banners on the screen txo leverage more ways to monetize your inventory and attract Premium Buyers
+* Stability enhancements to continually ensure high performance
+* Improved real-time ad play callbacks for click and rewarded events for a better end-user experience
+* Improvements to orientation handling to improve end-user experience
+* Backend performance improvements to continually optimize your monetization efforts
+* Various bug fixes
+
 ## VERSION 6.5.3
 * Bugs and issues resolved.
 
