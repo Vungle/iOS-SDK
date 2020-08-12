@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 6.7.0
+//  SDK Version: 6.7.1
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -79,6 +79,7 @@ typedef enum {
     VungleDiscSpaceProviderErrorNoFileSystemAttributes,
     VungleSDKErrorUnknownBannerSize,
     VungleSDKResetPlacementForDifferentAdSize,
+    VungleSDKErrorSDKAlreadyInitializing,
 } VungleSDKErrorCode;
 
 typedef NS_ENUM (NSInteger, VungleConsentStatus) {
