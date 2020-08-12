@@ -17,8 +17,6 @@
 }
 
 @property (strong, nonatomic) IBOutlet UIView *view;
-//is this good practice?
-//@property (nonatomic, strong) VungleSDK *sdk;
 @property (nonatomic, assign, getter = isPlayingBanner1) BOOL playingBanner1;
 @property (nonatomic, assign, getter = isPlayingBanner2) BOOL playingBanner2;
 @property (nonatomic, assign, getter = isPlayingMREC1) BOOL playingMREC1;
