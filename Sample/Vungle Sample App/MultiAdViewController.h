@@ -15,8 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITableView *multiAdTableView;
 @property (weak, nonatomic) IBOutlet UIButton *playFullScreen;
 @property (weak, nonatomic) IBOutlet UIButton *loadFullScreen;
-@property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UILabel *fullScreenLabel;
+@property (nonatomic, strong) VungleSDK *sdk;
+@property (nonatomic, assign) BOOL isInitialized;
 
 @end
 
