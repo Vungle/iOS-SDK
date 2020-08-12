@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "MultiAdViewController.h"
 #import "Constants.h"
 
 
@@ -62,8 +63,17 @@
     // Do any additional setup after loading the view.
     [self setViewDefault];
 }
-- (IBAction)onShowBannerTapped:(id)sender {
-    
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    MultiAdViewController *multiAdViewController = (MultiAdViewController*)segue.destinationViewController;
+    if ([self.sdk isInitialized]) {
+        [multiAdViewController vungleSDKDidInitialize];
+        multiAdViewController.isInitialized = YES;
+        multiAdViewController.sdk = self.sdk;
+    }
+}
+- (IBAction)multiBannerTapped:(id)sender {
+    [self performSegueWithIdentifier:@"toMultiAd" sender:self];
 }
 
 - (IBAction)onInitButtonTapped:(id)sender {
@@ -385,7 +395,7 @@
 }
 
 - (IBAction)showAdForPlacement02 {
-    NSDictionary *options = @{VunglePlayAdOptionKeyOrientations: @(UIInterfaceOrientationMaskAll),VunglePlayAdOptionKeyOrdinal: @20031023};
+    NSDictionary *options = @{VunglePlayAdOptionKeyOrientations: @(UIInterfaceOrientationMaskPortrait),VunglePlayAdOptionKeyOrdinal: @20031023, VunglePlayAdOptionKeyStartMuted:@(0)};
     NSError *error;
     [self.sdk playAd:self options:options placementID:kVungleTestPlacementID02 error:&error];
     if (error) {
@@ -395,7 +405,8 @@
 }
 
 - (IBAction)showAdForPlacement03 {
-    NSDictionary *options = @{VunglePlayAdOptionKeyUser:@"test_user_id",
+    NSDictionary *options = @{
+        VunglePlayAdOptionKeyOrientations: @(UIInterfaceOrientationMaskAll), VunglePlayAdOptionKeyStartMuted:@(0), VunglePlayAdOptionKeyUser:@"test_user_id",
                               VunglePlayAdOptionKeyIncentivizedAlertBodyText : @"If the video isn't completed you won't get your reward! Are you sure you want to close early?",
 							  VunglePlayAdOptionKeyIncentivizedAlertCloseButtonText : @"Close",
 							  VunglePlayAdOptionKeyIncentivizedAlertContinueButtonText : @"Keep Watching",
