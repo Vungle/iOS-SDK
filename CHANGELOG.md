@@ -1,12 +1,12 @@
 ### Changelog
 
 ## VERSION 6.8.0
-* iOS 14 Support, built on Xcode 12
-* SkAdNetwork Support
-* AppTrackingTransparency Support
-* Updated StoreKit to be available for all formats 
+* iOS 14 Support, built on Xcode 12 - Connect to all iOS users including those on the latest version, iOS 14 
+* SkAdNetwork Support - Access all data sources to better understand your audience
+* AppTrackingTransparency Support - Prepare for upcoming privacy changes and ensure users have more controls on their data usage.
+* Updated StoreKit to be available for all formats - Create a seamless ad experience within your app in all formats.
 * Removed Flex Feed and Flex View formats
-* Stability improvements
+* Stability improvements - Backend performance improvements to continually optimize your monetization efforts
 
 ## VERSION 6.7.1
 * Removal of Moat framework
