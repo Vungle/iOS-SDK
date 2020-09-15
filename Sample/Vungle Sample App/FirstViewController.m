@@ -9,8 +9,11 @@
 #import "FirstViewController.h"
 #import "MultiAdViewController.h"
 #import "Constants.h"
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
 
-
+@interface VungleSDK ()
+- (void)setPluginName:(NSString *)pluginName version:(NSString *)version;
+@end
 
 @interface FirstViewController () {
  CGFloat screenHeight;
@@ -60,7 +63,13 @@
     [super viewDidLoad];
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
+    
     // Do any additional setup after loading the view.
+    if (@available(iOS 14, *)) {
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+        }];
+    }
+    
     [self setViewDefault];
 }
 
@@ -366,11 +375,11 @@
 - (void)startVungle {
     [self updateButtonState:self.sdkInitButton enabled:NO];
     self.sdk = [VungleSDK sharedSDK];
-    [self.sdk updateConsentStatus:VungleConsentAccepted consentMessageVersion:@"Accepted"];
+    [self.sdk updateConsentStatus:VungleConsentDenied consentMessageVersion:@"Accepted"];
     /**GDPR status option to opt_out
      [self.sdk updateConsentStatus:VungleConsentDenied consentMessageVersion:@"Denied"];
      */
-    [self.sdk updateCCPAStatus:VungleCCPAAccepted];
+    [self.sdk updateCCPAStatus:VungleCCPADenied];
     /**CCPA Status Opt_Out API Call
      [self.sdk updateCCPAStatus:VungleCCPADenied];
      */
@@ -395,7 +404,7 @@
 }
 
 - (IBAction)showAdForPlacement02 {
-    NSDictionary *options = @{VunglePlayAdOptionKeyOrientations: @(UIInterfaceOrientationMaskPortrait),VunglePlayAdOptionKeyOrdinal: @20031023, VunglePlayAdOptionKeyStartMuted:@(0)};
+    NSDictionary *options = @{VunglePlayAdOptionKeyOrientations: @(UIInterfaceOrientationMaskAllButUpsideDown),VunglePlayAdOptionKeyOrdinal: @20031023, VunglePlayAdOptionKeyStartMuted:@(1)};
     NSError *error;
     [self.sdk playAd:self options:options placementID:kVungleTestPlacementID02 error:&error];
     if (error) {
@@ -406,8 +415,8 @@
 
 - (IBAction)showAdForPlacement03 {
     NSDictionary *options = @{
-        VunglePlayAdOptionKeyOrientations: @(UIInterfaceOrientationMaskAll), VunglePlayAdOptionKeyStartMuted:@(0), VunglePlayAdOptionKeyUser:@"test_user_id",
-                              VunglePlayAdOptionKeyIncentivizedAlertBodyText : @"If the video isn't completed you won't get your reward! Are you sure you want to close early?",
+        VunglePlayAdOptionKeyOrientations: @(UIInterfaceOrientationMaskAll), VunglePlayAdOptionKeyStartMuted:@(1), VunglePlayAdOptionKeyUser:@"test_user_id",
+                              VunglePlayAdOptionKeyIncentivizedAlertBodyText : @"Complete the video in order to get reward",
 							  VunglePlayAdOptionKeyIncentivizedAlertCloseButtonText : @"Close",
 							  VunglePlayAdOptionKeyIncentivizedAlertContinueButtonText : @"Keep Watching",
 							  VunglePlayAdOptionKeyIncentivizedAlertTitleText : @"Careful!"};
@@ -472,7 +481,7 @@
     [self.scrollView setContentOffset:bottomOffset animated:YES];
     NSError *error;
     [self getScreenDimension];
-    self.adView = [[UIView alloc]initWithFrame:CGRectMake((screenWidth / 2) - (BANNER_AD_WIDTH / 2), screenHeight - BANNER_AD_HEIGHT-20, BANNER_AD_WIDTH, BANNER_AD_HEIGHT)];
+    self.adView = [[UIView alloc]initWithFrame:CGRectMake((screenWidth / 2) - (BANNER_AD_WIDTH / 2), screenHeight - BANNER_AD_HEIGHT-20, 320, 50)];
     [self.view addSubview:self.adView];
     [self.sdk addAdViewToView:self.adView withOptions:nil placementID:kVungleTestPlacementID07 error:&error];
     if (error) {
