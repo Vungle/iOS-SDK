@@ -1,5 +1,13 @@
 ### Changelog
 
+## VERSION 6.8.0
+* iOS 14 Support, built on Xcode 12
+* SkAdNetwork Support
+* AppTrackingTransparency Support
+* Updated StoreKit to be available for all formats 
+* Removed Flex Feed and Flex View formats
+* Stability improvements
+
 ## VERSION 6.7.1
 * Removal of Moat framework
 * Fixed issue with FMDB duplicate symbol
