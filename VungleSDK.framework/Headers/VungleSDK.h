@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 6.7.1
+//  SDK Version: 6.8.0
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -254,7 +254,7 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
  */
 - (BOOL)playAd:(UIViewController *)controller options:(nullable NSDictionary *)options placementID:(nullable NSString *)placementID error:(NSError *__autoreleasing _Nullable *_Nullable)error;
 
-#pragma mark - Flex Feed / MREC / Banner Ad lifecycle
+#pragma mark - MREC / Banner Ad lifecycle
 /**
  * Pass in an UIView which acts as a container for the ad experience. This view container may be placed in random positions.
  * @note This method should only be called using placements that have the `flexfeed` or `mrec` or `banner` template type. For
