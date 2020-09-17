@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		90113F122492C80D00805B8C /* BannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90113F112492C80D00805B8C /* BannerTableViewCell.m */; };
 		90113F152492C81900805B8C /* MRECTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90113F142492C81900805B8C /* MRECTableViewCell.m */; };
-		902BEDC325117464009DBB03 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902BEDC225117464009DBB03 /* VungleSDK.framework */; };
 		903A22C4243BF10F00365E15 /* MultiAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 903A22C3243BF10F00365E15 /* MultiAdViewController.m */; };
+		909547F12512E27C004C2BA3 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909547F02512E27C004C2BA3 /* VungleSDK.framework */; };
 		DE8F42381BBB0BC9009EC672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */; };
 		E319A21B230CE6D200EE8EC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E319A219230CE6D200EE8EC8 /* Main.storyboard */; };
 		F45D5FCF18E0F05300329123 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F45D5FCD18E0F05300329123 /* InfoPlist.strings */; };
@@ -37,9 +37,9 @@
 		90113F112492C80D00805B8C /* BannerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerTableViewCell.m; sourceTree = "<group>"; };
 		90113F132492C81900805B8C /* MRECTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRECTableViewCell.h; sourceTree = "<group>"; };
 		90113F142492C81900805B8C /* MRECTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRECTableViewCell.m; sourceTree = "<group>"; };
-		902BEDC225117464009DBB03 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VungleSDK.framework; path = ../VungleSDK.framework; sourceTree = "<group>"; };
 		903A22C2243BF10F00365E15 /* MultiAdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiAdViewController.h; sourceTree = "<group>"; };
 		903A22C3243BF10F00365E15 /* MultiAdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiAdViewController.m; sourceTree = "<group>"; };
+		909547F02512E27C004C2BA3 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VungleSDK.framework; path = ../VungleSDK.framework; sourceTree = "<group>"; };
 		DE8F42351BBB09C7009EC672 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
 		DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEFCFF601BA34127006414B2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				902BEDC325117464009DBB03 /* VungleSDK.framework in Frameworks */,
+				909547F12512E27C004C2BA3 /* VungleSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +104,7 @@
 		F45D5FC318E0F05300329123 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				902BEDC225117464009DBB03 /* VungleSDK.framework */,
+				909547F02512E27C004C2BA3 /* VungleSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
