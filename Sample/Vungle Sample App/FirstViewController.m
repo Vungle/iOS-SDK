@@ -84,6 +84,7 @@
         multiAdViewController.sdk = self.sdk;
     }
 }
+
 - (IBAction)multiBannerTapped:(id)sender {
     [self performSegueWithIdentifier:@"toMultiAd" sender:self];
 }
