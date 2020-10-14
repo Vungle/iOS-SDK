@@ -1,5 +1,10 @@
 ### Changelog
 
+## VERSION 6.8.1
+* SKOverlay Support: Using Apple's new SKOverlay to improve user's ad experience with a seamless presentation of the app store for app recommendation.
+* vungleAdViewedForPlacement - new callback introduced to more accurately track ad impressions
+* Stability Improvements
+
 ## VERSION 6.8.0
 * iOS 14 Support, built on Xcode 12 - Connect to all iOS users including those on the latest version, iOS 14. Xcode 12 required.
 * SkAdNetwork Support - Access all data sources to better understand your audience
