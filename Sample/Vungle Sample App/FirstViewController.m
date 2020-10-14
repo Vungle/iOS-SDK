@@ -9,7 +9,10 @@
 #import "FirstViewController.h"
 #import "MultiAdViewController.h"
 #import "Constants.h"
+
+#if defined(__IPHONE_14_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_14_0
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
+#endif
 
 @interface VungleSDK ()
 - (void)setPluginName:(NSString *)pluginName version:(NSString *)version;
@@ -139,8 +142,7 @@
         NSError *error = nil;
         if ([self.sdk loadPlacementWithID:kVungleTestPlacementID06 withSize:VungleAdSizeBannerShort error:&error]){
             [self updateButtonState:self.loadButton6 enabled:NO];
-        }
-         else {
+        } else {
             [self updateButtonState:self.loadButton6 enabled:YES];
             if (error) {
                 NSLog(@"Unable to load placement with reference ID :%@, Error %@", kVungleTestPlacementID06, error);
@@ -190,8 +192,7 @@
         [self updateButtonState:self.dismissButton6 enabled:YES];
         [self setPlayingBanner:YES];
         [self showAdForPlacement06];
-    }
-    else if (sender == self.playButton7) {
+    } else if (sender == self.playButton7) {
         NSLog(@"-->> Play an ad for %@", kVungleTestPlacementID07);
         [self updateButtonState:self.playButton7 enabled:NO];
         [self updateButtonState:self.dismissButton7 enabled:YES];
@@ -220,7 +221,7 @@
             [self.adView removeFromSuperview];
         }
         [self updateButtonState:self.dismissButton6 enabled:NO];
-    }else if (sender == self.dismissButton7) {
+    } else if (sender == self.dismissButton7) {
         [self.sdk finishDisplayingAd:kVungleTestPlacementID07];
         [self setPlayingBanner:NO];
         [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, 0)
@@ -271,20 +272,17 @@
     } else if ([placementID isEqualToString:kVungleTestPlacementID04]) {
         [self updateButtonState:self.loadButton4 enabled:!isAdPlayable];
         [self updateButtonState:self.playButton4 enabled:isAdPlayable];
-    }
-    else if ([placementID isEqualToString:kVungleTestPlacementID05]) {
+    } else if ([placementID isEqualToString:kVungleTestPlacementID05]) {
         if(![self isPlayingMREC]) {
             [self updateButtonState:self.loadButton5 enabled:!isAdPlayable];
         }
         [self updateButtonState:self.playButton5 enabled:isAdPlayable];
-    }
-    else if ([placementID isEqualToString:kVungleTestPlacementID06]) {
+    } else if ([placementID isEqualToString:kVungleTestPlacementID06]) {
         if(![self isPlayingBanner]) {
             [self updateButtonState:self.loadButton6 enabled:!isAdPlayable];
         }
             [self updateButtonState:self.playButton6 enabled:isAdPlayable];
-       }
-    else if ([placementID isEqualToString:kVungleTestPlacementID07]) {
+    } else if ([placementID isEqualToString:kVungleTestPlacementID07]) {
         if(![self isPlayingBanner]) {
             [self updateButtonState:self.loadButton7 enabled:!isAdPlayable];
         }
