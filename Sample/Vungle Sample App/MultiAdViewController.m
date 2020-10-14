@@ -176,24 +176,11 @@
 }
 
 -(void)vungleWillShowAdForPlacementID:(NSString *)placementID {
-    NSLog(@"-->> Delegate Callback: vungleWillShowAdForPlacement is called %@", placementID);
-    if ([placementID isEqualToString:kVungleTestPlacementID07]) {
-        NSLog(@"vungleWillShowAdForPlacementID 07");
-        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
-        UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath];
-        BannerTableViewCell *bCell = (BannerTableViewCell*)cell;
-        [self updateButtonState:bCell.playBannerButton enabled:NO];
-    } else if ([placementID isEqualToString:kVungleTestPlacementID05]) {
-        NSLog(@"vungleWillShowAdForPlacementID 05");
-        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:1 inSection:0];
-        UITableViewCell *cell = [self.multiAdTableView cellForRowAtIndexPath:indexPath];
-        MRECTableViewCell *mCell = (MRECTableViewCell*)cell;
-        [self updateButtonState:mCell.playMRECButton enabled:NO];
-    } else if ([placementID isEqualToString:kVungleTestPlacementID08]) {
-        
-    } else if ([placementID isEqualToString:kVungleTestPlacementID09]) {
-        
-    }
+    NSLog(@"-->> Delegate Callback: vungleWillShowAdForPlacementID is called for %@", placementID);
+}
+
+-(void)vungleDidShowAdForPlacementID:(NSString *)placementID {
+    NSLog(@"-->> Delegate Callback: vungleDidShowAdForPlacementID is called for %@", placementID);
 }
 
 -(void)vungleAdPlayabilityUpdate:(BOOL)isAdPlayable placementID:(NSString *)placementID error:(NSError *)error {
@@ -261,6 +248,10 @@
 
 - (void)vungleWillLeaveApplicationForPlacementID:(nullable NSString *)placementID {
     NSLog(@"-->> Delegate Callback: vungleWillLeaveApplicationForPlacementID for %@", placementID);
+}
+
+-(void)vungleAdViewedForPlacement:(NSString *)placementID {
+    NSLog(@"-->> Delegate Callback: vungleAdViewedForPlacement for %@", placementID);
 }
 
 #pragma mark - Helper Methods
