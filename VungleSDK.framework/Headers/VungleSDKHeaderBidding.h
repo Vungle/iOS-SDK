@@ -23,7 +23,7 @@
  *
  * @param placement The ID of a that has already been loaded placement
  */
-- (NSString *)bidTokenForPlacement:(NSString *)placement;
+- (NSString *)bidTokenForPlacement:(NSString *)placement __attribute__((deprecated("Use currentSuperToken to get all the participating bid Tokens.")));
 
 /**
  * This is a synchronous method to fetch super token. This method
@@ -45,9 +45,8 @@
  * @param bidToken An encrypted bid token used to identify the placement through the auction
  */
 - (void)placementWillBeginCaching:(NSString *)placement
-                     withBidToken:(NSString *)bidToken;
+                     withBidToken:(NSString *)bidToken __attribute__((deprecated("This delegate method will no longer be used in feature releases.")));
 
-@required
 /**
  * If implemented, this will be called when the SDK has a placement fully prepared and cached
  * to disk with a corresponding bid token.
@@ -56,6 +55,6 @@
  * @param bidToken An encrypted bid token used to identify the placement through the auction
  */
 - (void)placementPrepared:(NSString *)placement
-             withBidToken:(NSString *)bidToken;
+             withBidToken:(NSString *)bidToken __attribute__((deprecated("This delegate method will no longer be used in feature releases.")));
 
 @end
