@@ -90,6 +90,7 @@
 }
 
 - (IBAction)onInitButtonTapped:(id)sender {
+    [VungleSDK enableBackgroundDownload:YES];
     [self startVungle];
 }
 
