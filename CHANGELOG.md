@@ -1,5 +1,9 @@
 ### Changelog
 
+## VERSION 6.9.1
+* OM SDK Integration - The Open Measurement Software Development Kit (OM SDK) is designed to facilitate third-party viewability and verification measurement for ads served by Vungle.
+* Stability Improvements
+
 ## VERSION 6.8.1
 * SKOverlay Support: Using Apple's new SKOverlay to improve user's ad experience with a seamless presentation of the app store for app recommendation.
 * vungleAdViewedForPlacement - new callback introduced to more accurately track ad impressions
