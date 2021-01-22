@@ -1,11 +1,15 @@
 ### Changelog
 
-## VERSION 6.8.1
+## VERSION 6.9.1 (January 21, 2021)
+* OM SDK Integration - The Open Measurement Software Development Kit (OM SDK) is designed to facilitate third-party viewability and verification measurement for ads served by Vungle.
+* Stability Improvements
+
+## VERSION 6.8.1 (October 14, 2020)
 * SKOverlay Support: Using Apple's new SKOverlay to improve user's ad experience with a seamless presentation of the app store for app recommendation.
 * vungleAdViewedForPlacement - new callback introduced to more accurately track ad impressions
 * Stability Improvements
 
-## VERSION 6.8.0
+## VERSION 6.8.0 (September 15, 2020)
 * iOS 14 Support, built on Xcode 12 - Connect to all iOS users including those on the latest version, iOS 14. Xcode 12 required.
 * SkAdNetwork Support - Access all data sources to better understand your audience
 * AppTrackingTransparency Support - Prepare for upcoming privacy changes and ensure users have more controls on their data usage.
@@ -13,12 +17,12 @@
 * Removed Flex Feed and Flex View formats
 * Stability improvements - Backend performance improvements to continually optimize your monetization efforts
 
-## VERSION 6.7.1
+## VERSION 6.7.1 (August 13, 2020)
 * Removal of Moat framework
 * Fixed issue with FMDB duplicate symbol
 * Various bug fixes
 
-## VERSION 6.7.0
+## VERSION 6.7.0 (June 22, 2020)
 * CCPA Support – Compliance with new government regulations while assuring your users their personal data is being used the way they want
 * Multiple banner ad support – Display multiple banners on the screen txo leverage more ways to monetize your inventory and attract Premium Buyers
 * Stability enhancements to continually ensure high performance
@@ -27,7 +31,7 @@
 * Backend performance improvements to continually optimize your monetization efforts
 * Various bug fixes
 
-## VERSION 6.5.3
+## VERSION 6.5.3 (March 24, 2020)
 * Bugs and issues resolved.
 
 ## VERSION 6.5.1

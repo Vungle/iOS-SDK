@@ -90,6 +90,7 @@
 }
 
 - (IBAction)onInitButtonTapped:(id)sender {
+    [VungleSDK enableBackgroundDownload:YES];
     [self startVungle];
 }
 
@@ -332,7 +333,7 @@
     NSLog(@"-->> Delegate callback: vungleWillCloseAdForPlacement for %@",placementID);
 }
 
--(void)vungleDidCloseAdForPlacementID:(NSString *)placementID {
+- (void)vungleDidCloseAdForPlacementID:(NSString *)placementID {
     NSLog(@"-->> Delegate callback: vungleDidCloseAdForPlacementID for %@", placementID);
     [self updateButtons];
 }
@@ -340,6 +341,10 @@
 - (void)vungleSDKDidInitialize {
     NSLog(@"-->> Delegate Callback: vungleSDKDidInitialize - SDK initialized SUCCESSFULLY");
     [self updateButtons];
+}
+
+- (void)vungleAdViewedForPlacement:(NSString *)placementID {
+    NSLog(@"-->> Delegate Callback: vungleAdViewedForPlacement %@",placementID);
 }
 
 #pragma mark - FirstView Methods

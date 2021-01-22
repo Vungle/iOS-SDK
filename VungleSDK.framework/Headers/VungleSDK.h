@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 6.8.1
+//  SDK Version: 6.9.1
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -205,6 +205,13 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
 @property (atomic, readonly, getter = isInitialized) BOOL initialized;
 
 /**
+* Used when background download has completed. This is sent by the
+* application:handleEventsForBackgroundURLSession:completionHandler:
+* which needs to be called in `URLSessionDidFinishEventsForBackgroundURLSession`
+*/
+@property void (^backgroundURLSessionCompletionHandler)(void);
+
+/**
  * Returns the singleton instance.
  */
 + (VungleSDK *)sharedSDK;
@@ -221,6 +228,19 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
  * @return the current value of the publish IDFV flag
  */
 + (BOOL)shouldPublishIDFV;
+
+/**
+ *  Enable or disable background downloads.
+ *  If enabled you must implement the  application:handleEventsForBackgroundURLSession:completionHandler:
+ *  and before the method returns call the VungleSDK class method hanfleBackground
+ */
++ (void)enableBackgroundDownload:(BOOL)enable;
+
+/**
+ *  Check to find out if background download is enabled.
+ *  @return YES if background download is disabled, NO if not.
+ */
++ (BOOL)backgroundDownloadEnabled;
 
 #pragma mark - Initialization
 /**
