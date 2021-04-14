@@ -1,30 +1,22 @@
-//
-//  Constants.h
-//  Vungle Sample App
-//
-//  Created by Vungle on 8/21/19.
-//  Copyright © 2019 Vungle. All rights reserved.
-//
-
 #ifndef Constants_h
 #define Constants_h
 
 static NSString *const kVungleAppIDPrefix = @"App ID:";
-static NSString *const kVungleTestAppID = @"5ee7cef38693721c500d15ca";
+static NSString *const kVungleTestAppID = @"5e13cc9d61880b27a65bf735";
 static NSString *const kVunglePlacementID1Prefix = @"PlacementID: ";
-static NSString *const kVungleTestPlacementID01 = @"DEFAULT-3652844"; // Auto Cached
+static NSString *const kVungleTestPlacementID01 = @"DEFAULT-2227894"; // Auto Cached
 static NSString *const kVunglePlacementID2Prefix = @"Interstitial: ";
-static NSString *const kVungleTestPlacementID02 = @"INTERSTITIAL01-2446128";
+static NSString *const kVungleTestPlacementID02 = @"INTERSTITIAL01-8573922";
 static NSString *const kVunglePlacementID3Prefix = @"Rewarded: ";
-static NSString *const kVungleTestPlacementID03 = @"REWARDED02-6669942";
+static NSString *const kVungleTestPlacementID03 = @"REWARDED01-4772665";
 static NSString *const kVunglePlacementID4Prefix = @"Rewarded Playable: ";
-static NSString *const kVungleTestPlacementID04 = @"REWARDED_PLAYABLE-8222961";
+static NSString *const kVungleTestPlacementID04 = @"REWARDED_PLAYABLE03-6535366";
 static NSString *const kVunglePlacementID5Prefix = @"MREC: ";
-static NSString *const kVungleTestPlacementID05 = @"MREC01-8863655";
+static NSString *const kVungleTestPlacementID05 = @"MRECC02-9825235";
 static NSString *const kVunglePlacementID6Prefix = @"Banner Short: ";
-static NSString *const kVungleTestPlacementID06 = @"BANNER01-1678809";
+static NSString *const kVungleTestPlacementID06 = @"BANNER04-8166553";
 static NSString *const kVunglePlacementID7Prefix = @"Banner: ";
-static NSString *const kVungleTestPlacementID07 = @"BANNER02-6146432";
+static NSString *const kVungleTestPlacementID07 = @"BANNER3-7051875";
 static NSString *const kVunglePlacementID8Prefix = @"Banner: ";
 static NSString *const kVungleTestPlacementID08 = @"BANNER05-9988742";
 static NSString *const kVunglePlacementID9Prefix = @"MREC: ";

@@ -1,5 +1,12 @@
 ### Changelog
 
+## VERSION 6.9.2 (April 14, 2021)
+* Thread deadlock issue reported by mediation partners
+* Background downloading enabled by default
+* Fix for Namespace collision
+* Includes the .xcframework bundle type introduced in Xcode 11. This bundle type allows support for multiple architectures, platforms and simulator in one package.
+* Stability Improvements
+
 ## VERSION 6.9.1 (January 21, 2021)
 * OM SDK Integration - The Open Measurement Software Development Kit (OM SDK) is designed to facilitate third-party viewability and verification measurement for ads served by Vungle.
 * Stability Improvements
@@ -93,6 +100,7 @@
 * License updated
 * Removed the requirement to have an auto-cached placement
 * Removed the requirement to initialize Vungle SDK with all placements
+* Includes .xcframework to support multiple architectures or device types.
 * Bug fixes
 
 ## VERSION 5.4.0
