@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 6.9.2
+//  SDK Version: 6.10.0
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -205,9 +205,10 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
 @property (atomic, readonly, getter = isInitialized) BOOL initialized;
 
 /**
-* Used when background download has completed. This is sent by the
-* application:handleEventsForBackgroundURLSession:completionHandler:
-* which needs to be called in `URLSessionDidFinishEventsForBackgroundURLSession`
+ * Used when background download has completed.
+ * @note This is sent by the
+ * application:handleEventsForBackgroundURLSession:completionHandler:
+ * and needs to be called in `URLSessionDidFinishEventsForBackgroundURLSession`
 */
 @property void (^backgroundURLSessionCompletionHandler)(void);
 
@@ -231,14 +232,16 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
 
 /**
  *  Enable or disable background downloads.
- *  If enabled you must implement the  application:handleEventsForBackgroundURLSession:completionHandler:
- *  and before the method returns call the VungleSDK class method hanfleBackground
+ *  @note If enabled you must implement the `application:handleEventsForBackgroundURLSession:completionHandler:`
+ *  in your AppDelegate class. Before the AppDelegate method returns, call the VungleSDK completion handler
+ *  `backgroundURLSessionCompletionHandler`.
+ *  @param enable YES to enable, NO to disable
  */
 + (void)enableBackgroundDownload:(BOOL)enable;
 
 /**
  *  Check to find out if background download is enabled.
- *  @return YES if background download is disabled, NO if not.
+ *  @return YES if background download is enabled, NO if not.
  */
 + (BOOL)backgroundDownloadEnabled;
 
