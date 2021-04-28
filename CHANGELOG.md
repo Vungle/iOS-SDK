@@ -1,5 +1,10 @@
 ### Changelog
 
+## VERSION 6.10.0 (April 28, 2021)
+* SKAdNetwork 2.2 & Xcode12.5 - Support for view-through attribution for all formats. Must update to the latest Xcode 12.5.  
+* Swift integration - Now contains a module map, so publishers no longer need a bridging-header file to import the VungleSDK. 
+* Stability improvements
+
 ## VERSION 6.9.2 (April 14, 2021)
 * Thread deadlock issue reported by mediation partners
 * Background downloading enabled by default
