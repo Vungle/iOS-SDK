@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 6.9.2
+//  SDK Version: 6.10.1
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -205,9 +205,10 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
 @property (atomic, readonly, getter = isInitialized) BOOL initialized;
 
 /**
-* Used when background download has completed. This is sent by the
-* application:handleEventsForBackgroundURLSession:completionHandler:
-* which needs to be called in `URLSessionDidFinishEventsForBackgroundURLSession`
+ * Used when background download has completed.
+ * @note This is sent by the
+ * application:handleEventsForBackgroundURLSession:completionHandler:
+ * and needs to be called in `URLSessionDidFinishEventsForBackgroundURLSession`
 */
 @property void (^backgroundURLSessionCompletionHandler)(void);
 
@@ -231,14 +232,16 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
 
 /**
  *  Enable or disable background downloads.
- *  If enabled you must implement the  application:handleEventsForBackgroundURLSession:completionHandler:
- *  and before the method returns call the VungleSDK class method hanfleBackground
+ *  @note If enabled you must implement the `application:handleEventsForBackgroundURLSession:completionHandler:`
+ *  in your AppDelegate class. Before the AppDelegate method returns, call the VungleSDK completion handler
+ *  `backgroundURLSessionCompletionHandler`.
+ *  @param enable YES to enable, NO to disable
  */
 + (void)enableBackgroundDownload:(BOOL)enable;
 
 /**
  *  Check to find out if background download is enabled.
- *  @return YES if background download is disabled, NO if not.
+ *  @return YES if background download is enabled, NO if not.
  */
 + (BOOL)backgroundDownloadEnabled;
 
@@ -313,25 +316,21 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
  * If you have added an advertisement with `addAdViewToView:` or you are playing a placement that has been configured as a
  * Flex View, Flex Feed, Banner or MREC placement, then this method will remove the advertisement from the screen and perform any
  * necessary clean up steps.
- *
  * This method will call the existing delegate callbacks as part of the lifecycle.
- *
  * @param placementId Thje placement identifier for the ad to dismiss.
  */
 - (void)finishDisplayingAd:(NSString *)placementId;
 
 #pragma mark - Placements support
 /**
- * Returns `YES` when there is certainty that an ad will be able to play for a given placementID.
- * Returning `NO`.
+ * Returns YES/NO when there is certainty that an ad will be able to play/can't play for a given placementID.
  * @param placementID the specific ID of the placement you are trying to present
  */
 - (BOOL)isAdCachedForPlacementID:(nonnull NSString *)placementID;
 
 /**
 * (Overloaded method)
- * Returns `YES` when there is certainty that an ad will be able to play for a given placementID.
- * Returning `NO`.
+ * Returns YES/NO when there is certainty that an ad will be able to play/can't play for a given placementID.
  * @param size the VungleAdSize (enum) you would like to request (only for banner ad type at the moment)
  * @param placementID the specific ID of the placement you are trying to present
  */
@@ -341,6 +340,7 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
  * Prepares a placement when you know that you will want
  * to show an ad experience tied to a specific placementID.
  * @param placementID the specific ID of the placement you would like to present at some point soon
+ * @param error the NSError object that used to hold error generated
  * @return NO if something goes immediately wrong with loading, YES otherwise
  */
 - (BOOL)loadPlacementWithID:(NSString *)placementID error:(NSError **)error;
@@ -351,6 +351,7 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
  * to show an ad experience tied to a specific placementID.
  * @param placementID the specific ID of the placement you would like to present at some point soon
  * @param size the VungleAdSize (enum) you would like to request (only for banner ad type at the moment)
+ * @param error the NSError object that used to hold error generated
  * @return NO if something goes immediately wrong with loading, YES otherwise
  */
 - (BOOL)loadPlacementWithID:(NSString *)placementID withSize:(VungleAdSize)size error:(NSError **)error;
