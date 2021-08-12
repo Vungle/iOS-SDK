@@ -1,5 +1,14 @@
 ### Changelog
 
+## VERSION 6.10.1 (Aug 12, 2021)
+* SKAdNetwork 2.2 & XCode12.5 - This update supports view-through attribution for interactive and video advertisement formats. This allows you to display your choice of advertising formats and measure which creatives are most effective, while preserving user privacy.
+* Swift integration - On SDK6.10.1, VungleSDK now contains a module map, so publishers no longer need a bridging-header file to import the VungleSDK. 
+* Stability improvements
+#### Mediation In-App Bidding (Closed Beta)
+* Banner / MREC Bidding Support in Bidding  
+* Caching enhancements for in-app bidding Placements
+* New SDK APIs for In-App bidding (Only applicable to mediation partners)
+
 ## VERSION 6.9.2 (April 14, 2021)
 * Thread deadlock issue reported by mediation partners
 * Background downloading enabled by default
