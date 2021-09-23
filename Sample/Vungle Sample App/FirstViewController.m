@@ -471,7 +471,7 @@
     [self getScreenDimension];
     CGFloat viewYAxis = screenHeight - BANNER_AD_HEIGHT;
     NSLog(@"viewYAxis is %f",viewYAxis);
-       self.adView = [[UIView alloc]initWithFrame:CGRectMake((screenWidth / 2) - (BANNER_SHORT_AD_WIDTH / 2), screenHeight - BANNER_AD_HEIGHT-20, BANNER_SHORT_AD_WIDTH, BANNER_AD_HEIGHT)];
+    self.adView = [[UIView alloc]initWithFrame:CGRectMake((screenWidth / 2) - (BANNER_SHORT_AD_WIDTH / 2), screenHeight - BANNER_AD_HEIGHT-20, BANNER_SHORT_AD_WIDTH, BANNER_AD_HEIGHT)];
     [self.view addSubview:self.adView];
     [self.sdk addAdViewToView:self.adView withOptions:nil placementID:kVungleTestPlacementID06 error:&error];
     if (error) {
