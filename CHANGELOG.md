@@ -1,5 +1,10 @@
 ### Changelog
 
+## VERSION 6.10.3 (September 23, 2021)
+* SDK version fully compatible with iOS 15 and Xcode 13.
+* For apps using Xcode 13, upgrading to this version is REQUIRED as older SDKs don’t support Xcode 13 for iOS 15 devices.
+* Updated the minimum iOS version to 10. SDK won’t support iOS versions 9 and below.
+
 ## VERSION 6.10.1 (Aug 12, 2021)
 * SKAdNetwork 2.2 & XCode12.5 - This update supports view-through attribution for interactive and video advertisement formats. This allows you to display your choice of advertising formats and measure which creatives are most effective, while preserving user privacy.
 * Swift integration - On SDK6.10.1, VungleSDK now contains a module map, so publishers no longer need a bridging-header file to import the VungleSDK. 
