@@ -347,6 +347,10 @@
     NSLog(@"-->> Delegate Callback: vungleAdViewedForPlacement %@",placementID);
 }
 
+- (void)vungleSDKFailedToInitializeWithError:(NSError *)error {
+    NSLog(@"-->> Delegate Callback: vungleSDKFailedToInitializeWithError: %@",error);
+}
+
 #pragma mark - FirstView Methods
 
 - (void)setViewDefault {
