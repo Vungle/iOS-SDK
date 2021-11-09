@@ -1,5 +1,10 @@
 ### Changelog
 
+## VERSION 6.10.4 (November 8, 2021)
+* Fixed crashes related to SDK upgrades.
+* Fixed an issue where the publisher dashboard mute setting was getting reset at the SDK level.
+* Other minor bug fixes and stability improvements.
+
 ## VERSION 6.10.3 (September 23, 2021)
 * SDK version fully compatible with iOS 15 and Xcode 13.
 * For apps using Xcode 13, upgrading to this version is REQUIRED as older SDKs don’t support Xcode 13 for iOS 15 devices.
