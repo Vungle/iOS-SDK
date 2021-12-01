@@ -1,5 +1,10 @@
 ### Changelog
 
+## VERSION 6.10.5 (December 1, 2021)
+* Addressed a race condition occurring on iOS 15.1 that was preventing SDK from initializing.
+* Addressed instances where adMarkup can be nil for VungleSDKHBDelegate callbacks
+* SDK compiled using Xcode 12.5
+
 ## VERSION 6.10.4 (November 8, 2021)
 * Fixed crashes related to SDK upgrades.
 * Fixed an issue where the publisher dashboard mute setting was getting reset at the SDK level.
