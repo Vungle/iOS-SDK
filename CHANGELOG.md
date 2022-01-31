@@ -2,7 +2,7 @@
 
 ## VERSION 6.10.6 (January 31, 2022)
 * Addressed a race condition that prevented SDK from bidding with valid tokens for banner ads. 
-* SDK prevents playability callbacks from firing with nil admarkups. 
+* Updated SDK prevents playability callbacks from firing with nil admarkups. 
 * Fixed an issue that could prevent ad requests from sending when the app was resumed from background. 
 * Updated the way SDK handles bad URLs and ad assets that fail to load as expected.
 
