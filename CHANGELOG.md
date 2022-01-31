@@ -1,5 +1,11 @@
 ### Changelog
 
+## VERSION 6.10.6 (January 31, 2022)
+* Addressed a race condition that prevented SDK from bidding with valid tokens for banner ads. 
+* SDK prevents playability callbacks from firing with nil admarkups. 
+* Fixed an issue that could prevent ad requests from sending when the app was resumed from background. 
+* Updated the way SDK handles bad URLs and ad assets that fail to load as expected.
+
 ## VERSION 6.10.5 (December 1, 2021)
 * Addressed a race condition occurring on iOS 15.1 that was preventing SDK from initializing.
 * Addressed instances where adMarkup can be nil for VungleSDKHBDelegate callbacks
