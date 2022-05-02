@@ -116,14 +116,22 @@ NS_ASSUME_NONNULL_BEGIN
  * will return nil if it is unable to find an available token.
  *
  */
-- (NSString *)currentSuperToken;
+- (NSString *)currentSuperToken __attribute__((deprecated("Use currentSuperTokenForPlacementID:placementID:size: instead.")));
 
 /**
  * This is a synchronous method to fetch super token. This method
  * will return nil if it is unable to find an available token.
  * @param size Size limit of the supertoken needs to be returned
  */
-- (NSString *)currentSuperTokenForSize:(NSInteger)size;
+- (NSString *)currentSuperTokenForSize:(NSInteger)size __attribute__((deprecated("Use currentSuperTokenForPlacementID:placementID:size: instead.")));
+
+/**
+ * This is a synchronous method to request super token includes bidTokens
+ * for specified Placement with size limitation.
+ * @param placementID the specific ID of the placement. Setting `nil` includes all bidTokens for available Placements.
+ * @param size size limit applied for the supertoken returned. 0 or negative value sets no size limit.
+ */
+- (NSString *)currentSuperTokenForPlacementID:(nullable NSString *)placementID forSize:(NSInteger)size;
 
 @end
 
