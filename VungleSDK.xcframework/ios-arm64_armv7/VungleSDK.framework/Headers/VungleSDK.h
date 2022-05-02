@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 6.10.6
+//  SDK Version: 6.11.0
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -80,6 +80,12 @@ typedef enum {
     VungleSDKErrorUnknownBannerSize,
     VungleSDKResetPlacementForDifferentAdSize,
     VungleSDKErrorSDKAlreadyInitializing,
+    VungleSDKErrorInvalidAdTypeForNativeAdExperience,
+    VungleSDKErrorMissingAdMarkupForPlacement,
+    VungleSDKErrorInvalidAdMarkupForPlacement,
+    VungleSDKErrorIllegalAdRequest,
+    VungleSDKErrorSetNativeAdLoadCompletionBlock,
+    VungleSDKErrorNativeAdLoad,
 } VungleSDKErrorCode;
 
 typedef NS_ENUM (NSInteger, VungleConsentStatus) {
@@ -434,6 +440,15 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
  * This method disables refresh functionality for all banner and MREC placements.
  */
 - (void)disableBannerRefresh;
+
+/**
+ * This method can be used to provide a user's COPPA status to the Vungle SDK.
+ * This method should be called before initialization.
+ * @param status the bool flag to be set for the user's COPPA status.
+ * status: YES if the user should be treated as 'under 13'  and under COPPA regulations.
+ * status: NO if the user is known to be over the age of 13 and does NOT fall under COPPA regulations.
+ */
+- (void)updateCOPPAStatus:(BOOL)status;
 
 @end
 

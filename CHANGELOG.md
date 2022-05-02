@@ -1,5 +1,15 @@
 ### Changelog
 
+## VERSION 6.11.0 (May 2, 2022)
+* Added support for Native Ads format for non-HB placements (closed beta)
+* Support for custom App Store product pages
+* COPPA API support (advanced setting)
+* Support of deep-linking URLs into other apps
+* In-app bidding enhancements
+* Caching improvements for HB placements
+* Fixed an issue to prevent HB banners from auto refreshing in mediated scenarios
+* Removed the unused VungleSDKNativeAds public header
+
 ## VERSION 6.10.6 (January 31, 2022)
 * Addressed a race condition that prevented SDK from bidding with valid tokens for banner ads. 
 * Updated SDK prevents playability callbacks from firing with nil admarkups. 
