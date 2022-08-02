@@ -1,5 +1,12 @@
 ### Changelog
 
+## VERSION 6.12.0 (Aug 1, 2022)
+* New ad format: Rewarded Interstitial (closed beta)
+* In-app bidding enhancements
+* Performance optimizations
+* Fixed memory leaks
+* Removal of ordinal view play option
+
 ## VERSION 6.11.0 (May 2, 2022)
 * Added support for Native Ads format for non-HB placements (closed beta)
 * Support for custom App Store product pages

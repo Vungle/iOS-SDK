@@ -74,6 +74,12 @@ typedef NS_ENUM (NSInteger, NativeAdOptionsPosition) {
 - (void)loadAd;
 
 /**
+ * Prepare a native ad for the specified placement.
+ * @param adMarkup includes the adunit data of the placement
+ */
+- (void)loadAdWithAdMarkup:(nullable NSString *)adMarkup;
+
+/**
  * Pass UIViews and UIViewController to prepare and display a Native ad.
  * @param view a container view in which a native ad will be displayed. This view will be clickable.
  * @param mediaView a VungleMediaView to display the ad's image or video
