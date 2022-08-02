@@ -18,9 +18,9 @@ static NSString *const kVungleTestPlacementID06 = @"BANNER04-8166553";
 static NSString *const kVunglePlacementID7Prefix = @"Banner: ";
 static NSString *const kVungleTestPlacementID07 = @"BANNER3-7051875";
 static NSString *const kVunglePlacementID8Prefix = @"Banner: ";
-static NSString *const kVungleTestPlacementID08 = @"BANNER05-9988742";
+static NSString *const kVungleTestPlacementID08 = @"BANNER05-4730786";
 static NSString *const kVunglePlacementID9Prefix = @"MREC: ";
-static NSString *const kVungleTestPlacementID09 = @"MREC02-3040297";
+static NSString *const kVungleTestPlacementID09 = @"MREC04-8692745";
 
 #define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 #define SCREEN_WIDTH self.view.frame.size.width

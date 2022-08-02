@@ -412,7 +412,7 @@
 }
 
 - (IBAction)showAdForPlacement02 {
-    NSDictionary *options = @{VunglePlayAdOptionKeyOrientations: @(UIInterfaceOrientationMaskAllButUpsideDown),VunglePlayAdOptionKeyOrdinal: @20031023, VunglePlayAdOptionKeyStartMuted:@(1)};
+    NSDictionary *options = @{VunglePlayAdOptionKeyOrientations: @(UIInterfaceOrientationMaskAllButUpsideDown), VunglePlayAdOptionKeyStartMuted:@(1)};
     NSError *error;
     [self.sdk playAd:self options:options placementID:kVungleTestPlacementID02 error:&error];
     if (error) {
