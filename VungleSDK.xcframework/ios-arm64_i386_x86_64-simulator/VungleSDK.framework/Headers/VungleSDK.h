@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 6.11.0
+//  SDK Version: 6.12.1
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -55,7 +55,6 @@ extern NSString *VunglePlayAdOptionKeyExtra6;
 extern NSString *VunglePlayAdOptionKeyExtra7;
 extern NSString *VunglePlayAdOptionKeyExtra8;
 extern NSString *VunglePlayAdOptionKeyLargeButtons;
-extern NSString *VunglePlayAdOptionKeyOrdinal;
 extern NSString *VunglePlayAdOptionKeyFlexViewAutoDismissSeconds;
 
 typedef enum {
@@ -118,15 +117,12 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
  * If implemented, this will get called when the SDK has an ad ready to be displayed. Also it will
  * get called with an argument `NO` for `isAdPlayable` when for some reason, there is
  * no ad available, for instance there is a corrupt ad or the OS wiped the cache.
- * Please note that receiving a `NO` here does not mean that you can't play an Ad: if you haven't
- * opted-out of our Exchange, you might be able to get a streaming ad if you call `play`.
  * @param isAdPlayable A boolean indicating if an ad is currently in a playable state
  * @param placementID The ID of a placement which is ready to be played
  * @param error The error that was encountered.  This is only sent when the placementID is nil.
  */
 - (void)vungleAdPlayabilityUpdate:(BOOL)isAdPlayable placementID:(nullable NSString *)placementID error:(nullable NSError *)error;
 
-- (void)vungleAdPlayabilityUpdate:(BOOL)isAdPlayable placementID:(nullable NSString *)placementID __attribute__((deprecated("Use vungleAdPlayabilityUpdate:isAdPlayable:plaementID:error: instead.")));
 /**
  * If implemented, this will get called when the SDK is about to show an ad. This point
  * might be a good time to pause your game, and turn off any sound you might be playing.
@@ -154,20 +150,11 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
  */
 - (void)vungleWillCloseAdForPlacementID:(nonnull NSString *)placementID;
 
-- (void)vungleWillCloseAdWithViewInfo:(nonnull VungleViewInfo *)info placementID:(nonnull NSString *)placementID __attribute__((deprecated("Use vungleWillCloseAdForPlacementID: instead.")));
-
-- (void)vungleSDKwillCloseAdWithViewInfo:(NSDictionary *)viewInfo
-                 willPresentProductSheet:(BOOL)willPresentProductSheet __attribute__((deprecated("Use vungleWillCloseAdForPlacementID: instead.")));
-
-- (void)vungleSDKwillCloseProductSheet:(id)productSheet __attribute__((deprecated("Use vungleWillCloseAdForPlacementID: instead.")));
-
 /**
  * If implemented, this method gets called when a Vungle Ad Unit has been completely dismissed.
  * At this point, you can load another ad for non-auto-cached placement if necessary.
  */
 - (void)vungleDidCloseAdForPlacementID:(nonnull NSString *)placementID;
-
-- (void)vungleDidCloseAdWithViewInfo:(nonnull VungleViewInfo *)info placementID:(nonnull NSString *)placementID __attribute__((deprecated("Use vungleDidCloseAdForPlacementID: instead.")));
 
 /**
  * If implemented, this method gets called when user clicks the Vungle Ad.
@@ -254,15 +241,6 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
 /**
  * Initializes the SDK. You can get your app id on Vungle's dashboard: https://v.vungle.com
  * @param appID the unique identifier for your app
- * @param placements An array of strings representing placements defined in the dashboard.
- * @param error An error object containing information about why initialization failed
- * @return YES if the SDK has started, NO otherwise
- */
-- (BOOL)startWithAppId:(nonnull NSString *)appID placements:(nullable NSArray <NSString *> *)placements error:(NSError **)error  __attribute__((deprecated("Use startWithAppId:appID:error: instead.")));
-
-/**
- * Initializes the SDK. You can get your app id on Vungle's dashboard: https://v.vungle.com
- * @param appID the unique identifier for your app
  * @param error An error object containing information about why initialization failed
  * @return YES if the SDK has started, NO otherwise
  */
@@ -305,16 +283,6 @@ typedef NS_ENUM (NSInteger, VungleAdSize) {
  * @return YES/NO in case of success/error while presenting an AdUnit
  */
 - (BOOL)addAdViewToView:(UIView *)publisherView withOptions:(nullable NSDictionary *)options placementID:(nullable NSString *)placementID error:(NSError *__autoreleasing _Nullable *_Nullable)error;
-
-/**
- * This method will dismiss the currently playing Flex View, Flex Feed, Banner or MREC advertisement. If you have added an
- * advertisement with `addAdViewToView:` or you are playing a placement that has been configured as a Flex View, Flex Feed,
- * Banner or MREC placement, then this method will remove the advertisement from the screen and perform any necessary clean up
- * steps.
- *
- * This method will call the existing delegate callbacks as part of the lifecycle.
- */
-- (void)finishedDisplayingAd __attribute((deprecated("Use finishDisplayingAd: with the placementID of the ad to finish.")));
 
 /**
  * This method will dismiss the currently playing Flex View, Flex Feed, Banner or MREC advertisement with the placementId specified.

@@ -167,8 +167,6 @@ NS_ASSUME_NONNULL_BEGIN
  * If implemented, this will get called when the SDK has an ad ready to be displayed. Also it will
  * get called with an argument `NO` for `isAdPlayable` when for some reason, there is
  * no ad available, for instance there is a corrupt ad or the OS wiped the cache.
- * Please note that receiving a `NO` here does not mean that you can't play an Ad: if you haven't
- * opted-out of our Exchange, you might be able to get a streaming ad if you call `play`.
  * @param isAdPlayable A boolean indicating if an ad is currently in a playable state
  * @param placementID The ID of a placement which is ready to be played
  * @param adMarkup The ad markup of an adUnit which is ready to be played.
