@@ -1,8 +1,5 @@
 ### Changelog
 
-## VERSION 6.12.2 (Feb 9, 2023)
-* Performance optimizations & bug fixes
-
 ## VERSION 6.12.1 (Nov 7, 2022)
 * iOS 16 support
 * Bug fixes and improvements

@@ -10,7 +10,7 @@
 		90113F122492C80D00805B8C /* BannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90113F112492C80D00805B8C /* BannerTableViewCell.m */; };
 		90113F152492C81900805B8C /* MRECTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90113F142492C81900805B8C /* MRECTableViewCell.m */; };
 		903A22C4243BF10F00365E15 /* MultiAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 903A22C3243BF10F00365E15 /* MultiAdViewController.m */; };
-		BC2077D32995B8140062E247 /* VungleSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82284852915A90A009FA2DC /* VungleSDK.xcframework */; };
+		A82284862915A90A009FA2DC /* VungleSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82284852915A90A009FA2DC /* VungleSDK.xcframework */; };
 		DE8F42381BBB0BC9009EC672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8F42371BBB0BC9009EC672 /* LaunchScreen.storyboard */; };
 		E319A21B230CE6D200EE8EC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E319A219230CE6D200EE8EC8 /* Main.storyboard */; };
 		F45D5FCF18E0F05300329123 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F45D5FCD18E0F05300329123 /* InfoPlist.strings */; };
@@ -66,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC2077D32995B8140062E247 /* VungleSDK.xcframework in Frameworks */,
+				A82284862915A90A009FA2DC /* VungleSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
