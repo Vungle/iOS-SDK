@@ -1,5 +1,8 @@
 ### Changelog
 
+## VERSION 6.12.3 (Mar 4, 2023)
+* Bug fixes
+
 ## VERSION 6.12.2 (Feb 9, 2023)
 * Performance optimizations & bug fixes
 
