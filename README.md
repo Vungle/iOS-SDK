@@ -1,8 +1,8 @@
 
 # Vungle's iOS-SDK
-[![Version](https://img.shields.io/cocoapods/v/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
-[![License](https://img.shields.io/cocoapods/l/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
-[![Platform](https://img.shields.io/cocoapods/p/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
+[![Version](https://img.shields.io/cocoapods/v/VungleAds.svg?style=flat)](http://cocoapods.org/pods/VungleAds)
+[![License](https://img.shields.io/cocoapods/l/VungleAds.svg?style=flat)](http://cocoapods.org/pods/VungleAds)
+[![Platform](https://img.shields.io/cocoapods/p/VungleAds.svg?style=flat)](http://cocoapods.org/pods/VungleAds)
 
 ## Getting Started
 https://support.vungle.com/hc/en-us/articles/360002925791
