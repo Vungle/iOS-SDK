@@ -1,5 +1,23 @@
 ### Changelog
 
+## VERSION 7.1.0 (Sep 13, 2023)
+* SKAN 4.0 Support
+* Improved handling of StoreKit
+* Improved caching of ad assets
+* Various smaller enhancements and bug fixes
+* Updated minimum supported Xcode version to 14.1
+* The minimum deployment target has been increased to iOS 11.0
+
+## VERSION 7.0.1 (June 15, 2023)
+* Bug fixes
+* Addressed conflict with third party library
+* Stability improvements
+
+## VERSION 7.0.0 (Mar 22, 2023)
+* Swift SDK.
+* Instance based public APIs and delegate callbacks.
+* New API changes.
+
 ## VERSION 6.12.3 (Mar 4, 2023)
 * Bug fixes
 
