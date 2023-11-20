@@ -1,5 +1,10 @@
 ### Changelog
 
+## VERSION 7.2.0 (Nov 20, 2023)
+* Improved Error handling
+* OMSDK Suport for Native ads
+* Stability improvements, enhancements and bug fixes
+
 ## VERSION 7.1.0 (Sep 13, 2023)
 * SKAN 4.0 Support
 * Improved handling of StoreKit
