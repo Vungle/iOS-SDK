@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 7.3.0 (Mar 25, 2024)
+- Performance improvements
+- Updated OMSDK to 1.4.12
+
+## Version 7.2.2 (Feb 5, 2024)
+- Introduced Privacy Manifest support and code signed SDK
+- Stability improvements and bug fixes
+
 ## Version 7.2.0 (Nov 20, 2023)
 - Improved error handling
 - OMSDK support for Native ads
