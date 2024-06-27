@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 7.4.0 (June 26, 2024)
+- InLine ads support
+- AppOpen ads Support
+- First Party Data Support
+- Bug fixes and stability improvements
+
 ## Version 7.3.2 (May 1, 2024)
 - Bug fixes and improvements
 
