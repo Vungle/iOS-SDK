@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 7.3.2 (May 1, 2024)
+- Bug fixes and improvements
+
+## Version 7.3.1 (April 4, 2024)
+- Updated the content of the Privacy Manifest
+
 ## Version 7.3.0 (Mar 25, 2024)
 - Performance improvements
 - Updated OMSDK to 1.4.12
