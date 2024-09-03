@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 7.4.1 (September 3, 2024)
+- Optimization in SDK initialization
+- Update OMSDK to version 1.5.0
+- Bug fixes and stability improvements
+
 ## Version 7.4.0 (June 26, 2024)
 - InLine ads support
 - AppOpen ads Support
