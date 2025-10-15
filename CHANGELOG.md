@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 7.6.1 (October 15, 2025)
+- Updated OMSDK to 1.5.7 to fix iOS 26 specific issue
+- Stability Improvements 
+
 ## Version 7.4.1 (September 3, 2024)
 - Optimization in SDK initialization
 - Update OMSDK to version 1.5.0
